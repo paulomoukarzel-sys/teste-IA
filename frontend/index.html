@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistente Juridico - Dr. Paulo Moukarzel</title>
+  <link rel="stylesheet" href="/css/shared.css">
+  <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+<div class="app-container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menu">&#9776;</button>
+      <span class="header-logo">&#9878;&#65039; Assistente Juridico</span>
+    </div>
+    <div class="header-center">
+      <div class="active-client-badge" id="activeClientBadge">
+        <span class="client-status-dot ativa"></span>
+        <span class="client-badge-name"></span>
+        <span style="opacity:0.7;font-size:0.76rem" class="client-badge-count"></span>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="header-btn" id="themeToggle" aria-label="Alternar tema">&#127769;</button>
+      <a class="header-btn" href="/dashboard" target="_blank">Dashboard</a>
+    </div>
+  </div>
+
+  <!-- SIDEBAR OVERLAY (mobile) -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <button class="new-conv-btn" onclick="Chat.newConversation()">+ Nova Conversa</button>
+    </div>
+
+    <div class="sidebar-search">
+      <input class="search-input" type="text" id="clientSearch"
+             placeholder="Buscar cliente...">
+    </div>
+
+    <div class="sidebar-filters">
+      <button class="filter-chip active" data-filter="all"
+              onclick="ClientSelector.setFilter('all')">Todos</button>
+      <button class="filter-chip" data-filter="Ativa"
+              onclick="ClientSelector.setFilter('Ativa')">Ativos</button>
+      <button class="filter-chip" data-filter="Encerrada"
+              onclick="ClientSelector.setFilter('Encerrada')">Encerrados</button>
+    </div>
+
+    <div class="sidebar-clients" id="clientList">
+      <!-- Preenchido via JS -->
+    </div>
+
+    <div class="sidebar-convs">
+      <div class="sidebar-section-title" onclick="this.classList.toggle('collapsed'); document.getElementById('convList').style.display = this.classList.contains('collapsed') ? 'none' : 'block'">
+        Conversas Recentes <span class="arrow">&#9660;</span>
+      </div>
+      <div id="convList">
+        <!-- Preenchido via JS -->
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <a class="sidebar-footer-btn" href="/dashboard" target="_blank">Dashboard</a>
+    </div>
+  </div>
+
+  <!-- CHAT AREA -->
+  <div class="chat-area">
+
+    <!-- Welcome screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+      <h2>Assistente Juridico</h2>
+      <p>Selecione um cliente na sidebar e comece a trabalhar. Voce pode elaborar pecas, revisar documentos e gerar arquivos .docx formatados.</p>
+      <div class="welcome-cards">
+        <div class="welcome-card" onclick="Chat.welcomeAction('elaborar')">
+          <div class="icon">&#128221;</div>
+          <div class="label">Elaborar Peticao</div>
+          <div class="desc">Redigir nova peca juridica</div>
+        </div>
+        <div class="welcome-card" onclick="Chat.welcomeAction('revisar')">
+          <div class="icon">&#128270;</div>
+          <div class="label">Revisar Peca</div>
+          <div class="desc">Analisar e corrigir texto</div>
+        </div>
+        <div class="welcome-card" onclick="Chat.welcomeAction('docx')">
+          <div class="icon">&#128196;</div>
+          <div class="label">Gerar .docx</div>
+          <div class="desc">Formatar e exportar</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Messages container -->
+    <div class="messages-container" id="messagesContainer" style="display:none">
+      <!-- Mensagens renderizadas via JS -->
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator" id="typingIndicator">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+    </div>
+
+    <!-- Scroll to bottom -->
+    <button class="scroll-bottom-btn" id="scrollBottomBtn" aria-label="Rolar para baixo">&#8595;</button>
+
+    <!-- Commands bar -->
+    <div class="commands-bar" style="display:none">
+      <button class="cmd-chip" onclick="Chat.handleCommand('/inicial')">/inicial</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/contestacao')">/contestacao</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/hc')">/hc</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/embargos')">/embargos</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/alegacoes')">/alegacoes</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/apelacao')">/apelacao</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/agravo')">/agravo</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/resp')">/resp</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/aresp')">/aresp</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/contrarrazoes')">/contrarrazoes</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/replica')">/replica</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/tutela')">/tutela</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/revisar')">/revisar</button>
+      <button class="cmd-chip" onclick="Chat.handleCommand('/docx')">/docx</button>
+    </div>
+
+    <!-- Input bar -->
+    <div class="input-bar" style="display:none">
+      <button class="attach-btn" aria-label="Anexar arquivo">&#128206;</button>
+      <div class="input-wrapper">
+        <textarea class="chat-input" id="chatInput"
+                  placeholder="Digite sua mensagem ou use um comando rapido..."
+                  rows="1"></textarea>
+      </div>
+      <button class="send-btn" id="sendBtn" aria-label="Enviar">&#10148;</button>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Document Preview Panel -->
+<div class="doc-panel-overlay" id="docPanelOverlay" onclick="DocumentViewer.close()"></div>
+<div class="doc-panel" id="docPanel">
+  <div class="doc-panel-header">
+    <h3 id="docPanelTitle">Documento</h3>
+    <button class="doc-panel-close" onclick="DocumentViewer.close()">&#10005;</button>
+  </div>
+  <div class="doc-panel-body" id="docPanelBody"></div>
+  <div class="doc-panel-actions">
+    <button class="doc-action-btn primary" onclick="Chat.generateDocxFromLast()">Gerar .docx</button>
+    <button class="doc-action-btn" onclick="DocumentViewer.copyContent()">Copiar Texto</button>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="/js/api.js"></script>
+<script src="/js/message-renderer.js"></script>
+<script src="/js/client-selector.js"></script>
+<script src="/js/document-viewer.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>

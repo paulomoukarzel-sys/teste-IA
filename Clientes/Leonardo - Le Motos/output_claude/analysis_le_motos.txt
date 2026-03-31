@@ -1,0 +1,717 @@
+================================================================================
+ANÁLISE JURÍDICA COMPLETA — CONTESTAÇÃO LE MOTOS
+Processo n. 0000827-79.2026.8.16.0001
+19ª Vara Cível da Comarca de Curitiba/PR — Juiz Henrique Kurscheidt
+Agente: Analista Jurídico | Data: 30/03/2026
+================================================================================
+
+================================================================================
+SUBTASK 1.1 — PETIÇÃO INICIAL DA AUTORA (PEDIDO PRINCIPAL art. 308 CPC)
+================================================================================
+
+1.1.1. QUALIFICAÇÃO DAS PARTES
+
+AUTORA: MOTOCAR PARANÁ LTDA
+  CNPJ: 59.282.524/0001-65
+  Sede: Av. Marechal Floriano Peixoto, 4961, Hauer, Curitiba/PR, CEP 80240-000
+  Advogados: Roberto Moreno de Melo (OAB-RJ 138.260) e Bernardo Gomes Leão (OAB-RJ 165.196)
+
+RÉ (nosso cliente): LEONARDO L DA ROSA COMERCIO DE MOTOCICLETAS LTDA ("LE MOTOS")
+  CNPJ: 42.332.927/0001-79
+  Sede: Rua Delfino José de Souza Filho, 267, sala 04, Serraria, São José/SC
+  Telefone: (48) 98465-6605
+  Representante legal: Leonardo Luiz da Rosa
+  Advogado: Paulo Ekke Moukarzel Junior (OAB/SC 36.591)
+
+DEMAIS RÉUS (pessoas físicas — "laranjas" segundo a autora):
+  1) Jonathan Cesar Moreira Souza (CPF 109.962.079-10)
+  2) João Vitor Duarte (CPF 104.204.569-02)
+  3) James Peterson da Silva (CPF 084.780.849-16)
+  4) Juliana Duarte da Rosa (CPF 102.774.489-30)
+  5) Felipe Rafael Pereira (CPF 157.042.879-48)
+  6) Nilton Luiz Martini Junior (CPF 583.369.239-34)
+
+RÉUS EXCLUÍDOS (acordo celebrado com a autora):
+  1) Alexandre Ferreira de Almeida
+  2) Amauri Lopres
+  3) Antonio Decol Neto
+  4) Jose Aparecido Ferreiro de Lima
+  5) Sergio Piotrowski
+  6) Silvio Lopes
+  7) Valdinei dos Santos Soares
+
+NOTA: Raphael Bismark Lemos NÃO figura como réu na ação.
+
+1.1.2. DADOS PROCESSUAIS
+
+  Distribuição da tutela cautelar antecedente: 13/01/2026
+  Decisão liminar (concessão da cautelar): publicada em 23/01/2026 (DJEN)
+  Efetivação da cautelar (expedição ordem bloqueio RENAJUD): 16/01/2026 (seq. 31)
+  Pedido principal (art. 308 CPC): protocolado em 27/02/2026
+  Valor da causa (atualizado): R$ 784.050,00 (originalmente R$ 948.000,00, reduzido após acordo com 7 réus)
+
+1.1.3. PEDIDOS EXATOS DA AUTORA
+
+  a) Emenda à inicial para excluir 7 réus do polo passivo e retificar valor da causa para R$ 784.050,00
+  b) Expedição de ordem de levantamento das constrições sobre 7 motos objeto do acordo
+  c) Citação dos réus remanescentes para contestar
+  d) PEDIDO PRINCIPAL (art. 308 CPC): restituição das 34 motocicletas OU conversão em perdas e danos de R$ 784.050,00, com correção e juros, com base nos arts. 186, 187, 927 e 884 CC
+  e) Condenação dos réus em custas e honorários
+  f) Recolhimento/cancelamento dos mandados de citação dos réus excluídos
+
+1.1.4. FUNDAMENTOS FÁTICOS DA AUTORA
+
+  A) Raphael Bismark Lemos, ex-vendedor da Motocar, orquestrou fraude milionária
+  B) Desde outubro/2025, aumento no volume de vendas de Raphael + elevação da inadimplência
+  C) Modus operandi: retirada de motos antes das 8h, sem procedimentos administrativos
+  D) 30 de 41 motos entregues SEM assinatura do Termo de Expedição pelo gestor
+  E) 11 entregas: gestor Cleberson "induzido a erro" por Raphael
+  F) Termos de Entrega falsificados (mesmo traço grafotécnico de Raphael)
+  G) Auditoria interna em 26/12/2025 revelou 41 motos sem pagamento = R$ 948.000,00
+  H) Raphael desapareceu em 27/12/2025, bloqueou contatos
+  I) LE MOTOS recebeu "parte substancial" das motos desviadas
+  J) Leonardo alegou ter pago diretamente na conta pessoal de Raphael, mas "recusou-se sistematicamente a apresentar comprovantes"
+  K) LE MOTOS continuou revendendo as motos (stories em redes sociais, anúncios no site)
+  L) NFs emitidas em CPFs de pessoas físicas (não no CNPJ da LE MOTOS) = esquema de "laranjas"
+  M) Mesmo telefone (41) 98412-2059 em NFs de 5 supostos compradores diferentes
+  N) Jonathan sozinho recebeu 11 motos em curto espaço de tempo
+
+1.1.5. FUNDAMENTOS JURÍDICOS DA AUTORA
+
+  - Art. 308 CPC (tutela cautelar antecedente → pedido principal)
+  - Art. 309, I, CPC (cessação da eficácia da cautelar se não deduzido pedido principal)
+  - Arts. 186, 187, 927 CC (ato ilícito, abuso de direito, responsabilidade civil)
+  - Art. 884 CC (enriquecimento sem causa — citado pela autora)
+  - Arts. 171, 168, 180 §1º, 298, 299, 288 CP (crimes imputados na representação criminal)
+
+1.1.6. ADMISSÕES FAVORÁVEIS À DEFESA (extraídas da própria petição inicial)
+
+  *** ADMISSÃO CRUCIAL 1: "em todas elas [transações anteriores], os valores correspondentes eram adequadamente depositados na conta da ora Requerente" (p. 9, linhas 294-296)
+  → A própria autora reconhece que Leonardo PAGAVA regularmente nas operações anteriores.
+
+  *** ADMISSÃO CRUCIAL 2: A autora reconhece que Raphael era seu vendedor/preposto, atuava dentro da concessionária, tinha acesso ao estoque e sistemas.
+
+  *** ADMISSÃO CRUCIAL 3: 30 de 41 motos foram entregues SEM Termo de Expedição assinado pelo gestor = falha grave de controle interno da Motocar.
+
+  *** ADMISSÃO CRUCIAL 4: Nas 11 restantes, o gestor Cleberson foi "induzido a erro" = falha de supervisão.
+
+  *** ADMISSÃO CRUCIAL 5: Raphael retirava motos "antes das 8h" = a Motocar permitia acesso fora do horário comercial.
+
+  *** ADMISSÃO CRUCIAL 6: A autora afirma que Leonardo "alegou ter efetuado pagamentos diretamente na conta pessoal de Raphael" — ou seja, a autora SABE que Leonardo pagou, apenas questiona o destinatário.
+
+1.1.7. LISTA DAS 34 MOTOCICLETAS (PEDIDO PRINCIPAL)
+
+  #   MODELO                    CHASSI
+  1.  CG 160 FAN                9C2KC2200TR415419
+  2.  CG 160 FAN                9C2KC2200TR415394
+  3.  NXR 160 BROS ABS          9C2KD0820TR017135
+  4.  NXR 160 BROS ABS          9C2KD0820TR017225
+  5.  PCX 160 DLX ABS           9C2KF5220TR002219
+  6.  CG 160 FAN                9C2KC2200TR419540
+  7.  PCX 160 DLX ABS           9C2KF5220TR002102
+  8.  CG 160 FAN                9C2KC2200TR611956
+  9.  CG 160 FAN                9C2KC2200TR612292
+  10. CG 160 FAN                9C2KC2200TR611679
+  11. CG 160 FAN                9C2KC2200TR419722
+  12. NX 500                    9C2PC4920TR001431
+  13. NXR 160 BROS ABS          9C2KD0820TR021742
+  14. CB 300F TWISTER ABS       9C2NC6110TR014377
+  15. XRE 190                   9C2MD4100TR007428
+  16. CG 160 FAN                9C2KC2200TR613284
+  17. NXR 160 BROS ABS          9C2KD0820TR024371
+  18. CG 160 FAN                9C2KC2200TR423736
+  19. XRE 190 ADVENTURE         9C2MD4110TR002433
+  20. XRE 190 ADVENTURE         9C2MD4110TR003478
+  21. CB 300F TWISTER ABS       9C2NC6110TR015675
+  22. CG 160 FAN                9C2KC2200TR429480
+  23. CG 160 FAN                9C2KC2200TR423755
+  24. CG 160 FAN                9C2KC2200TR424856
+  25. NXR 160 BROS ABS          9C2KD0820TR027184
+  26. CG 160 FAN                9C2KC2200TR429447
+  27. CG 160 FAN                9C2KC2200TR429545
+  28. NOVA BIZ 125 EX           9C2JC9610TR048831
+  29. NOVA BIZ 125 EX           9C2JC9610TR066179
+  30. NOVA BIZ 125 EX           9C2JC9610TR057959
+  31. CB 300F TWISTER ABS       9C2NC6110TR016952
+  32. CG 160 START              9C2KC2500TR403807
+  33. CG 160 TITAN              9C2KC2210TR029212
+  34. XRE 190                   9C2MD4100TR010134
+
+
+================================================================================
+SUBTASK 1.2 — BOLETIM DE OCORRÊNCIA (BO) REGISTRADO POR LEONARDO
+================================================================================
+
+DADOS DO BO:
+  Número: 0130990/2026-BO-00597.2026.0003936
+  Data de registro: 03/02/2026, 16h17min
+  Delegacia: Delegacia de Polícia Virtual de São José/SC
+  Unidade responsável: 2ª Delegacia de Polícia de São José
+  Fato comunicado: Estelionato/Consumado
+  Atendente: Thais Maria Rebello Schnell (Agente de Polícia Civil)
+
+QUALIFICAÇÃO DE LEONARDO NO BO:
+  - COMUNICANTE e VÍTIMA de Estelionato/Consumado
+  - Leonardo Luiz da Rosa, 36 anos, nascido em 25/02/1989, Florianópolis/SC
+  - Filiação: Irene Duarte da Rosa e Miguel Luiz da Rosa
+
+RELATO CHAVE DO BO (resumo):
+  1. Proprietário da "Lemotos Multimarcas" desde junho/2021
+  2. Em abril/2025, iniciou tratativas com Raphael, vendedor da Motocar (contato via WhatsApp por conhecido em comum)
+  3. Rotina de aquisição de motos 0km em lotes de 5 unidades
+  4. Pagamento inicialmente direto à concessionária
+  5. Em outubro, novembro e dezembro/2025: seguiu NOVA ORIENTAÇÃO de Raphael para depositar em conta indicada por ele, que disse que repassaria à concessionária
+  6. Leonardo agiu de boa-fé diante da habitualidade das transações anteriores (sem vícios, motos liberadas regularmente)
+  7. Em 07/01/2026: não conseguiu mais contato com Raphael
+  8. Foi procurado pela Sra. Marisa (gerente da Motocar) que alegou pendências financeiras
+  9. Surpreendido com cobrança de ~34 motos (~R$ 790 mil) adquiridas entre novembro e dezembro/2025
+  10. Destaca que pagou ao colaborador Raphael da Motocar, responsável pelo repasse
+  11. Destaca que a praxe do mercado é que a concessionária só libera motos mediante pagamento
+
+*** PONTO CRÍTICO — CRONOLOGIA DO BO:
+  - Tutela cautelar antecedente distribuída: 13/01/2026
+  - Efetivação da cautelar (bloqueio RENAJUD): 16/01/2026
+  - Decisão publicada no DJEN: 23/01/2026
+  - BO registrado: 03/02/2026
+  → O BO foi registrado APÓS a cautelar antecedente.
+  → Uso: CORROBORATIVO APENAS. Não centralizar como prova principal.
+  → O relato é coerente com os documentos e com a postura de vítima.
+  → A parte adversa argumentará que foi ato defensivo reativo ao processo.
+
+
+================================================================================
+SUBTASK 1.3 — DOCUMENTOS DO CLIENTE (PIX, NFs, CRLVs, BLOQUEIOS)
+================================================================================
+
+1.3.1. COMPROVANTES PIX — TABELA COMPLETA
+
+  #  | DATA        | VALOR (R$)  | PAGADOR                    | BENEFICIÁRIO              | BANCO PAG. | BANCO BENEF. | OBS
+  ---|-------------|-------------|----------------------------|---------------------------|------------|--------------|----
+  1  | 01/10/2025  | 80.000,00   | RAPHAEL BISMARK LEMOS      | MOTOCAR PARANA LTDA       | Bradesco   | Bradesco     | Raphael → Motocar (repasse)
+  2  | 11/11/2025  | 88.000,00   | Le Motos (Santander)        | Raphael (Bradesco)        | Santander  | Bradesco     | 2ª via Comprovante
+  3  | 25/11/2025  | 83.000,00   | Le Motos (Santander)        | Raphael (Bradesco)        | Santander  | Bradesco     | Comprovante Santander
+  4  | 28/11/2025  | 90.000,00   | Le Motos (Itaú)             | Raphael (Bradesco)        | Itaú       | Bradesco     | Comprovante Itaú
+  5  | 28/11/2025  | 26.000,00   | Le Motos (Santander)        | Raphael (Bradesco)        | Santander  | Bradesco     | 2ª via Comprovante
+  6  | 08/12/2025  | 98.550,00   | Le Motos (Santander)        | Raphael (Bradesco)        | Santander  | Bradesco     | R$ 97.000 motos + R$ 1.550 docs
+  7  | 12/12/2025  | 75.240,00   | Le Motos (Itaú)             | Raphael (C6)              | Itaú       | C6           | R$ 74.000 motos + R$ 1.240 docs
+  8  | 17/12/2025  | 77.550,00   | Le Motos (Itaú)             | Raphael (Bradesco)        | Itaú       | Bradesco     | R$ 75.500 motos + R$ 1.550 docs
+  9  | 23/12/2025  | 75.740,00   | Le Motos (Santander)        | Raphael (Bradesco)        | Santander  | Bradesco     | R$ 74.000 motos + R$ 1.240 docs
+
+  NOTA: Há também referência a um comprovante de transferência adicional de R$ 75.240,00 (Le Motos → Raphael) que pode ser duplicata do item 7 (mesma data e valor). Necessário confirmar.
+
+1.3.2. NOTAS FISCAIS (NFs) IDENTIFICADAS
+
+  NF #     | DATA       | DESTINATÁRIO           | CPF             | MODELO           | CHASSI                  | VALOR (R$) | VENDEDOR
+  ---------|------------|------------------------|-----------------|------------------|-------------------------|------------|------------------
+  4.008    | 25/08/2025 | Daniele Ione Lacerda   | 048.514.839-02  | CG 160 START     | 9C2KC2500SR177065       | 19.890,00  | (não identificado na NF)
+  5.685    | 28/08/2025 | Daniele Ione Lacerda   | 048.514.839-02  | CG 160 START     | 9C2KC2500SR171155       | 19.890,00  | (não identificado na NF)
+  4.754    | 28/07/2025 | Mauro Roberto Duarte   | 005.806.849-03  | CG 160 START     | 9C2KC2500SR168284       | 19.890,00  | RAPHAEL BISMARK LEMOS
+  4.311    | 28/07/2025 | Mauro Roberto Duarte   | 005.806.849-03  | CG 160 FAN       | 9C2KC2200SR285542       | 21.890,00  | RAPHAEL BISMARK LEMOS
+  4.307    | 28/07/2025 | Mauro Roberto Duarte   | 005.806.849-03  | CG 160 TITAN     | 9C2KC2210SR088912       | 23.490,00  | RAPHAEL BISMARK LEMOS
+
+  *** PONTO ESSENCIAL: As NFs 4.754, 4.311 e 4.307 contêm o campo "QL Vendedor: RAPHAEL BISMARK LEMOS" — prova documental direta de que Raphael era vendedor credenciado da Motocar.
+
+  *** PONTO DE ATENÇÃO: Todas as NFs foram emitidas em CPFs de pessoas físicas (Daniele Ione Lacerda, Mauro Roberto Duarte), NÃO no CNPJ da LE MOTOS. O telefone (48) 98465-6605 nas NFs é o telefone da LE MOTOS.
+
+  *** NOTA: As NFs acima são de julho-agosto/2025 (fase de pagamento direto à Motocar). As NFs das 34 motos do pedido principal (nov-dez/2025) estão nos autos da cautelar, juntadas pela própria autora.
+
+1.3.3. CRLV-e (CERTIFICADO DE REGISTRO E LICENCIAMENTO DE VEÍCULO)
+
+  Arquivo: CRLVe_1462451516.pdf
+  Veículo: HONDA CG 160 FAN
+  Chassi: 9C2KC2200SR275952
+  Placa: UAT0F20
+  Proprietário: MAURO ROBERTO DUARTE (CPF 005.806.849-03)
+  Local: Curitiba/PR
+  Data emissão: 01/10/2025
+  → Comprova regularidade documental dos veículos adquiridos
+
+1.3.4. RELATÓRIOS DE BLOQUEIO RENAJUD
+
+  Arquivo: RelBloqueioVeiculo (3).pdf → Bloqueio placa UBF-7I28 em 16/01/2026
+  Arquivo: RelBloqueioVeiculo (4).pdf → Bloqueio placa UAZ-2F29 em 16/01/2026
+  → Data do bloqueio: 16/01/2026 (posterior a todas as aquisições)
+
+1.3.5. E-MAIL BLOKTON MOTOCAR (WhatsApp Image 2026-01-08)
+
+  Screenshot de e-mail interno da Blokton Motocar:
+  - Assunto: "REEMBOLSO DE EMPLACAMENTO"
+  - Remetente: "Caixa Marechal"
+  - Destinatários: Contas a Pagar, daianesouza, Celso Francisco, Marise Cesar, elainepinheiro, Marechal - Administrativo
+  - Conteúdo: Solicitação de reembolso de taxa de emplacamento
+  - Dados bancários: Nubank, Ag. 0001, C.c. 30569857-0, CPF 005.806.849-03, Nome: MAURO ROBERTO DUARTE, Chave PIX: 48996909022
+  - Assinatura: Marcos Felipe de Souza, Auxiliar Administrativo de Vendas, Blokton Motocar - Marechal, Fone (41) 99611-3763, www.blokton.com.br
+  - Logo: BLOKTON / MOTOCAR — "Agora, somos a 2ª maior rede Honda do país"
+
+  *** IMPORTÂNCIA: Comprova que a Blokton/Motocar é uma estrutura corporativa integrada. O e-mail menciona "Marise Cesar" (gerente que contatou Leonardo) e "Celso Francisco" (diretor mencionado na inicial). Vincula Raphael à estrutura oficial da concessionária.
+
+1.3.6. PETIÇÃO MOTOCAR — INDICAÇÃO DE ENDEREÇO DAS MOTOS (19/01/2026)
+
+  Documento juntado pela própria Motocar indicando a localização das 41 motos para busca e apreensão.
+  Mostra que várias motos já haviam sido revendidas pela LE MOTOS a terceiros em SC:
+  - CG 160 FAN (415419) → vendida em São José/SC para Cristiano Venceslau Gomes
+  - CG 160 FAN (423736) → vendida em Biguaçu/SC para Adriano de Oliveira
+  - XRE 190 ADV (002433) → vendida em Imbituba/SC para Matheus Alves Cutinei
+  - XRE 190 ADV (003478) → vendida em Florianópolis/SC para Cleiton Oliveira de Almeida
+  - NX 500 (001431) → vendida em Florianópolis/SC para Giovani Maziero Pinheiro
+  - XRE 190 (007428) → vendida em Biguaçu/SC para Taissa Daniele Garcia Alves
+  - NXR 160 BROS ABS (024371) → vendida em Biguaçu/SC para Gabriel Beckhauser
+  - CG FAN (419722) → vendida em Tijucas/SC para Cristiane Ramos Santos Siqueira
+  - CG FAN (611679) → vendida em Bombinhas/SC para Kauan Silva Rodrigues
+  - CG FAN (612292) → vendida em Ilhota/SC para Edson Luna da Silva Junior
+  - CG FAN (429447) → vendida em São José/SC para Manoel Victor Maia dos Remédios
+
+  → Isso demonstra que a LE MOTOS operava como revendedora regular, comercializando as motos no mercado aberto — conduta compatível com boa-fé.
+
+
+================================================================================
+SUBTASK 1.4 — MENSAGENS WHATSAPP RELEVANTES
+================================================================================
+
+DADOS GERAIS DA CONVERSA:
+  Participantes: Leonardo (Le Motos) e "Raphael Honda Blokton Motocar"
+  Período: 23/05/2025 a 08/01/2026 (último contato de Leonardo sem resposta)
+  Total de linhas: ~4.060
+  Formato: exportação WhatsApp padrão
+
+*** NOTA: O nome do contato salvo como "Raphael Honda Blokton Motocar" é prova de que Raphael se apresentava como representante oficial da concessionária.
+
+1.4.1. MENSAGENS-CHAVE PARA A DEFESA
+
+A) CONFISSÃO DE RAPHAEL — "EU QUE TAVA METENDO O MIGUE" (18/12/2025)
+
+  [18/12/2025, 09:43:44] Raphael Honda Blokton Motocar: Gato
+  [18/12/2025, 09:44:01] Raphael Honda Blokton Motocar: Arruma outro nome pra nós, consegue? Minha gerente já embaçou na minha
+  [18/12/2025, 09:44:03] Raphael Honda Blokton Motocar: Bom diaaa
+  [18/12/2025, 09:50:22] Leonardo: <áudio>
+  [18/12/2025, 09:51:28] Raphael Honda Blokton Motocar: Não da, pq ela ja me pegou que tem um monte de moto faturada pras mesmas pessoas ai já mandaram pra ela perguntando se era logista, pq eles tão deixando duas por cpf né
+  [18/12/2025, 09:51:32] Raphael Honda Blokton Motocar: Eu que tava metendo o migue
+  [18/12/2025, 09:51:33] Raphael Honda Blokton Motocar: kkkkkk
+
+  ANÁLISE:
+  - Raphael ADMITE ser o único orquestrador do esquema de CPFs ("Eu que tava metendo o migue")
+  - Raphael explica que a Honda tem limite de 2 motos por CPF e que ele burlava esse controle
+  - A gerente ("minha gerente") já havia percebido a irregularidade
+  - Raphael PEDE a Leonardo que forneça outro nome — é Raphael quem conduz a operação
+  - Leonardo não demonstra ciência prévia do limite por CPF ou da irregularidade
+
+  *** CUIDADO (Lesson Learned #4): Esta confissão é sobre o ESQUEMA DE CPFs, não sobre desvio de pagamentos. Não extrapolar o sentido.
+
+B) RAPHAEL COMO CONDUTOR DAS OPERAÇÕES DE CPF
+
+  [18/12/2025, 09:52:00] Leonardo: Vamos achar um nome então
+  [18/12/2025, 09:52:03] Leonardo: Meu Deus
+  [18/12/2025, 09:52:07] Leonardo: Perdido nos nomes aqui
+  [18/12/2025, 09:52:26] Raphael Honda Blokton Motocar: A gente tava fazendo no do jonathan e do joao
+
+  ANÁLISE: Leonardo demonstra dificuldade em encontrar nomes ("Perdido nos nomes aqui"), enquanto Raphael já tinha os nomes organizados (Jonathan e João). Isso reforça que Raphael era quem controlava o esquema.
+
+C) RAPHAEL FORNECENDO INSTRUÇÕES DE PAGAMENTO
+
+  [10/07/2025, 11:20:58] Raphael Honda Blokton Motocar: Bom dia
+  [10/07/2025, 11:21:04] Raphael Honda Blokton Motocar: Vai precisar ser uma conta do Mauro
+  [10/07/2025, 11:21:20] Raphael Honda Blokton Motocar: Consegue pedir pra ele, pq as motos tão no nome dele
+
+  [10/07/2025, 17:05:08] Raphael Honda Blokton Motocar: 1600 vai cair
+  [10/07/2025, 17:05:27] Leonardo: Manda teu pix
+  [10/07/2025, 17:05:35] Raphael Honda Blokton Motocar: 10234458917
+
+  ANÁLISE: Raphael controlava para onde os pagamentos iam. Ele fornecia as chaves PIX e instruía Leonardo sobre os procedimentos.
+
+D) LINK PIX DA MOTOCAR (pagamento direto à concessionária na fase inicial)
+
+  [30/05/2025, 10:40:22] Raphael Honda Blokton Motocar: https://motocar.sisand.com.br/VisionAngular/pix-cliente/06538243940
+
+  ANÁLISE: Na fase inicial (maio/2025), Raphael enviou link do sistema oficial da Motocar para pagamento via PIX. Isso confirma que os primeiros pagamentos foram feitos diretamente à Motocar, como a própria autora admite.
+
+E) RAPHAEL CONFIRMANDO RECEBIMENTO DE PAGAMENTOS
+
+  [08/12/2025, 10:28:51] Raphael Honda Blokton Motocar: Tá na conta meu patrão
+  [12/12/2025, 10:55:57] Raphael Honda Blokton Motocar: Tá na conta patrão
+  [25/11/2025, 09:49:42] Raphael Honda Blokton Motocar: Tá na conta já cabeça
+
+F) RAPHAEL CALCULANDO VALORES E FORNECENDO PIX PARA PAGAMENTO (23/12/2025 — último lote)
+
+  [23/12/2025, 10:04:34] Raphael Honda Blokton Motocar: 17 + 15 + 21 + 21 =74 + 1240 doc
+  [23/12/2025, 10:19:04] Leonardo: Pix
+  [23/12/2025, 10:23:18] Raphael Honda Blokton Motocar: 10234458917
+  [23/12/2025, 10:23:20] Raphael Honda Blokton Motocar: Bradesco
+
+  ANÁLISE: Raphael calculava os valores (R$ 17.000 + R$ 15.000 + R$ 21.000 + R$ 21.000 = R$ 74.000 + R$ 1.240 docs = R$ 75.240) e fornecia a chave PIX. Leonardo pagava conforme instruído.
+
+G) RAPHAEL FORNECENDO VALORES PARA PAGAMENTO (17/12/2025)
+
+  [17/12/2025, 10:46:12] Leonardo: Já manda os valores e o pix
+  [17/12/2025, 10:47:01] Raphael Honda Blokton Motocar: 14.500,00 + 14.500,00 + 14.500,00 + 16.000,00 + 16.000,00 =75.500
+
+H) ÚLTIMO CONTATO — RAPHAEL DESAPARECE
+
+  [07/01/2026, 09:56:39] Raphael Honda Blokton Motocar: Bom dia lindo
+  [07/01/2026, 09:56:43] Raphael Honda Blokton Motocar: Conseguiu o endereço?
+  [07/01/2026, 10:03:31] Raphael Honda Blokton Motocar: Qual nome?
+  [07/01/2026, 10:03:34] Raphael Honda Blokton Motocar: E Cpf
+  [07/01/2026, 11:33:50] Raphael Honda Blokton Motocar: Fecho meu gato
+  [07/01/2026, 11:33:55] Raphael Honda Blokton Motocar: Vou ver se consigo ir agora meio dia
+  [07/01/2026, 14:42:24] Leonardo: Ligação de voz. Não atendida
+  [07/01/2026, 14:43:00] Leonardo: Daí
+  [08/01/2026, 10:25:55] Leonardo: Ligação de voz. Não atendida
+
+  ANÁLISE: Em 07/01/2026, Raphael ainda pedia nomes/CPFs e prometia ir buscar motos. A partir de 07/01/2026 14:42, Leonardo não consegue mais contato. Em 08/01/2026, nova tentativa sem resposta. Isso é coerente com o relato da autora de que Raphael desapareceu em 27/12/2025 (ou logo após).
+
+I) TABELA DE PREÇOS FORMAL (31/07-01/08/2025)
+
+  Raphael enviou tabela formal de preços:
+  - Biz ES: R$ 13.500
+  - Biz EX: R$ 16.500
+  - Start: R$ 16.400
+  - Titan: R$ 19.000
+  - Bros CBS: R$ 20.500
+  - Sahara ADV: R$ 31.500
+
+  ANÁLISE: Preços compatíveis com mercado. Leonardo pagou preço de mercado, sem desconto atípico.
+
+J) ENVIO DE DOCUMENTOS (NFs, CRLVe) APÓS CADA TRANSAÇÃO
+
+  Ao longo de toda a conversa, Raphael envia sistematicamente:
+  - Notas Fiscais eletrônicas (NFe)
+  - Certificados de Registro de Veículo (CRLVe)
+  - Documentos SSV (registro estadual)
+  - Faturas
+
+  Isso confirma a aparência de legalidade total das operações.
+
+
+================================================================================
+SUBTASK 1.5 — TABELA CRONOLÓGICA COMPLETA
+================================================================================
+
+DATA          | EVENTO                                                          | VALOR (R$)    | PROVA/DOCUMENTO
+--------------|----------------------------------------------------------------|---------------|------------------
+Abr/2025      | Início das tratativas Leonardo ↔ Raphael (via WhatsApp)         | —             | BO; _chat.txt
+23/05/2025    | Primeira mensagem registrada no WhatsApp                        | —             | _chat.txt linha 1
+30/05/2025    | Raphael envia link PIX oficial da Motocar para pagamento        | —             | _chat.txt linha 120
+Mai-Jun/2025  | Primeiras compras com pagamento direto à Motocar                | —             | Admissão da autora na inicial
+28/07/2025    | NFs 4.307, 4.311, 4.754 emitidas (Mauro R. Duarte, vendedor Raphael) | 65.270,00 | NFs download-2025-09-16
+31/07/2025    | Raphael envia tabela formal de preços                           | —             | _chat.txt
+25/08/2025    | NF 4.008 emitida (Daniele Lacerda, CG 160 Start)               | 19.890,00     | nfe danielli 1.pdf
+28/08/2025    | NF 5.685 emitida (Daniele Lacerda, CG 160 Start)               | 19.890,00     | nfe danielli 2.pdf
+01/10/2025    | PIX: Raphael → Motocar Paraná (repasse)                         | 80.000,00     | Comprovante (12).pdf
+01/10/2025    | CRLVe emitido (CG 160 FAN, Mauro R. Duarte)                    | —             | CRLVe_1462451516.pdf
+Out/2025      | Gerência da Motocar (Marise) nota aumento de vendas + inadimplência | —          | Petição inicial
+11/11/2025    | PIX: Le Motos (Santander) → Raphael (Bradesco)                  | 88.000,00     | 2ª via Comprovante (1)
+25/11/2025    | PIX: Le Motos (Santander) → Raphael (Bradesco)                  | 83.000,00     | Comprovante Santander
+28/11/2025    | PIX: Le Motos (Itaú) → Raphael (Bradesco)                       | 90.000,00     | 1 de 2 (1).pdf
+28/11/2025    | PIX: Le Motos (Santander) → Raphael (Bradesco)                  | 26.000,00     | 2° via Comprovante.pdf
+08/12/2025    | PIX: Le Motos (Santander) → Raphael (Bradesco)                  | 98.550,00     | 2ª via Comprovante.pdf
+12/12/2025    | PIX: Le Motos (Itaú) → Raphael (C6)                            | 75.240,00     | 1 de 2.pdf
+17/12/2025    | PIX: Le Motos (Itaú) → Raphael (Bradesco)                       | 77.550,00     | comprovante de transferência.pdf
+18/12/2025    | Raphael: "Arruma outro nome pra nós" + "Eu que tava metendo o migue" | —         | _chat.txt linhas 3748-3752
+23/12/2025    | PIX: Le Motos (Santander) → Raphael (Bradesco) — ÚLTIMO LOTE    | 75.740,00     | • Santander.pdf
+23/12/2025    | Raphael envia CRLVe das últimas motos                           | —             | _chat.txt linhas 3961-3963
+26/12/2025    | Auditoria interna da Motocar revela fraude (41 motos)           | —             | Petição inicial
+27/12/2025    | Raphael desaparece, bloqueia contatos                           | —             | Petição inicial
+07/01/2026    | Último contato de Raphael no WhatsApp (pede nome/CPF)           | —             | _chat.txt (últimas linhas)
+07-08/01/2026 | Leonardo tenta ligar para Raphael — sem resposta                | —             | _chat.txt (últimas linhas)
+~Jan/2026     | Gerente Marisa contata Leonardo sobre pendências                | —             | BO
+13/01/2026    | Distribuição da tutela cautelar antecedente pela Motocar        | —             | Autos do processo
+16/01/2026    | Efetivação da cautelar: bloqueio RENAJUD expedido               | —             | RelBloqueioVeiculo (3) e (4)
+19/01/2026    | Motocar junta petição com endereços das 41 motos                | —             | Petição Motocar - Indicação endereço
+23/01/2026    | Publicação da decisão concessiva da cautelar (DJEN)             | —             | Petição inicial (p. 4)
+03/02/2026    | Leonardo registra BO em São José/SC (estelionato)               | —             | BO 0130990/2026
+27/02/2026    | Motocar protocola pedido principal (art. 308 CPC)               | 784.050,00    | Petição inicial
+30/03/2026    | Prazo para contestação da LE MOTOS                              | —             | —
+
+
+================================================================================
+SUBTASK 1.6 — FUNDAMENTOS JURÍDICOS DA DEFESA
+================================================================================
+
+1.6.1. BOA-FÉ OBJETIVA
+  - Art. 422 CC: "Os contratantes são obrigados a guardar, assim na conclusão do contrato, como em sua execução, os princípios de probidade e boa-fé."
+  - Aplicação: Leonardo agiu com boa-fé em toda a relação comercial. Pagou integralmente, recebeu documentos (NFs, CRLVe), seguiu instruções do vendedor credenciado.
+
+1.6.2. RESPONSABILIDADE DO PREPONENTE POR ATOS DO PREPOSTO
+  - Art. 932, III, CC: "São também responsáveis pela reparação civil: [...] III - o empregador ou comitente, por seus empregados, serviçais e prepostos, no exercício do trabalho que lhes competir, ou em razão dele"
+  - Art. 933 CC: "As pessoas indicadas nos incisos I a V do artigo antecedente, ainda que não haja culpa de sua parte, responderão pelos atos praticados pelos terceiros ali referidos."
+  - Aplicação: Raphael era preposto/vendedor da Motocar. Atuava nas instalações, emitia NFs com CNPJ da Motocar, tinha acesso ao estoque. A Motocar responde objetivamente pelos atos de Raphael.
+
+1.6.3. TEORIA DA APARÊNCIA
+  - Art. 113 CC: "Os negócios jurídicos devem ser interpretados conforme a boa-fé e os usos do lugar de sua celebração."
+  - Art. 116 CC: "A manifestação de vontade pelo representante, nos limites de seus poderes, produz efeitos em relação ao representado."
+  - Art. 118 CC: "O representante é obrigado a provar às pessoas, com quem tratar em nome do representado, a sua qualidade e a extensão de seus poderes, sob pena de, não o fazendo, responder pelos atos que a estes excederem."
+  - Art. 686 CC: "A revogação do mandato, notificada somente ao mandatário, não se pode opor aos terceiros que, ignorando-a, de boa-fé com ele trataram."
+  - Aplicação: Raphael apresentava-se com todas as formalidades de vendedor autorizado (NFs com CNPJ da Motocar, tabela de preços oficial, e-mail corporativo Blokton Motocar, CRLVe emitidos). Leonardo não tinha como saber que Raphael agia fraudulentamente.
+
+1.6.4. INAPLICABILIDADE DO ATO ILÍCITO À RÉ
+  - Art. 186 CC: "Aquele que, por ação ou omissão voluntária, negligência ou imprudência, violar direito e causar dano a outrem, ainda que exclusivamente moral, comete ato ilícito."
+  - Art. 187 CC: "Também comete ato ilícito o titular de um direito que, ao exercê-lo, excede manifestamente os limites impostos pelo seu fim econômico ou social, pela boa-fé ou pelos bons costumes."
+  - Art. 927 CC: "Aquele que, por ato ilícito (arts. 186 e 187), causar dano a outrem, fica obrigado a repará-lo."
+  - Aplicação: Leonardo não praticou ato ilícito. Pagou R$ 614.080,00 integrais, seguiu orientações do vendedor credenciado. Não há dolo, culpa, nem nexo causal entre a conduta de Leonardo e o dano da Motocar.
+
+1.6.5. ENRIQUECIMENTO SEM CAUSA (TESE SUBSIDIÁRIA)
+  - Art. 884 CC: "Aquele que, sem justa causa, se enriquecer à custa de outrem, será obrigado a restituir o indevidamente auferido, feita a atualização dos valores monetários."
+  - Art. 885 CC: "A restituição é devida, não só quando não tenha havido causa que justifique o enriquecimento, mas também quando esta deixou de existir."
+  - Art. 886 CC: "Não caberá a restituição por enriquecimento, se a lei conferir ao lesado outros meios para se ressarcir do prejuízo sofrido."
+  - Aplicação: Se houver condenação, deduzir R$ 614.080,00 de qualquer valor. A Motocar não pode receber as motos E o valor pago por Leonardo.
+
+1.6.6. DESINTERESSE NA CONCILIAÇÃO
+  - Art. 334, §4º, II, CPC: "A audiência não será realizada: [...] II - quando não se admitir a autocomposição."
+  - Aplicação: Declarar formalmente o desinteresse. Mencionar que houve tentativa extrajudicial (contato da gerente Marisa pós-cautelar).
+
+1.6.7. LEVANTAMENTO DAS RESTRIÇÕES RENAJUD/SISBAJUD
+  - Art. 296 CPC: "A tutela provisória conserva sua eficácia na pendência do processo, mas pode, a qualquer tempo, ser revogada ou modificada."
+  - Art. 300 CPC: "A tutela de urgência será concedida quando houver elementos que evidenciem a probabilidade do direito e o perigo de dano ou o risco ao resultado útil do processo."
+  - Aplicação: Demonstrar fumus boni juris (pagamento integral + boa-fé) e periculum in mora (bloqueio impede atividade comercial da LE MOTOS, causa depreciação).
+
+1.6.8. HONORÁRIOS SUCUMBENCIAIS
+  - Art. 85 CPC: Condenação da autora em honorários.
+
+1.6.9. TEMAS JURISPRUDENCIAIS RELEVANTES
+  - Teoria da aparência: proteção do terceiro de boa-fé que contrata com preposto aparentemente autorizado
+  - Culpa in vigilando: responsabilidade objetiva do empregador por atos do empregado (art. 933 CC)
+  - Boa-fé do adquirente: pagamento integral como prova de ausência de conluio
+  - Enriquecimento sem causa: vedação à dupla cobrança
+
+
+================================================================================
+SUBTASK 1.7 — DOCUMENTOS NUMERADOS PARA JUNTADA
+================================================================================
+
+Doc. 1 — Procuração outorgada por LEONARDO L DA ROSA COMERCIO DE MOTOCICLETAS LTDA ao advogado Paulo Ekke Moukarzel Junior (OAB/SC 36.591)
+         [Arquivo: Leonardo da Rosa - Procuração.docx / Procuração-VersaoImpressao.pdf]
+
+Doc. 2 — Boletim de Ocorrência n. 0130990/2026, registrado por Leonardo Luiz da Rosa como comunicante e vítima de estelionato em 03/02/2026, perante a 2ª Delegacia de Polícia de São José/SC
+         [Arquivo: BO registrado por Leonardo.pdf]
+
+Doc. 3 — Notas Fiscais eletrônicas emitidas pela Motocar Paraná com identificação de RAPHAEL BISMARK LEMOS como vendedor (campo "QL Vendedor"):
+         - NF 4.754 (28/07/2025) — CG 160 START, chassi 9C2KC2500SR168284, R$ 19.890,00
+         - NF 4.311 (28/07/2025) — CG 160 FAN, chassi 9C2KC2200SR285542, R$ 21.890,00
+         - NF 4.307 (28/07/2025) — CG 160 TITAN, chassi 9C2KC2210SR088912, R$ 23.490,00
+         [Arquivos: download - 2025-09-16T094011.517.pdf, download - 2025-09-16T094013.732.pdf, download - 2025-09-16T094017.476.pdf]
+
+Doc. 4 — Captura de tela de e-mail interno da Blokton Motocar (08/01/2026), com assinatura de Marcos Felipe de Souza, "Auxiliar Administrativo de Vendas, Blokton Motocar - Marechal", contendo logo oficial BLOKTON/MOTOCAR e mencionando Marise Cesar e Celso Francisco como destinatários
+         [Arquivo: WhatsApp Image 2026-01-08 at 16.32.41.jpeg]
+
+Doc. 5 — Comprovante de transferência PIX de RAPHAEL BISMARK LEMOS para MOTOCAR PARANA LTDA (CNPJ 59.282.524/0001-65), no valor de R$ 80.000,00, em 01/10/2025 — prova de que Raphael repassava valores à Motocar
+         [Arquivo: Comprovante (12).pdf]
+
+Doc. 6 — Comprovante PIX de R$ 88.000,00 — Le Motos (Santander) → Raphael (Bradesco), em 11/11/2025
+         [Arquivo: 2ª via Comprovante (1).pdf]
+
+Doc. 7 — Comprovante PIX de R$ 83.000,00 — Le Motos (Santander) → Raphael (Bradesco), em 25/11/2025
+         [Arquivo: • Santander.pdf ou → Santander.pdf]
+
+Doc. 8 — Comprovante PIX de R$ 90.000,00 — Le Motos (Itaú) → Raphael (Bradesco), em 28/11/2025
+         [Arquivo: 1 de 2 (1).pdf]
+
+Doc. 9 — Comprovante PIX de R$ 26.000,00 — Le Motos (Santander) → Raphael (Bradesco), em 28/11/2025
+         [Arquivo: 2° via Comprovante.pdf]
+
+Doc. 10 — Comprovante PIX de R$ 98.550,00 — Le Motos (Santander) → Raphael (Bradesco), em 08/12/2025
+          [Arquivo: 2ª via Comprovante.pdf]
+
+Doc. 11 — Comprovante PIX de R$ 75.240,00 — Le Motos (Itaú) → Raphael (C6), em 12/12/2025
+          [Arquivo: 1 de 2.pdf]
+
+Doc. 12 — Comprovante PIX de R$ 77.550,00 — Le Motos (Itaú) → Raphael (Bradesco), em 17/12/2025
+          [Arquivo: comprovante de transferência.pdf]
+
+Doc. 13 — Comprovante PIX de R$ 75.740,00 — Le Motos (Santander) → Raphael (Bradesco), em 23/12/2025
+          [Arquivo: • Santander.pdf ou → Santander.pdf]
+
+Doc. 14 — Notas Fiscais emitidas pela Motocar Paraná em nome de Daniele Ione Lacerda (CPF 048.514.839-02):
+          - NF 4.008 (25/08/2025) — CG 160 START, R$ 19.890,00
+          - NF 5.685 (28/08/2025) — CG 160 START, R$ 19.890,00
+          [Arquivos: nfe danielli 1.pdf, nfe danielli 2.pdf]
+
+Doc. 15 — CRLVe n. 1462451516 — Honda CG 160 FAN, chassi 9C2KC2200SR275952, proprietário Mauro Roberto Duarte, emitido em 01/10/2025
+          [Arquivo: CRLVe_1462451516.pdf]
+
+Doc. 16 — Relatórios de Bloqueio RENAJUD:
+          - Placa UBF-7I28, bloqueio em 16/01/2026
+          - Placa UAZ-2F29, bloqueio em 16/01/2026
+          [Arquivos: RelBloqueioVeiculo (3).pdf, RelBloqueioVeiculo (4).pdf]
+
+Doc. 17 — Compilação de comprovantes PIX (Le Motos → Raphael e Raphael → Motocar) em documento único
+          [Arquivo: PIX P RAPHAEL E DELE P MOTOCAR.pdf — NOTA: arquivo de imagens, 42MB]
+
+Doc. 18 — [PENDENTE DE CONFIRMAÇÃO] Prints de tela das mensagens WhatsApp relevantes (confissão de Raphael, pedidos de CPF, confirmações de pagamento) — a serem extraídos do chat exportado ou do PDF da conversa
+          [Arquivo fonte: Conversa whats c Raphael em PDF.pdf]
+
+
+================================================================================
+SUBTASK 1.8 — VERIFICAÇÃO DO TOTAL PIX
+================================================================================
+
+CÁLCULO:
+
+  PIX Le Motos → Raphael:
+  11/11/2025:  R$  88.000,00
+  25/11/2025:  R$  83.000,00
+  28/11/2025:  R$  90.000,00
+  28/11/2025:  R$  26.000,00
+  08/12/2025:  R$  98.550,00
+  12/12/2025:  R$  75.240,00
+  17/12/2025:  R$  77.550,00
+  23/12/2025:  R$  75.740,00
+  ─────────────────────────────
+  SUBTOTAL:    R$ 614.080,00 ✓
+
+  PIX Raphael → Motocar:
+  01/10/2025:  R$  80.000,00
+  ─────────────────────────────
+  SUBTOTAL:    R$  80.000,00
+
+  TOTAL GERAL (Le Motos + repasse Raphael): R$ 694.080,00
+
+*** VERIFICAÇÃO: O total de R$ 614.080,00 pagos DIRETAMENTE pela Le Motos a Raphael está CONFIRMADO.
+    Somando o repasse de R$ 80.000,00 que Raphael fez à Motocar, o total é R$ 694.080,00.
+
+*** COMPOSIÇÃO DOS VALORES:
+    - Valor das motos: R$ 614.080,00 - (R$ 1.550 × 2 + R$ 1.240 × 2) = ~R$ 608.500,00 em motos + ~R$ 5.580,00 em documentação
+    - Detalhamento por comprovante:
+      08/12: R$ 97.000 motos + R$ 1.550 docs = R$ 98.550
+      12/12: R$ 74.000 motos + R$ 1.240 docs = R$ 75.240
+      17/12: R$ 75.500 motos + R$ 1.550 docs = R$ 77.550 (confirmado no WhatsApp: "14.500 + 14.500 + 14.500 + 16.000 + 16.000 = 75.500")
+      23/12: R$ 74.000 motos + R$ 1.240 docs = R$ 75.240 (confirmado no WhatsApp: "17 + 15 + 21 + 21 = 74 + 1240 doc")
+
+*** DIFERENÇA ENTRE VALOR PAGO E VALOR COBRADO:
+    Valor cobrado pela autora: R$ 784.050,00
+    Valor pago pela Le Motos:  R$ 614.080,00
+    Diferença:                 R$ 169.970,00
+
+    Possíveis explicações para a diferença:
+    1) A autora calcula pelo preço de tabela/varejo; Leonardo pagou preço de atacado/lojista
+    2) A autora inclui motos que podem ter sido adquiridas por outros réus (não pela Le Motos)
+    3) Custos de documentação/emplacamento não incluídos no valor da autora
+    4) Margem de lucro da concessionária vs. preço praticado com lojista
+
+*** NOTA: O comprovante de transferência.pdf (R$ 75.240,00) pode ser duplicata do comprovante de 12/12/2025. O estudo preliminar do advogado lista este como item separado, mas o valor e a descrição são idênticos. Se for duplicata, o total permanece R$ 614.080,00. Se for transferência adicional, o total seria R$ 689.320,00. A análise do estudo preliminar do advogado confirma R$ 614.080,00 como total correto (excluindo o repasse de R$ 80.000 de Raphael à Motocar).
+
+
+================================================================================
+SUBTASK 1.9 — PONTOS DE ATENÇÃO
+================================================================================
+
+1.9.1. CRONOLOGIA BO vs. CAUTELAR (LESSON LEARNED #1 e #5)
+
+  ⚠️ O BO (03/02/2026) foi registrado APÓS:
+     - A distribuição da cautelar (13/01/2026)
+     - A efetivação do bloqueio RENAJUD (16/01/2026)
+     - A publicação da decisão (23/01/2026)
+  
+  MAS ANTES do pedido principal (27/02/2026).
+
+  → REGRA: Usar o BO apenas como CORROBORAÇÃO. Nunca afirmar que foi registrado "antes do processo" sem especificar que se refere ao pedido principal.
+  → A parte adversa argumentará que o BO foi ato defensivo reativo ao processo.
+  → O relato do BO é coerente com os documentos e com a postura de vítima.
+
+1.9.2. NFs EM CPF vs. CNPJ (LESSON LEARNED #2)
+
+  ⚠️ TODAS as NFs identificadas foram emitidas em CPFs de pessoas físicas:
+     - Mauro Roberto Duarte (CPF 005.806.849-03) — 3 NFs de julho/2025
+     - Daniele Ione Lacerda (CPF 048.514.839-02) — 2 NFs de agosto/2025
+     - Jonathan Cesar Moreira Souza, João Vitor Duarte, etc. — NFs de nov-dez/2025 (nos autos)
+
+  → NENHUMA NF foi emitida no CNPJ da LE MOTOS (42.332.927/0001-79).
+  → Isso é irregularidade fiscal, MAS é responsabilidade do preposto/preponente (Raphael/Motocar).
+  → A Motocar é quem emite as NFs em seu sistema — se emitiu em CPFs, é porque Raphael tinha acesso ao sistema e a Motocar não controlava.
+  → NUNCA misturar a questão dos CPFs com a questão do não-pagamento. São temas distintos.
+
+1.9.3. PROVA CENTRAL = AUSÊNCIA DE GANHO FINANCEIRO (LESSON LEARNED #3)
+
+  ✓ Leonardo pagou R$ 614.080,00 integrais, a preço de mercado.
+  ✓ Não há evidência de desconto atípico, kickback, devolução parcial ou qualquer vantagem financeira.
+  ✓ Conluio pressupõe benefício mútuo — Leonardo não obteve benefício algum além das motos pelo preço pago.
+  ✓ Este é o argumento mais forte contra a alegação de conluio.
+
+1.9.4. CONFISSÃO DE RAPHAEL — ESCOPO LIMITADO (LESSON LEARNED #4)
+
+  ⚠️ A mensagem "Eu que tava metendo o migue" (18/12/2025) refere-se ESPECIFICAMENTE ao esquema de CPFs (limite de 2 motos por CPF da Honda), NÃO ao desvio de pagamentos.
+  → Usar com precisão: identifica Raphael como orquestrador do esquema de faturamento.
+  → NÃO extrapolar para dizer que Raphael confessou o desvio de pagamentos.
+
+1.9.5. DOCUMENTOS PENDENTES / LACUNAS
+
+  ⚠️ PIX P RAPHAEL E DELE P MOTOCAR.pdf — arquivo de 42MB com imagens dos comprovantes PIX. O texto não pôde ser extraído (PDF de imagens). Os dados foram obtidos do estudo preliminar do advogado.
+  
+  ⚠️ Comprovantes PIX individuais — alguns arquivos na pasta do cliente têm nomes genéricos (• Santander.pdf, → Santander.pdf, 1 de 2.pdf, etc.). A correspondência exata entre arquivo e transação precisa ser confirmada pelo advogado.
+
+  ⚠️ Prints de WhatsApp como documentos autônomos — o chat exportado (.txt) contém as mensagens, mas para juntada nos autos pode ser necessário:
+     a) Ata notarial do chat completo, OU
+     b) Prints de tela das mensagens-chave, OU
+     c) O PDF da conversa já existente (Conversa whats c Raphael em PDF.pdf)
+
+  ⚠️ Documento de vínculo formal de Raphael com a Motocar — além das NFs com "QL Vendedor: RAPHAEL BISMARK LEMOS" e do e-mail Blokton Motocar, não há contrato de trabalho ou credencial formal. Porém, a própria petição inicial da Motocar reconhece Raphael como "ex-vendedor", o que supre essa necessidade.
+
+1.9.6. POTENCIAIS FRAQUEZAS QUE A AUTORA PODE EXPLORAR
+
+  ⚠️ 1) "Leonardo pagou na conta pessoal de Raphael, não na conta da Motocar"
+     → Resposta: Leonardo seguiu instrução do vendedor credenciado. Na fase inicial, pagava direto à Motocar (admitido pela autora). A mudança de conta foi orientação de Raphael. Além disso, Raphael repassou R$ 80.000 à Motocar (doc. 5), demonstrando que o fluxo era Le Motos → Raphael → Motocar.
+
+  ⚠️ 2) "Leonardo forneceu CPFs de terceiros para faturamento"
+     → Resposta: Leonardo seguiu instrução rotineira do vendedor, sem ciência do limite por CPF da Honda. Raphael é quem pedia os nomes e admitiu ser o orquestrador ("Eu que tava metendo o migue"). A emissão das NFs é ato da Motocar em seu sistema — a responsabilidade é do preposto/preponente.
+
+  ⚠️ 3) "Leonardo se recusou a apresentar comprovantes"
+     → Resposta: Os comprovantes existem e serão juntados. A alegação da autora de "recusa sistemática" é contestada pelos fatos.
+
+  ⚠️ 4) "Leonardo continuou revendendo as motos após saber do problema"
+     → Resposta: A LE MOTOS é empresa de comércio de motocicletas. Revender é sua atividade-fim. Enquanto não havia bloqueio judicial (RENAJUD só em 16/01/2026), a revenda era exercício regular de atividade econômica.
+
+  ⚠️ 5) "Volume incomum de motos e mesmo telefone em várias NFs"
+     → Resposta: O telefone (48) 98465-6605 é o telefone da LE MOTOS — é natural que apareça nas NFs de motos destinadas à empresa. O volume é compatível com atividade de revendedora.
+
+  ⚠️ 6) "Somente após o manejo da cautelar houve contato por parte dos representantes da LE MOTOS"
+     → Resposta: O BO mostra que Leonardo foi surpreendido pela cobrança. Antes da cautelar, Leonardo tentou contato com Raphael (07-08/01/2026, sem resposta). A gerente Marisa é quem contatou Leonardo.
+
+1.9.7. FUMUS E PERICULUM PARA LEVANTAMENTO RENAJUD (LESSON LEARNED #6)
+
+  Para o pedido de levantamento das restrições:
+  
+  FUMUS BONI JURIS (concreto):
+  - Pagamento integral de R$ 614.080,00 via PIX rastreável (docs. 6-13)
+  - NFs com Raphael como vendedor credenciado (doc. 3)
+  - Confissão de Raphael como orquestrador (doc. 18)
+  - Admissão da autora de que pagamentos anteriores eram regulares
+  - E-mail corporativo Blokton Motocar vinculando Raphael à estrutura (doc. 4)
+
+  PERICULUM IN MORA (concreto):
+  - LE MOTOS é empresa cujo objeto social é comércio de motocicletas
+  - Bloqueio RENAJUD impede diretamente o exercício da atividade econômica
+  - Veículos bloqueados = estoque comercial que não pode ser vendido/transferido
+  - Depreciação natural: motos perdem valor com tempo e atualização de modelos
+  - Cada dia de bloqueio = diminuição concreta do patrimônio sobre o qual já foram pagos R$ 614.080,00
+  - Sacrifício desproporcional à ré que cumpriu sua obrigação
+
+1.9.8. INFORMAÇÃO ADICIONAL — JUIZ DO CASO
+
+  Juiz: Henrique Kurscheidt (19ª Vara Cível de Curitiba/PR)
+  Fonte: Estudo preliminar do advogado (Leonardo LeMotos - Estudo para a contestação.docx)
+
+1.9.9. EMBARGOS DE TERCEIRO CONEXOS
+
+  Processo: 0003198-16.2026.8.16.0001
+  Embargante: Manoel Victor Maia dos Remédios
+  Objeto: CG 160 FAN, placa UBF7127 (chassi final 429447)
+  Aquisição: de Felipe Rafael Pereira em 27/12/2025 (antes do bloqueio RENAJUD de 16/01/2026)
+  → Demonstra que terceiros de boa-fé adquiriram motos no mercado regular.
+
+
+================================================================================
+FIM DA ANÁLISE — RESUMO EXECUTIVO
+================================================================================
+
+QUATRO PILARES DA DEFESA (confirmados pela análise documental):
+
+1. PAGAMENTO INTEGRAL: R$ 614.080,00 pagos via PIX rastreável (8 transferências documentadas, nov-dez/2025), mais R$ 80.000,00 repassados por Raphael à Motocar (out/2025). Total: R$ 694.080,00.
+
+2. AUSÊNCIA DE GANHO FINANCEIRO: Leonardo pagou preço de mercado, sem desconto atípico, sem kickback, sem devolução parcial. Conluio pressupõe benefício mútuo — Leonardo não obteve benefício algum.
+
+3. RAPHAEL COMO ÚNICO ORQUESTRADOR: Confissão no WhatsApp ("Eu que tava metendo o migue", 18/12/2025). Raphael pedia nomes, controlava faturamento, fornecia chaves PIX, confirmava recebimentos. Leonardo seguia instruções do vendedor credenciado.
+
+4. TEORIA DA APARÊNCIA + CULPA IN VIGILANDO: Raphael era preposto da Motocar (NFs com "QL Vendedor: RAPHAEL BISMARK LEMOS", e-mail corporativo Blokton Motocar). A Motocar permitiu que 30 motos saíssem sem Termo de Expedição, que Raphael retirasse motos antes das 8h, e que NFs fossem emitidas em CPFs de terceiros por meses. Arts. 932 III + 933 CC.
+
+================================================================================
+Análise concluída em 30/03/2026 pelo Agente Analista Jurídico.
+Output: Clientes/Leonardo - Le Motos/output_claude/analysis_le_motos.txt
+================================================================================

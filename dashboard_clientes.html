@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Jurídico – Paulo Moukarzel</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --azul: #2F5496;
+      --azul-claro: #D6E4F0;
+      --azul-medio: #4472C4;
+      --verde: #1E7145;
+      --cinza: #F4F7FB;
+      --cinza-borda: #D0DCF0;
+      --texto: #1a1a2e;
+      --texto-leve: #5a6a84;
+      --branco: #ffffff;
+      --ativa: #1E7145;
+      --encerrada: #7F7F7F;
+      --sombra: 0 2px 12px rgba(47,84,150,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--cinza);
+      color: var(--texto);
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-medio) 100%);
+      color: white;
+      padding: 24px 36px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: 0 2px 16px rgba(47,84,150,0.20);
+    }
+    header h1 { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.5px; }
+    header p { font-size: 0.88rem; opacity: 0.82; margin-top: 3px; }
+    .header-badge {
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px; padding: 6px 16px;
+      font-size: 0.82rem; font-weight: 600;
+      border: 1px solid rgba(255,255,255,0.35);
+    }
+
+    /* MAIN LAYOUT */
+    main { max-width: 1400px; margin: 0 auto; padding: 28px 24px; }
+
+    /* SUMMARY CARDS */
+    .cards { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 28px; }
+    .card {
+      background: var(--branco); border-radius: 14px; padding: 20px 24px;
+      box-shadow: var(--sombra); border: 1px solid var(--cinza-borda);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .card-icon.total { background: #EBF1FB; }
+    .card-icon.ativa { background: #E6F4EC; }
+    .card-icon.encerrada { background: #F0F0F0; }
+    .card-icon.peticoes { background: #FFF4E6; }
+    .card-label { font-size: 0.78rem; color: var(--texto-leve); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card-value { font-size: 2rem; font-weight: 800; color: var(--azul); line-height: 1.1; }
+    .card-sub { font-size: 0.75rem; color: var(--texto-leve); margin-top: 2px; }
+
+    /* CHARTS ROW */
+    .charts-row { display: grid; grid-template-columns: 1.6fr 1fr; gap: 20px; margin-bottom: 28px; }
+    .chart-card {
+      background: var(--branco); border-radius: 14px; padding: 22px;
+      box-shadow: var(--sombra); border: 1px solid var(--cinza-borda);
+    }
+    .chart-title {
+      font-size: 0.95rem; font-weight: 700; color: var(--azul);
+      margin-bottom: 16px; padding-bottom: 10px;
+      border-bottom: 2px solid var(--azul-claro);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .chart-card canvas { max-height: 300px; }
+
+    /* CONTROLS */
+    .controls {
+      background: var(--branco); border-radius: 14px; padding: 18px 22px;
+      box-shadow: var(--sombra); border: 1px solid var(--cinza-borda);
+      display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .ctrl-label { font-size: 0.82rem; font-weight: 600; color: var(--texto-leve); white-space: nowrap; }
+    .search-box {
+      flex: 1; min-width: 220px; padding: 9px 14px;
+      border: 1.5px solid var(--cinza-borda); border-radius: 8px;
+      font-size: 0.9rem; outline: none; transition: border 0.2s;
+    }
+    .search-box:focus { border-color: var(--azul-medio); }
+    .filter-btns { display: flex; gap: 8px; }
+    .fbtn {
+      padding: 8px 18px; border-radius: 8px; cursor: pointer;
+      font-size: 0.84rem; font-weight: 600; border: 2px solid transparent;
+      transition: all 0.15s;
+    }
+    .fbtn.all { background: var(--azul); color: white; border-color: var(--azul); }
+    .fbtn.all.inactive { background: white; color: var(--azul); }
+    .fbtn.ativa { background: var(--verde); color: white; border-color: var(--verde); }
+    .fbtn.ativa.inactive { background: white; color: var(--verde); border-color: var(--verde); }
+    .fbtn.encerrada { background: #666; color: white; border-color: #666; }
+    .fbtn.encerrada.inactive { background: white; color: #666; border-color: #888; }
+    .sort-select {
+      padding: 9px 12px; border: 1.5px solid var(--cinza-borda);
+      border-radius: 8px; font-size: 0.88rem; outline: none;
+      background: white; cursor: pointer;
+    }
+    .result-count { font-size: 0.82rem; color: var(--texto-leve); margin-left: auto; white-space: nowrap; }
+
+    /* TABLE */
+    .table-card {
+      background: var(--branco); border-radius: 14px;
+      box-shadow: var(--sombra); border: 1px solid var(--cinza-borda);
+      overflow: hidden;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: linear-gradient(90deg, var(--azul), var(--azul-medio)); }
+    thead th {
+      padding: 13px 14px; text-align: left;
+      color: white; font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.4px; text-transform: uppercase;
+      cursor: pointer; user-select: none; white-space: nowrap;
+    }
+    thead th:hover { background: rgba(255,255,255,0.15); }
+    thead th.num { text-align: center; width: 52px; }
+    thead th.count { text-align: center; width: 100px; }
+    thead th.status { width: 110px; }
+    thead th::after { content: ''; margin-left: 5px; opacity: 0.5; }
+    thead th.sort-asc::after { content: ' ▲'; opacity: 1; }
+    thead th.sort-desc::after { content: ' ▼'; opacity: 1; }
+    tbody tr { border-bottom: 1px solid #EDF2FB; transition: background 0.12s; }
+    tbody tr:hover { background: #F0F6FF; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 12px 14px; font-size: 0.88rem; vertical-align: top; }
+    td.num { text-align: center; color: var(--texto-leve); font-size: 0.8rem; }
+    td.count {
+      text-align: center; font-weight: 800; font-size: 1.1rem; color: var(--azul-medio);
+    }
+    td.count.zero { color: #ccc; }
+    .badge {
+      display: inline-block; padding: 3px 10px; border-radius: 20px;
+      font-size: 0.76rem; font-weight: 700;
+    }
+    .badge.ativa { background: #E6F4EC; color: #1E7145; }
+    .badge.encerrada { background: #F0F0F0; color: #5a5a5a; }
+    .client-name { font-weight: 600; color: var(--texto); }
+    .synopsis-text { color: var(--texto-leve); font-size: 0.84rem; line-height: 1.45; }
+    .type-count {
+      display: inline-block; background: var(--azul-claro);
+      color: var(--azul); font-size: 0.75rem; font-weight: 700;
+      padding: 2px 8px; border-radius: 12px; white-space: nowrap;
+    }
+    .bar-bg { background: #EDF2FB; border-radius: 4px; height: 8px; margin-top: 4px; width: 100%; max-width: 120px; }
+    .bar-fill { background: linear-gradient(90deg, var(--azul-medio), var(--azul)); height: 8px; border-radius: 4px; min-width: 3px; }
+    .no-results {
+      text-align: center; padding: 48px; color: var(--texto-leve);
+      font-size: 1rem;
+    }
+
+    /* DETAIL PANEL */
+    .detail-panel {
+      position: fixed; right: 0; top: 0; bottom: 0; width: 400px;
+      background: white; box-shadow: -4px 0 30px rgba(47,84,150,0.15);
+      transform: translateX(100%); transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
+      z-index: 1000; overflow-y: auto; display: flex; flex-direction: column;
+    }
+    .detail-panel.open { transform: translateX(0); }
+    .panel-header {
+      background: linear-gradient(135deg, var(--azul), var(--azul-medio));
+      color: white; padding: 22px 24px;
+      display: flex; align-items: flex-start; justify-content: space-between;
+    }
+    .panel-header h2 { font-size: 1.05rem; font-weight: 700; line-height: 1.4; }
+    .panel-close {
+      background: rgba(255,255,255,0.2); border: none; color: white;
+      width: 32px; height: 32px; border-radius: 50%; cursor: pointer;
+      font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-left: 12px; transition: background 0.15s;
+    }
+    .panel-close:hover { background: rgba(255,255,255,0.35); }
+    .panel-body { padding: 24px; flex: 1; }
+    .panel-stat {
+      display: flex; gap: 12px; margin-bottom: 20px;
+    }
+    .pstat {
+      flex: 1; background: var(--cinza); border-radius: 10px; padding: 14px;
+      text-align: center;
+    }
+    .pstat-val { font-size: 1.7rem; font-weight: 800; color: var(--azul); }
+    .pstat-lbl { font-size: 0.72rem; color: var(--texto-leve); font-weight: 600; text-transform: uppercase; margin-top: 2px; }
+    .panel-section-title {
+      font-size: 0.8rem; font-weight: 700; color: var(--azul);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 10px; padding-bottom: 6px;
+      border-bottom: 2px solid var(--azul-claro);
+    }
+    .petition-chip {
+      display: inline-block; background: var(--azul-claro); color: var(--azul);
+      padding: 5px 12px; border-radius: 20px; font-size: 0.82rem;
+      font-weight: 600; margin: 3px 3px 3px 0;
+    }
+    .overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.25);
+      z-index: 999; opacity: 0; pointer-events: none; transition: opacity 0.28s;
+    }
+    .overlay.open { opacity: 1; pointer-events: all; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: repeat(2,1fr); }
+      .charts-row { grid-template-columns: 1fr; }
+      .detail-panel { width: 100%; }
+    }
+    @media (max-width: 600px) {
+      main { padding: 16px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+      header { padding: 16px; }
+      header h1 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>⚖️ Dashboard Jurídico</h1>
+    <p>Paulo Moukarzel — Relatório Dinâmico de Clientes e Petições</p>
+  </div>
+  <div class="header-badge" id="lastUpdate">Gerado em: <span id="dateDisplay"></span></div>
+</header>
+
+<main>
+  <!-- CARDS -->
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon total">👥</div>
+      <div>
+        <div class="card-label">Total de Clientes</div>
+        <div class="card-value" id="totalClientes">0</div>
+        <div class="card-sub">todos os casos</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon ativa">🟢</div>
+      <div>
+        <div class="card-label">Casos Ativos</div>
+        <div class="card-value" id="totalAtivos" style="color:var(--verde)">0</div>
+        <div class="card-sub">atuação em andamento</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon encerrada">⚫</div>
+      <div>
+        <div class="card-label">Casos Encerrados</div>
+        <div class="card-value" id="totalEncerrados" style="color:#666">0</div>
+        <div class="card-sub">atuação concluída</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-icon peticoes">📄</div>
+      <div>
+        <div class="card-label">Total de Petições</div>
+        <div class="card-value" id="totalPeticoes" style="color:#C55A11">0</div>
+        <div class="card-sub">peças elaboradas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARTS -->
+  <div class="charts-row">
+    <div class="chart-card">
+      <div class="chart-title">📊 Top 15 Clientes por Volume de Petições</div>
+      <canvas id="barChart"></canvas>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">🥧 Tipos de Peças mais Elaboradas</div>
+      <canvas id="pieChart"></canvas>
+    </div>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="controls">
+    <span class="ctrl-label">Filtrar:</span>
+    <div class="filter-btns">
+      <button class="fbtn all" onclick="setFilter('all',this)">Todos</button>
+      <button class="fbtn ativa inactive" onclick="setFilter('Ativa',this)">✅ Ativos</button>
+      <button class="fbtn encerrada inactive" onclick="setFilter('Encerrada',this)">⬛ Encerrados</button>
+    </div>
+    <input class="search-box" type="text" id="searchInput" placeholder="🔍 Buscar por nome ou tipo de petição..." oninput="renderTable()">
+    <select class="sort-select" id="sortSelect" onchange="renderTable()">
+      <option value="name">Ordenar: Nome A–Z</option>
+      <option value="name-desc">Ordenar: Nome Z–A</option>
+      <option value="count-desc">Ordenar: + Petições</option>
+      <option value="count-asc">Ordenar: – Petições</option>
+      <option value="status">Ordenar: Status</option>
+    </select>
+    <span class="result-count" id="resultCount"></span>
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th class="num">#</th>
+          <th onclick="cycleSortCol('name')">Cliente</th>
+          <th class="status" onclick="cycleSortCol('status')">Status</th>
+          <th class="count" onclick="cycleSortCol('count')">Peças</th>
+          <th>Tipos de Petições</th>
+          <th>Síntese das Petições</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <div class="no-results" id="noResults" style="display:none">😕 Nenhum cliente encontrado para esse filtro.</div>
+  </div>
+</main>
+
+<!-- DETAIL PANEL -->
+<div class="overlay" id="overlay" onclick="closePanel()"></div>
+<div class="detail-panel" id="detailPanel">
+  <div class="panel-header">
+    <div>
+      <div id="panelBadge" style="font-size:0.76rem;opacity:0.8;margin-bottom:4px"></div>
+      <h2 id="panelName"></h2>
+    </div>
+    <button class="panel-close" onclick="closePanel()">✕</button>
+  </div>
+  <div class="panel-body">
+    <div class="panel-stat" id="panelStats"></div>
+    <div class="panel-section-title">Tipos de Peças Elaboradas</div>
+    <div id="panelChips" style="margin-bottom:20px"></div>
+    <div class="panel-section-title">Síntese Completa</div>
+    <div id="panelSynopsis" style="font-size:0.9rem;line-height:1.6;color:var(--texto-leve)"></div>
+  </div>
+</div>
+
+<script>
+const clientes = [
+  {nome:"Alexandre Westphal - ind. Stella",status:"Ativa",peticoes:4,tipos:4,sintese:"Petição Inicial (cumprimento de sentença); Pedido de Citação; Pedido de Penhora (SISBAJUD e RENAJUD); Reiteração SISBAJUD"},
+  {nome:"Ana Paula Medeiros",status:"Ativa",peticoes:8,tipos:7,sintese:"Pedido de Acesso aos Autos; Resposta à Acusação; Substituição e Intimação de Testemunhas; Reiteração de Endereço de Testemunhas; Desistência da Oitiva de Testemunhas; Pedido de Descadastramento de Advogado; Pedido de Indeferimento de Assistência da Acusação"},
+  {nome:"Anna Clara Carvalho (Fitosil)",status:"Ativa",peticoes:4,tipos:3,sintese:"Agravo Interno; Memoriais; Objeção ao Julgamento Virtual"},
+  {nome:"Ariel Ramos Rosa",status:"Ativa",peticoes:7,tipos:6,sintese:"REsp; RE; Embargos de Declaração; Memoriais; Juntada de Ata Notarial; Pedido de Retirada de Pauta"},
+  {nome:"Augusto Pereira da Silva",status:"Ativa",peticoes:6,tipos:5,sintese:"Resposta à Acusação; Pedido de Extinção da Punibilidade; Intimação Pessoal; Pedido de Suspensão de Execução Fiscal; Pedido de Expedição de Alvará e Liberação de Bloqueio SISBAJUD"},
+  {nome:"Banco Real (Bradesco) - Bruno Gastão",status:"Ativa",peticoes:1,tipos:1,sintese:"Petição avulsa"},
+  {nome:"Bi Tax - Lobo e Vaz Advogados",status:"Ativa",peticoes:3,tipos:2,sintese:"Contestação com Reconvenção; Manifestação à Contestação; Requerimento de Julgamento Antecipado"},
+  {nome:"Brunão Andrade",status:"Ativa",peticoes:1,tipos:1,sintese:"Recurso JARI"},
+  {nome:"Carlos Munaretto",status:"Ativa",peticoes:12,tipos:6,sintese:"AREsp; RE; REsp; Agravo Interno (AgRg e AgInt); Embargos de Declaração; Petição de Nulidade e Prosseguimento do Feito"},
+  {nome:"Cris Damim (amigo Rui)",status:"Ativa",peticoes:5,tipos:4,sintese:"Réplica; Especificação de Provas; Embargos de Declaração; Contrarrazões"},
+  {nome:"Cristian Vieira (marinheiro Edenir)",status:"Ativa",peticoes:2,tipos:2,sintese:"Defesa Prévia (recusa bafômetro); Recurso JARI"},
+  {nome:"Daniel de Sena Pletikos",status:"Ativa",peticoes:17,tipos:10,sintese:"Resposta à Acusação; RESE; Apelação Criminal; Memoriais; Objeção ao Julgamento Virtual; Embargos de Declaração; REsp; AREsp; Habeas Corpus; Termo de Acordo (pensão)"},
+  {nome:"Eduarda de Sá Gesser",status:"Ativa",peticoes:1,tipos:1,sintese:"Habeas Corpus"},
+  {nome:"Elena Oriana de Benedictis",status:"Ativa",peticoes:41,tipos:16,sintese:"Petição Inicial; Contestação; Contrarrazões; Réplica; Alegações Finais; Memoriais; Embargos de Declaração; Apelação; REsp; Objeção ao Julgamento Virtual; Manifestações diversas; Pedido de Suspensão; Juntada de documentos; Cumprimento de Sentença; Pedido de Expedição de Alvará; Desistência"},
+  {nome:"Elierri Medeiros",status:"Ativa",peticoes:8,tipos:6,sintese:"Contestação; Alegações Finais; Manifestações; Juntada de documentos; Preparação para AIJ; Petições diversas"},
+  {nome:"Emerson Trevisol",status:"Ativa",peticoes:2,tipos:2,sintese:"Defesa Prévia (recusa bafômetro); Recurso JARI"},
+  {nome:"Fernanda Moukarzel",status:"Ativa",peticoes:2,tipos:2,sintese:"Defesa Prévia (recusa bafômetro); Recurso JARI"},
+  {nome:"Fernando Soares da Luz",status:"Ativa",peticoes:22,tipos:13,sintese:"Alegações Finais; Apelação; Embargos de Declaração; Memoriais; REsp; AREsp; AgRg no AREsp; Agravo Interno; Habeas Corpus; Juntada de documentos; Objeção ao Julgamento Virtual; Pedido de Retirada de Pauta; Petições diversas"},
+  {nome:"Gastão da Rosa e Moukarzel Adv. Associados",status:"Ativa",peticoes:9,tipos:6,sintese:"Petição Inicial (cumprimento de sentença); Contrarrazões; Embargos de Declaração; Manifestações; Pedido de Penhora; Petições diversas"},
+  {nome:"Gean Alessandro Silveira Byler",status:"Ativa",peticoes:17,tipos:11,sintese:"Contestação; Apelação; Memoriais; AREsp; REsp; Agravo Interno; Agravo; Juntada de documentos; Objeção ao Julgamento Virtual; Pedido de Acesso aos Autos; Petições diversas"},
+  {nome:"Geraldo Otto Weber",status:"Ativa",peticoes:20,tipos:12,sintese:"Alegações Finais; RESE; Habeas Corpus; Contrarrazões; Memoriais; Agravo; Embargos de Declaração; REsp; Juntada de documentos; Objeção ao Julgamento Virtual; Petições diversas"},
+  {nome:"Gilson dos Santos",status:"Ativa",peticoes:15,tipos:11,sintese:"Petição Inicial; Réplica; Especificação de Provas; Apelação; Contrarrazões; Embargos de Declaração; Memoriais; Objeção ao Julgamento Virtual; Pedido de Suspensão; REsp; AREsp"},
+  {nome:"Heitor Koerich da Silveira",status:"Ativa",peticoes:1,tipos:1,sintese:"Juntada de documentos"},
+  {nome:"Ivanir Alves Dias Parizotto",status:"Ativa",peticoes:14,tipos:12,sintese:"Pedido de Acesso; Recurso Inominado; Réplica; Especificação de Provas; Alegações Finais; Apelação; Contrarrazões; Memoriais; Embargos de Declaração; REsp; Objeção ao Julgamento Virtual; Juntada de documentos"},
+  {nome:"Luciano Nivaldo",status:"Ativa",peticoes:11,tipos:6,sintese:"Petição Inicial; Réplica; Apelação; Embargos de Declaração; Juntada de documentos; Petições diversas"},
+  {nome:"Luiz Antônio - Toni EuroQuadros",status:"Ativa",peticoes:1,tipos:1,sintese:"Pedido de Suspensão"},
+  {nome:"Manuel Ribeiro",status:"Ativa",peticoes:1,tipos:1,sintese:"Recurso"},
+  {nome:"Margarete Fukushima (Espólio de Rioitsu)",status:"Ativa",peticoes:3,tipos:3,sintese:"Contestação; Especificação de Provas; Juntada de documentos"},
+  {nome:"Maria Ap. Gastão - Espólio de Cláudio",status:"Ativa",peticoes:18,tipos:10,sintese:"Cumprimento de Sentença (múltiplos); Contrarrazões; Memoriais; Embargos de Declaração; Manifestações; Juntada de documentos; Pedido de Citação; Pedido de Expedição de Alvará; Concordância; Comprovação de Pagamento"},
+  {nome:"Mayck Torres Mates",status:"Ativa",peticoes:18,tipos:11,sintese:"Habeas Corpus; Memoriais; AREsp; REsp; Agravo Interno; Contrarrazões; Embargos de Declaração; Juntada de documentos; Objeção ao Julgamento Virtual; Pedido de Retirada de Pauta; Petições diversas"},
+  {nome:"Murilo Bongiolo",status:"Ativa",peticoes:2,tipos:2,sintese:"Defesa Prévia (recusa bafômetro); Recurso JARI"},
+  {nome:"Parcerias com o Delegado Ilson",status:"Ativa",peticoes:10,tipos:4,sintese:"Defesa Prévia; Recurso; Memoriais; Petições diversas"},
+  {nome:"Paulo Moukarzel Jr",status:"Ativa",peticoes:1,tipos:1,sintese:"Defesa Prévia"},
+  {nome:"Rafael de Melo",status:"Ativa",peticoes:1,tipos:1,sintese:"Petição avulsa"},
+  {nome:"Revail Pires de Lima",status:"Ativa",peticoes:3,tipos:3,sintese:"Petição Inicial; Embargos de Declaração; Juntada de documentos"},
+  {nome:"Rodrigo Bertoldi",status:"Ativa",peticoes:3,tipos:2,sintese:"Defesa Prévia; Recurso"},
+  {nome:"Stella Maris Seixas",status:"Ativa",peticoes:4,tipos:3,sintese:"Cumprimento de Sentença; Reiteração; Petições diversas"},
+  {nome:"Vagner Silva de Borba",status:"Ativa",peticoes:2,tipos:2,sintese:"Juntada de documentos; Manifestação"},
+  {nome:"Vera Moukarzel",status:"Ativa",peticoes:11,tipos:9,sintese:"Petição Inicial; Apelação; Memoriais; Embargos de Declaração; Cumprimento de Sentença; Concordância; Juntada de documentos; Manifestação; Petições diversas"},
+  {nome:"Wellington Rodrigues Ferreira (Wellmix)",status:"Ativa",peticoes:10,tipos:7,sintese:"RESE; REsp; Contrarrazões; Memoriais; Juntada de documentos; Petições diversas; Habeas Corpus"},
+  {nome:"Adilson Gomes",status:"Encerrada",peticoes:5,tipos:2,sintese:"AREsp; AgRg no AREsp; RE; Embargos de Declaração (2x)"},
+  {nome:"Alex José Gonçalves",status:"Encerrada",peticoes:0,tipos:0,sintese:"Apenas procuração"},
+  {nome:"Ana Cláudia Thober",status:"Encerrada",peticoes:2,tipos:2,sintese:"Recurso; Juntada de atestado no IP"},
+  {nome:"Fabíola Gomes (Esposa Paulinho)",status:"Encerrada",peticoes:2,tipos:2,sintese:"Alegações Finais; Preparação para AIJ"},
+  {nome:"Felipe Vasconcelos",status:"Encerrada",peticoes:0,tipos:0,sintese:"Minuta de contrato"},
+  {nome:"Felipe Vieira",status:"Encerrada",peticoes:1,tipos:1,sintese:"Pedido de TAC"},
+  {nome:"Heitor Roecker Vieira",status:"Encerrada",peticoes:0,tipos:0,sintese:"Documentos locatícios (entrega de chaves, recibo, rescisão)"},
+  {nome:"Laura Toscan Mitterer",status:"Encerrada",peticoes:0,tipos:0,sintese:"Apenas procuração"},
+  {nome:"Leonardo Henriques Maciel",status:"Encerrada",peticoes:2,tipos:2,sintese:"Contestação; Pedido de Homologação de Renúncia"},
+  {nome:"Lincoln Zaghi Jr",status:"Encerrada",peticoes:8,tipos:6,sintese:"Habeas Corpus; RHC (STJ); RESE contra pronúncia; Pedido de Revogação de Prisão Preventiva; Memoriais; Nota à imprensa"},
+  {nome:"Luciano Petry",status:"Encerrada",peticoes:2,tipos:2,sintese:"Agravo; Pedido de Detração"},
+  {nome:"Maria Aparecida Có",status:"Encerrada",peticoes:7,tipos:5,sintese:"Contrarrazões (AI e AgInt); Embargos de Declaração; Manifestações (ITCMD e evento 337); Concordância dos Herdeiros com Plano de Partilha; Juntada de documentos"},
+  {nome:"Maria Fernanda Dias",status:"Encerrada",peticoes:1,tipos:1,sintese:"Inicial de Dissolução de União Estável"},
+  {nome:"Osvaldo Peixer Neto",status:"Encerrada",peticoes:1,tipos:1,sintese:"Inicial de Dissolução de União Estável (consensual)"},
+  {nome:"Pablo Espíndola Dal Maso",status:"Encerrada",peticoes:2,tipos:2,sintese:"Defesa Prévia (recusa bafômetro); Recurso"},
+  {nome:"Renato Hercílio Bertoldi",status:"Encerrada",peticoes:11,tipos:10,sintese:"Alegações Finais; Contrarrazões (EDs); Embargos de Declaração; Apelação; Juntada de certidão de arquivamento; Defesa Prévia (multa); Recurso JARI; Petições diversas; Pedido de Prosseguimento; Acordo (reintegração de posse)"},
+  {nome:"Ricobert Bach",status:"Encerrada",peticoes:3,tipos:3,sintese:"Contestação; Embargos de Declaração; Comprovação de Pagamento (cumprimento de sentença)"},
+  {nome:"Rivael Pires de Lima",status:"Encerrada",peticoes:1,tipos:1,sintese:"Recurso administrativo (DETRAN)"},
+  {nome:"Rodrigo Bruggemann",status:"Encerrada",peticoes:1,tipos:1,sintese:"Pedido de Acesso ao IP"},
+  {nome:"Sílvio Cristóvão (Wellmix)",status:"Encerrada",peticoes:2,tipos:2,sintese:"Memoriais; Juntada de memoriais"},
+  {nome:"Thays Oliveira",status:"Encerrada",peticoes:2,tipos:2,sintese:"Medida Protetiva; Pedido de Acesso e Cópia dos Autos"},
+  {nome:"Tiago Civa",status:"Encerrada",peticoes:0,tipos:0,sintese:"Apenas procuração"},
+  {nome:"Tomaz Agenor Aguiar",status:"Encerrada",peticoes:2,tipos:2,sintese:"Defesa (execução); Renúncia"},
+  {nome:"Vitor de Farias",status:"Encerrada",peticoes:4,tipos:3,sintese:"Juntada de Procuração; Pedido de Acesso aos Autos; Renúncia"},
+  {nome:"Volnei Muniz Lima",status:"Encerrada",peticoes:0,tipos:0,sintese:"Apenas procuração"},
+  {nome:"Yxpia",status:"Encerrada",peticoes:1,tipos:1,sintese:"Carta para entrega de produtos (FEMSA)"},
+];
+
+let currentFilter = 'all';
+let currentSortCol = 'name';
+let currentSortDir = 'asc';
+const maxPeticoes = Math.max(...clientes.map(c => c.peticoes));
+
+// INIT
+document.getElementById('dateDisplay').textContent = new Date().toLocaleDateString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric'});
+updateCards();
+initCharts();
+renderTable();
+
+function updateCards() {
+  const ativos = clientes.filter(c => c.status === 'Ativa');
+  const enc = clientes.filter(c => c.status === 'Encerrada');
+  document.getElementById('totalClientes').textContent = clientes.length;
+  document.getElementById('totalAtivos').textContent = ativos.length;
+  document.getElementById('totalEncerrados').textContent = enc.length;
+  document.getElementById('totalPeticoes').textContent = clientes.reduce((s,c)=>s+c.peticoes,0);
+}
+
+function initCharts() {
+  // Bar chart: top 15 by peticoes
+  const sorted = [...clientes].sort((a,b) => b.peticoes - a.peticoes).slice(0,15);
+  const barCtx = document.getElementById('barChart').getContext('2d');
+  new Chart(barCtx, {
+    type: 'bar',
+    data: {
+      labels: sorted.map(c => c.nome.length > 22 ? c.nome.substring(0,22)+'…' : c.nome),
+      datasets: [{
+        label: 'Nº de Petições',
+        data: sorted.map(c => c.peticoes),
+        backgroundColor: sorted.map(c => c.status === 'Ativa' ? 'rgba(47,84,150,0.82)' : 'rgba(127,127,127,0.65)'),
+        borderRadius: 6,
+        borderSkipped: false,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: { legend: { display: false }, tooltip: {
+        callbacks: { title: (items) => sorted[items[0].dataIndex].nome }
+      }},
+      scales: {
+        x: { ticks: { font: { size: 10 }, maxRotation: 35, minRotation: 20 }, grid: { display: false } },
+        y: { beginAtZero: true, ticks: { stepSize: 5 }, grid: { color: '#EDF2FB' } }
+      }
+    }
+  });
+
+  // Pie chart: petition types frequency
+  const typeCount = {};
+  clientes.forEach(c => {
+    c.sintese.split(';').forEach(t => {
+      const key = t.trim().split('(')[0].trim();
+      if (key && key.length > 2) typeCount[key] = (typeCount[key]||0)+1;
+    });
+  });
+  const sortedTypes = Object.entries(typeCount).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const pieColors = ['#2F5496','#4472C4','#5B9BD5','#1E7145','#70AD47','#FFC000','#ED7D31','#C55A11','#7030A0','#A5A5A5'];
+  const pieCtx = document.getElementById('pieChart').getContext('2d');
+  new Chart(pieCtx, {
+    type: 'doughnut',
+    data: {
+      labels: sortedTypes.map(t => t[0].length > 20 ? t[0].substring(0,20)+'…' : t[0]),
+      datasets: [{ data: sortedTypes.map(t=>t[1]), backgroundColor: pieColors, borderWidth: 2, borderColor: '#fff' }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 10 }, padding: 8, boxWidth: 12 } },
+        tooltip: { callbacks: { label: (ctx) => ` ${ctx.label}: ${ctx.raw} cliente(s)` } }
+      }
+    }
+  });
+}
+
+function setFilter(f, btn) {
+  currentFilter = f;
+  document.querySelectorAll('.fbtn').forEach(b => {
+    b.classList.toggle('inactive', true);
+  });
+  btn.classList.toggle('inactive', false);
+  renderTable();
+}
+
+function cycleSortCol(col) {
+  if (currentSortCol === col) {
+    currentSortDir = currentSortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    currentSortCol = col;
+    currentSortDir = col === 'count' ? 'desc' : 'asc';
+  }
+  const sortSel = document.getElementById('sortSelect');
+  if (col === 'name') sortSel.value = currentSortDir === 'asc' ? 'name' : 'name-desc';
+  if (col === 'count') sortSel.value = currentSortDir === 'desc' ? 'count-desc' : 'count-asc';
+  renderTable();
+}
+
+function getFiltered() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  let list = clientes.filter(c => {
+    const matchFilter = currentFilter === 'all' || c.status === currentFilter;
+    const matchSearch = !search || c.nome.toLowerCase().includes(search) || c.sintese.toLowerCase().includes(search);
+    return matchFilter && matchSearch;
+  });
+  const sort = document.getElementById('sortSelect').value;
+  if (sort === 'name') list.sort((a,b) => a.nome.localeCompare(b.nome,'pt'));
+  else if (sort === 'name-desc') list.sort((a,b) => b.nome.localeCompare(a.nome,'pt'));
+  else if (sort === 'count-desc') list.sort((a,b) => b.peticoes - a.peticoes || a.nome.localeCompare(b.nome,'pt'));
+  else if (sort === 'count-asc') list.sort((a,b) => a.peticoes - b.peticoes || a.nome.localeCompare(b.nome,'pt'));
+  else if (sort === 'status') list.sort((a,b) => a.status.localeCompare(b.status,'pt') || a.nome.localeCompare(b.nome,'pt'));
+  return list;
+}
+
+function renderTable() {
+  const list = getFiltered();
+  const tbody = document.getElementById('tableBody');
+  const noRes = document.getElementById('noResults');
+  document.getElementById('resultCount').textContent = `${list.length} cliente(s)`;
+  if (!list.length) { tbody.innerHTML=''; noRes.style.display='block'; return; }
+  noRes.style.display = 'none';
+  tbody.innerHTML = list.map((c, i) => {
+    const barW = maxPeticoes > 0 ? Math.max(3, Math.round(c.peticoes / maxPeticoes * 100)) : 0;
+    return `
+      <tr onclick="openPanel(${clientes.indexOf(c)})" style="cursor:pointer">
+        <td class="num">${i+1}</td>
+        <td><div class="client-name">${c.nome}</div></td>
+        <td><span class="badge ${c.status === 'Ativa' ? 'ativa' : 'encerrada'}">${c.status === 'Ativa' ? '✅ Ativa' : '⬛ Encerrada'}</span></td>
+        <td class="count ${c.peticoes === 0 ? 'zero' : ''}">
+          ${c.peticoes}
+          <div class="bar-bg"><div class="bar-fill" style="width:${barW}%"></div></div>
+        </td>
+        <td><span class="type-count">${c.tipos} tipo${c.tipos !== 1 ? 's' : ''}</span></td>
+        <td><div class="synopsis-text">${c.sintese.substring(0,120)}${c.sintese.length > 120 ? '…' : ''}</div></td>
+      </tr>`;
+  }).join('');
+}
+
+function openPanel(idx) {
+  const c = clientes[idx];
+  document.getElementById('panelName').textContent = c.nome;
+  document.getElementById('panelBadge').textContent = c.status === 'Ativa' ? '✅ Caso Ativo' : '⬛ Caso Encerrado';
+  document.getElementById('panelStats').innerHTML = `
+    <div class="pstat"><div class="pstat-val">${c.peticoes}</div><div class="pstat-lbl">Petições</div></div>
+    <div class="pstat"><div class="pstat-val">${c.tipos}</div><div class="pstat-lbl">Tipos Distintos</div></div>`;
+  const chips = c.sintese.split(';').map(t => `<span class="petition-chip">${t.trim()}</span>`).join('');
+  document.getElementById('panelChips').innerHTML = chips;
+  document.getElementById('panelSynopsis').textContent = c.sintese;
+  document.getElementById('detailPanel').classList.add('open');
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closePanel() {
+  document.getElementById('detailPanel').classList.remove('open');
+  document.getElementById('overlay').classList.remove('open');
+}
+</script>
+</body>
+</html>

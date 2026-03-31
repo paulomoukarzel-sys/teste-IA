@@ -1,0 +1,23 @@
+{
+  "skill_name": "criar-agentes-especializados",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Preciso de um agente especializado para pesquisar jurisprudência no STJ e STF. Ele deve receber o tema jurídico como input, buscar na web os julgados relevantes mais recentes, verificar autenticidade (número, relator, data, ementa), e retornar uma lista estruturada com no máximo 3 julgados confirmados. Não deve incluir julgados que não conseguiu verificar.",
+      "expected_output": "Arquivo .md com frontmatter YAML válido (name, description, tools), corpo com seções: responsabilidades, fora do escopo, processo, formato de saída, quando parar/escalar, e pelo menos 1 exemplo concreto.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Quero criar três agentes para um fluxo de análise de documentos processuais: (1) um que lê e extrai fatos cronológicos de PDFs de decisões judiciais, (2) um que identifica teses jurídicas favoráveis ao cliente com base nos fatos extraídos, e (3) um orquestrador que coordena os dois. Me ajuda a criar os três?",
+      "expected_output": "Três arquivos .md de agente com frontmatter correto. O orquestrador tem tool 'Agent'; os leaf não. Contratos de entrada/saída entre os agentes definidos. Cada agente tem escopo único e não sobrepõe responsabilidades dos outros.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "cria um agente que gera o arquivo .docx final das petições. ele pega o texto já redigido e roda o script gerar_peticao.py passando os parâmetros certos. precisa saber o nome do cliente, tipo da peça e cidade.",
+      "expected_output": "Arquivo .md com frontmatter YAML. Tools incluem Bash e Read (para ler o script se necessário). Processo descreve como montar o comando com os parâmetros. Formato de saída especifica o caminho do arquivo gerado. Não deve ter ferramentas desnecessárias como WebSearch.",
+      "files": []
+    }
+  ]
+}

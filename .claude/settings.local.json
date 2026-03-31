@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(python -c:*)",
+      "Bash(python:*)",
+      "Bash(Get-Item \"C:/tmp/resultado_agente_b.txt\")",
+      "Bash(Select-Object Length, LastWriteTime)",
+      "Bash(claude:*)",
+      "Bash(set:*)",
+      "Bash(pip install pymupdf)",
+      "Bash(pip install PyPDF2)",
+      "Bash(pip install PyMuPDF)",
+      "Bash(pip install pdfplumber)",
+      "Bash(pip install pytesseract)",
+      "Bash(where tesseract)",
+      "Read(//c/Users/paulo/OneDrive/Documentos/M.Adv/Processos/Rafael de Melo/**)",
+      "Read(//c/tmp/**)",
+      "Read(//c/Users/paulo/OneDrive/Documentos/M.Adv/Processos/Édipo Flamia Hellt/**)",
+      "Read(//c/Users/paulo/OneDrive/Documentos/Petição rejeição acordo/**)",
+      "Bash(find C:/Users/paulo/OneDrive/Documentos/teste_IA/Clientes -type f \\\\\\(-name *.doc -o -name *.docx \\\\\\))",
+      "WebSearch",
+      "Bash(ls -la \"C:\\\\Users\\\\paulo\\\\AppData\\\\Local\\\\Temp\\\\Mayck\"*)",
+      "Bash(python -c \":*)",
+      "Read(//c/Users/paulo/OneDrive/Área de Trabalho/**)",
+      "Read(//c/Users/paulo/OneDrive/**)",
+      "Read(//c/Users/paulo/**)",
+      "Bash(pip install:*)",
+      "Bash(find 'C:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\M.Adv\\\\Processos\\\\Leonardo L da Rosa - Le Motos' -type f \\\\\\(-iname *.docx -o -iname *.doc -o -iname *.pdf -o -iname *.txt -o -iname *.md \\\\\\))",
+      "Bash(find C:UserspauloOneDriveDocumentosteste_IA -name *Rafael*HC* -o -name *HC*Rafael*)",
+      "Bash(find C:/Users/paulo/OneDrive/Documentos/teste_IA -name *Rafael* -o -name *HC* -o -name *Decisao* -o -name *Decisão*)",
+      "Bash(ls -la \"C:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\M.Adv\\\\Processos\\\\Leonardo L da Rosa - Le Motos\\\\Conversa whats c Raphael - representante da Parana\"\" 2>/dev/null || echo \"Diretório não encontrado ou erro de acesso \")",
+      "Bash(unzip -l 'WhatsApp Chat - Raphael Honda Blokton Motocar.zip')",
+      "Bash(unzip -p 'WhatsApp Chat - Raphael Honda Blokton Motocar.zip' '_chat.txt')"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\paulo\\AppData\\Local\\Temp"
+    ]
+  }
+}

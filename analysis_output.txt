@@ -1,0 +1,494 @@
+
+===== Alegacoes_finais =====
+  TOTAL: 85 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DA 2ª VARA DA COMARCA DE ORLEANS/SC
+    | Autos n. 5001997-49.2023.8.24.0044
+    | FERNANDO SOARES DA LUZ, já qualificado nos autos da ação penal n. 5001997-49.2023.8.24.0044, proposta pelo MINISTÉRIO PÚBLICO DO ESTADO DE SANTA CATARINA, vem, 
+    | I – BREVE ESCORÇO DA DEMANDA
+    | O Ministério Público denunciou o réu Fernando Soares da Luz como incurso nos delitos de roubo majorado pelo concurso de pessoas, com a restrição de liberdade da
+    | Segundo a narrativa da denúncia, às 23h do dia 6.11.2022 o réu, em concurso com outras pessoas, teria entrado na empresa Orleplast Indústria e Comércio de Plást
+    | Ao detalhar os fatos, a denúncia alega que o réu e os demais comparsas teriam “abordado o segurança da empresa”, rendido outros funcionários e restringido a lib
+    | A peça acusatória sustenta, também, que o réu e outros agentes teriam arrombado um cofre, de onde foram extraídos os cheques, e várias salas e gavetas da Orlepl
+    | Aduz o ente Ministerial, ainda, que “a vítima Paul Crysostome foi atingida por três disparos de arma de fogo [..], o que ocasionou ferimentos graves e geraram r
+    | Recebida a denúncia (evento 5), foi decretada a prisão preventiva do réu, que foi mantida mesmo após a instauração do contraditório e do encerramento da instruç
+  CLOSE[-8..-1]:
+    | Ante o exposto, é esta para requerer:
+    | a absolvição do réu em razão da inexistência de prova quanto à participação de Fernando ou, ainda, pela inexistência certeza e de provas suficientes para a cond
+    | subsidiariamente, na remota hipótese de condenação do acusado, mesmo diante da evidente fragilidade do conjunto probatório, o reconhecimento da cooperação dolos
+    | Reitera, por fim, sejam todas as intimações realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno Gastão da 
+    | Pede deferimento.
+    | Florianópolis, 12 de fevereiro de 2026.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+    H> I – BREVE ESCORÇO DA DEMANDA
+    H> II – DA EVIDENTE FALTA DE PROVAS QUANTO À AUTORIA DELITIVA E A CONSEQUENTE ABSOLVIÇÃO DO RÉU
+    H> III – SUBSIDIARIAMENTE: DA PARTICIPAÇÃO DOLOSAMENTE DISTINTA
+    H> IV – REQUERIMENTOS
+
+===== Razoes_apelacao =====
+  TOTAL: 134 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DESEMBARGADOR RICARDO ROESLER, DIGNÍSSIMO RELATOR DA APELAÇÃO CRIMINAL N. 5001997-49.2023.8.24.0044
+    | Autos n. 5001997-49.2023.8.24.0044
+    | FERNANDO SOARES DA LUZ, já qualificado nos autos da apelação criminal n. 5001997-49.2023.8.24.0044, em que é apelado o MINISTÉRIO PÚBLICO DO ESTADO DE SANTA CAT
+    | Pleiteia, por fim, sejam todas as intimações realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno Gastão da
+    | Pede deferimento.
+    | Florianópolis, 12 de junho de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+    | Apelante: Fernando Soares da Luz.
+    | Apelado: Ministério Público de Santa Catarina.
+  CLOSE[-8..-1]:
+    | a absolvição do réu em razão da inexistência de prova quanto à participação de Fernando ou, ainda, pela inexistência certeza e de provas suficientes para a cond
+    | subsidiariamente, na remota hipótese de condenação do acusado, mesmo diante da evidente fragilidade do conjunto probatório, o reconhecimento de eventual coopera
+    | também subsidiariamente, a redução da pena imposta ao apelante, com a diminuição do quantum relativo aos maus antecedentes e o afastamento da agravante decorren
+    | Reitera, por fim, sejam todas as intimações realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno Gastão da 
+    | Pede deferimento.
+    | Florianópolis, 12 de junho de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+    H> I – BREVE ESCORÇO DA DEMANDA
+    H> II – RAZÕES DE REFORMA DA R. SENTENÇA APELADA: Da evidente falta de provas quanto à autoria delitiva e a consequente absolvição do réu
+    H> II.4 – A negligência das diligências investigativas sobre a autoria delitiva e a consequente absolvição do recorrente
+    H> III – SUBSIDIARIAMENTE: DA PARTICIPAÇÃO DOLOSAMENTE DISTINTA
+    H> IV – SUBSIDIARIAMENTE: DA READEQUAÇÃO DA PENA IMPOSTA
+    H> V – REQUERIMENTOS
+
+===== Habeas_Corpus =====
+  TOTAL: 87 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DESEMBARGADOR ALTAMIRO DE OLIVEIRA, DIGNÍSSIMO PRESIDENTE DO TRIBUNAL DE JUSTIÇA DE SANTA CATARINA
+    | URGENTE!
+    | Paciente preso
+    | BRUNO GASTÃO DA ROSA, brasileiro, solteiro, inscrito na OAB/SC sob o n. 47.774, e PAULO EKKE MOUKARZEL JUNIOR, brasileiro, solteiro, inscrito na OAB/SC sob o n.
+    | HABEAS CORPUS
+    | em favor de FERNANDO SOARES DA LUZ, brasileiro, casado, portador do RG n. 5.246.933, inscrito no CPF/MF sob o n. 077.100.329-31, atualmente recolhido no Presídi
+    | I – SÍNTESE DA DEMANDA
+    | O paciente foi denunciado como incurso nos delitos de roubo majorado pelo concurso de pessoas, com a restrição de liberdade das vítimas e o emprego de violência
+    | Segundo a narrativa da denúncia, às 23h do dia 6.11.2022 o paciente, em concurso com outras pessoas, teria entrado na empresa Orleplast Indústria e Comércio de 
+    | Ao detalhar os fatos, a peça acusatória alega que o paciente e os demais comparsas teriam “abordado o segurança da empresa”, rendido outros funcionários e restr
+  CLOSE[-8..-1]:
+    | Doc. 1: Decisão que constitui o ato coator impugnado;
+    | Doc. 2: Denúncia;
+    | Doc. 3: Decisão de recebimento da denúncia, que decretou a prisão preventiva do paciente;
+    | Doc. 4: Resposta à acusação apresentada nos autos da ação penal originária;
+    | Doc. 5: Depoimento da testemunha Júnior Freitas Pereira;
+    | Doc. 6: Relatório de investigação policial n. 77/2022/SIC;
+    | Doc. 7: Boletim de ocorrência dos fatos apurados na ação penal originária;
+    | Doc. 8: Relatório de investigação n. 239/CG/2022, feito pela DP de Imbituba.
+  HEADINGS:
+    H> I – SÍNTESE DA DEMANDA
+    H> II – DA AUSÊNCIA DE JUSTA CAUSA PARA A DEFLAGRAÇÃO DA AÇÃO PENAL.
+    H> Vale registrar que o paciente não tem sequer condenação definitiva no suposto fato de Imbituba.
+    H> III – DA ILEGALIDADE DA MANUTENÇÃO DA PRISÃO PREVENTIVA
+    H> IV – REQUERIMENTOS
+
+===== Resposta_acusacao_Fernando =====
+  TOTAL: 72 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DA 2ª VARA DA COMARCA DE ORLEANS/SC
+    | Autos n. 5001997-49.2023.8.24.0044
+    | FERNANDO SOARES DA LUZ, já qualificado nos autos da ação penal n. 5001997-49.2023.8.24.0044, proposta pelo MINISTÉRIO PÚBLICO DO ESTADO DE SANTA CATARINA, vem, 
+    | I – BREVE ESCORÇO DA DENÚNCIA
+    | O Ministério Público denunciou o réu Fernando Soares da Luz como incurso nos delitos de roubo majorado pelo concurso de pessoas, com a restrição de liberdade da
+    | Segundo a narrativa da denúncia, às 23h do dia 6.11.2022 o réu, em concurso com outras pessoas, teria entrado na empresa Orleplast Indústria e Comércio de Plást
+    | Ao detalhar os fatos, a denúncia alega que o réu e os demais comparsas teriam “abordado o segurança da empresa”, rendido outros funcionários e restringido a lib
+    | A peça acusatória sustenta, também, que o réu e outros agentes teriam arrombado um cofre, de onde foram extraídos os cheques, e várias salas e gavetas da Orlepl
+    | Aduz o ente Ministerial, ainda, que “a vítima Paul Crysostome foi atingida por três disparos de arma de fogo [..], o que ocasionou ferimentos graves e geraram r
+    | Recebida a denúncia (evento 5), foi decretada a prisão preventiva do réu, ao argumento de que, “Acerca dos indícios de autoria, consta dos autos que a equipe de
+  CLOSE[-8..-1]:
+    | ROL DE TESTEMUNHAS:
+    | 1. JOSÉ DEL CASTANHEL NETO, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 68;
+    | 2. JÚNIOR FREITAS PEREIRA, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 69;
+    | 3. ALCIMAR PACHECO, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 71;
+    | 4. PAUL CRYSOSTOME, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 72;
+    | 5. IRANI JOSÉ GALVANE, vítima, representante do estabelecimento comercial Orleplast
+    | Indústria e Comércio de Plásticos Ltda., qualificada no Evento 1 – Inquérito 3 – fl. 75;
+    | 6. JOSÉ ANTONIO AMABILE, Delegado de Policial Civil – Orleans/SC.
+  HEADINGS:
+    H> I – BREVE ESCORÇO DA DENÚNCIA
+    H> II – DA AUSÊNCIA DE JUSTA CAUSA PARA A DEFLAGRAÇÃO DA AÇÃO PENAL.
+    H> Vale registrar que o réu não tem sequer condenação no suposto fato de Imbituba.
+    H> III – DA NECESSIDADE DE REVOGAÇÃO DA PRISÃO PREVENTIVA
+    H> IV – REQUERIMENTOS
+    H> 1. JOSÉ DEL CASTANHEL NETO, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 68;
+    H> 2. JÚNIOR FREITAS PEREIRA, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 69;
+    H> 3. ALCIMAR PACHECO, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 71;
+    H> 4. PAUL CRYSOSTOME, vítima, qualificada no Evento 1 – Inquérito 3 – fl. 72;
+    H> 5. IRANI JOSÉ GALVANE, vítima, representante do estabelecimento comercial Orleplast
+    H> Indústria e Comércio de Plásticos Ltda., qualificada no Evento 1 – Inquérito 3 – fl. 75;
+    H> 6. JOSÉ ANTONIO AMABILE, Delegado de Policial Civil – Orleans/SC.
+
+===== Memoriais =====
+  TOTAL: 33 paras
+  OPEN[0..9]:
+    | Apelação Criminal n. 5001997-49.2023.8.24.0044.
+    | Apelante: Fernando Soares da Luz
+    | Apelado: Ministério Público do Estado de Santa Catarina
+    | Relator: Desembargador Ricardo Roesler.
+    | Data do julgamento: 25.6.2024		nº de pauta: 10
+    | MEMORIAIS PELO APELANTE
+    | EMINENTE DESEMBARGADOR RELATOR
+    | COLENDA TERCEIRA CÂMARA DE DIREITO CRIMINAL
+    | O apelante foi condenado à exorbitante pena de 19 anos, 5 meses e 12 dias de reclusão, em regime fechado, além de 22 dias-multa, por conta da acusação de que te
+    | Ocorre, no entanto, que, por várias razões, Fernando não participou do fato criminoso. Na pior das hipóteses, resta claro que faltam elementos de prova mínimos 
+  CLOSE[-8..-1]:
+    | Subsidiariamente, Excelência, na remota hipótese de manutenção da condenação, o que não se espera que aconteça, é de se reconhecer a participação dolosamente di
+    | Também subsidiariamente, sendo mantida a condenação, deve ser readequado o quantum da pena, em razão do aumento excessivo da pena-base pela negativação de uma c
+    | Na segunda fase, a sentença recorrida utilizou a condenação nos autos n. 0006977-80.2015.8.24.0020 para caracterizar a reincidência, desconsiderando, no entanto
+    | Falta, portanto, informação necessária para a caracterização dessa agravante nos autos, admitindo-se, no máximo, o uso do trânsito em julgado como parâmetro. As
+    | Como visto, Excelência, a absolvição do apelante é medida de Justiça, razão pela qual o recorrente reitera e confia no provimento da apelação, nos termos requer
+    | Florianópolis, 24 de junho de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+
+===== AREsp =====
+  TOTAL: 89 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DESEMBARGADOR JÚLIO CÉSAR MACHADO FERREIRA DE MELO, DIGNÍSSIMO 2º VICE-PRESIDENTE DO EGRÉGIO TRIBUNAL DE JUSTIÇA DO ESTADO DE SANTA CATARI
+    | Autos n. 5001997-49.2023.8.24.0044
+    | FERNANDO SOARES DA LUZ, já qualificado nos autos dos recurso especial n. 5001997-49.2023.8.24.0044, em que é recorrido o MINISTÉRIO PÚBLICO DO ESTADO DE SANTA C
+    | Requer, regularmente processado, que Vossa Excelência proceda ao juízo de retratação ou, não sendo o caso, sejam remetidos os autos ao Egrégio Superior Tribunal
+    | Pede deferimento.
+    | Florianópolis, 18 de dezembro de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+    | AREsp n. 5001997-49.2023.8.24.0044
+    | Agravante: Fernando Soares da Luz
+  CLOSE[-8..-1]:
+    | após o prazo de resposta, seja oportunizado o juízo de retratação, pelas razões expostas no tópico II deste recurso (art. 1.042, §2º, do CPC);
+    | não havendo retratação, o encaminhamento deste agravo ao Egrégio Superior Tribunal de Justiça, para seu regular processamento (art. 1.042, §4º, do CPC);
+    | o provimento deste agravo para admitir o andamento do recurso especial anteriormente interposto, sobre o qual também se reitera o conhecimento e provimento para
+    | Reitera, por fim, sejam todas as intimações realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno Gastão da 
+    | Pede deferimento.
+    | Florianópolis, 18 de dezembro de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+    H> I – SÍNTESE DA DEMANDA
+    H> II – FALTA DE FUNDAMENTAÇÃO DA DECISÃO AGRAVADA E O PEDIDO DE RETRATAÇÃO
+    H> III – RAZÕES DE REFORMA DA R. DECISÃO AGRAVADA
+    H> III.1 – Não incidência da Súmula n. 83/STJ, pois os vícios e erros de premissa veiculados nos aclaratórios não foram abordados
+    H> Vale conferir a única imagem em que é possível identificar o veículo do recorrente (evento 1, INQ3, p. 9):
+    H> IV – REQUERIMENTOS
+
+===== Inicial_rescisao =====
+  TOTAL: 108 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO(A) SENHOR(A) DOUTOR(A) JUIZ(A) DE DIREITO DA ___ VARA DA COMARCA DE SANTO AMARO DA IMPERATRIZ/SC.
+    | LUCIANO NIVALDO DE ARAUJO, brasileiro, casado, gerente de operações, portador do RG n. 2300628, inscrito no CPF/MF sob o n. 823.309.489-72, ZELI CATARINA DA CON
+    | AÇÃO DECLARATÓRIA DE RESCISÃO CONTRATUAL, CUMULADA COM INDENIZAÇÃO POR DANOS MATERIAIS E MORAIS,
+    | em face de RODRIGO GOULART, brasileiro, advogado, portador do RG n. 3424.648 (SSP/SC), inscrito no CPF/MF sob o n. 056.578.159-63 e na OAB/SC sob o n. 50.814, p
+    | I – DETALHAMENTO DOS FATOS
+    | No primeiro semestre de 2018 os autores LUCIANO e ZELI estavam se preparando para comemorar 30 anos de união e, à época, oficializaram o casamento (doc. 2). Apó
+    | Diante do encanto da paisagem e do aconchego da área, em maio de 2018 os autores começaram as tratativas para comprar o imóvel com Rosemeri, corretora de imóvei
+    | Chegando no local, o requerido RODRIGO GOULART, que se apresentou como proprietário da área, estava presente e mostrou as demarcações das extremidades do terren
+    | Nos dias seguintes, demonstrando sua estreita ligação junto à imobiliária, o requerido Rodrigo enviou o croqui do loteamento e o croqui das instalações de poste
+    | Mesmo diante disso, os demandantes escolheram dar andamento ao negócio pela IMOBILIÁRIA DRUMOND, tendo em vista que o assessoramento e o respaldo técnico de uma
+  CLOSE[-8..-1]:
+    | Doc. 7: Petição inicial da ação civil pública n. 5000422-98.2022.8.24.0057;
+    | Doc. 8: Laudo pericial elaborado na ACP n. 5000422-98.2022.8.24.0057, no qual demonstra a existência de APP na área;
+    | Doc. 9: Decisão que deferiu a tutela de urgência requerida no autos da ACP n. 5000422-98.2022.8.24.0057;
+    | Doc. 10: Registros da autora Luma no CAU/SC;
+    | Doc. 11: Contracheque de Luciano;
+    | Doc. 12: Despesas mensais da família;
+    | Doc. 13: Declaração de hipossuficiência dos demandantes;
+    | Doc. 14: Íntegra dos autos da ACP n. 5000422-98.2022.8.24.0057.
+  HEADINGS:
+    H> I – DETALHAMENTO DOS FATOS
+    H> II – FUNDAMENTOS JURÍDICOS DA DEMANDA
+    H> II.1 – Da aplicação do Código de Defesa do Consumidor e a inversão do ônus da prova.
+    H> II.2 – Da responsabilidade solidária dos requeridos e da corretora de imóveis.
+    H> IV – DA CLÁUSULA PENAL
+    H> V – DO DIREITO AOS DANOS MORAIS
+    H> VI – DA PRODUÇÃO DE PROVAS
+    H> VII – DA GRATUIDADE DA JUSTIÇA
+    H> VIII – REQUERIMENTOS
+
+===== Replica =====
+  TOTAL: 97 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DA 1ª VARA DA COMARCA DE SANTO AMARO DA IMPERATRIZ.
+    | Autos n. 5002830-62.2022.8.24.0057
+    | LUCIANO NIVALDO DE ARAUJO e OUTROS, já qualificados nos autos da ação declaratória de rescisão contratual n. 5002830-62.2022.8.24.0057, proposta contra a IMOBIL
+    | I – SÍNTESE DA DEMANDA
+    | Os autores ajuizaram ação de rescisão de contrato c/c pedido de indenização por danos morais contra os réus, em síntese, porque, após adquirem imóvel de Rodrigo
+    | Inicialmente, os demandantes registraram que esse imóvel era o sonho da família e foi adquirido com muito esforço e sacrifício em junho de 2018, para comemorar 
+    | Na exordial foi exposto, também, que os demandantes tomaram todas as precauções que estavam ao seu alcance para evitar qualquer infortúnio ou prejuízo ao firmar
+    | Após o atendimento da requerida Rosemeri, como uma das diligências realizadas, os autores visitaram o terreno objeto do negócio jurídico com o réu Rodrigo Goula
+    | Além disso, os demandantes explicaram que entraram em contato com os antigos proprietários da gleba do qual o terreno a ser comprado fazia parte, ocasião em que
+    | Os autores constataram, ainda, que na região já existia uma casa construída e outra sendo edificada, razão pela qual acreditaram na veracidade das informações q
+  CLOSE[-8..-1]:
+    | Ante o exposto, os autores requerem:
+    | o indeferimento do pedido de concessão da justiça gratuita requerido pelo demandado RODRIGO GOULART, além de sua intimação para se manifestar sobre os documento
+    | afastadas as teses deduzidas pelo réu Rodrigo Goulart em sede de contestação, que seja determinado o prosseguimento do feito, com a intimação da ré IMOBILIÁRIA 
+    | em atenção às certidões dos eventos 109 e 123, a citação por hora certa da ré ROSEMERI, no seu local de trabalho (Avenida Madre Benvenuta, n. 1.296, loja 101, S
+    | Pede deferimento.
+    | Florianópolis, 13 de outubro de 2023.
+    | Paulo Ekke Moukarzel Junior
+    | OAB/SC 36.591
+  HEADINGS:
+    H> I – SÍNTESE DA DEMANDA
+    H> II – DA IMPOSSIBILIDADE DE ACOLHIMENTO DO PEDIDO DE JUSTIÇA GRATUITA DEDUZIDO POR RODRIGO GOULART
+    H> III – DO IMÓVEL ADQUIRIDO QUE SE ENCONTRA DENTRO DE APP
+    H> IV – DA INSUBSISTÊNCIA DO ARGUMENTO DO RÉU DE QUE A AÇÃO É FUNDAMENTADA NA NEGATIVA DE INSTALAÇÃO DA ENERGIA ELÉTRICA
+    H> V – DA SUA CONDIÇÃO DE FORNECEDOR (art. 3º do CDC) E DO LOTEAMENTO IRREGULAR PROMOVIDO PELO RÉU
+    H> VI – DA INDIFERENÇA DO AJUIZAMENTO DA AÇÃO CIVIL PÚBLICA APÓS A CELEBRAÇÃO DO NEGÓCIO JURÍDICO PARA A PROCEDÊNCIA DA DEMANDA
+    H> VII – DA INSUBSISTÊNCIA DAS ALEGAÇÕES DO RÉU RELATIVAS AO DESPROVIMENTO DA DEMANDA
+    H> VIII – DA INEXISTÊNCIA DE PRESCRIÇÃO DO DIREITO À INDENIZAÇÃO POR DANOS MORAIS
+    H> IX – DA PRETENSÃO DE ENTREGA DE BEM SIMILAR AO VENDIDO AOS AUTORES
+    H> X – REQUERIMENTOS
+
+===== Contrarrazoes =====
+  TOTAL: 93 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DA 1ª VARA DA COMARCA DE SANTO AMARO DA IMPERATRIZ.
+    | Autos n. 5002830-62.2022.8.24.0057
+    | LUCIANO NIVALDO DE ARAUJO e OUTRAS, já qualificados nos autos da ação declaratória de rescisão contratual n. 5002830-62.2022.8.24.0057, proposta contra a IMOBIL
+    | I – SÍNTESE DA APELAÇÃO INTERPOSTA POR RODRIGO GOULART
+    | Inconformado com a sentença que lhe foi desfavorável, o réu Rodrigo Goulart interpôs o recurso de apelação alegando, preliminarmente, a necessidade de concessão
+    | Na sequência, o apelante aduz que o imóvel adquirido pelos apelados não estaria inserido em APP, retirando do contexto o laudo pericial juntado à exordial, além
+    | Em seguida, o apelante discorre, uma vez mais, sobre a ausência de prova da negativa da energia elétrica, o que, diga-se, não é objeto da lide nem constitui fat
+    | Ao prosseguir, o recorrente sustenta que não se enquadraria na condição de empresário do ramo imobiliário, pois, em síntese, não teria empresa ou CNPJ destinado
+    | E, novamente, o apelante alega que a ação civil pública que impediu o uso do terreno adquirido foi proposta após a celebração do negócio jurídico, o que, no seu
+    | Ao buscar discorrer sobre os motivos pelos quais o pedido autoral deveria ser desprovido, o recorrente argumenta que não descumpriu a cláusula terceira e parágr
+  CLOSE[-8..-1]:
+    | Por fim, o apelante postula a conversão de eventual condenação ao ressarcimento dos danos causados em entrega de bem imóvel que possui e é similar ao alienado a
+    | Ocorre, no entanto, que os recorridos não possuem interesse em outro imóvel, diante de todos os percalços e infortúnios que estão passando por conta da realizaç
+    | XI – REQUERIMENTOS
+    | Ante o exposto, os apelados requerem o indeferimento do pedido de concessão da justiça gratuita feito pelo recorrente RODRIGO GOULART, assim como o não conhecim
+    | Pede deferimento.
+    | Florianópolis, 18 de março de 2025.
+    | Paulo Ekke Moukarzel Junior
+    | OAB/SC 36.591
+  HEADINGS:
+    H> I – SÍNTESE DA APELAÇÃO INTERPOSTA POR RODRIGO GOULART
+    H> II – DA IMPOSSIBILIDADE DE ACOLHIMENTO DO PEDIDO DE JUSTIÇA GRATUITA DEDUZIDO POR RODRIGO GOULART
+    H> III – PRELIMINARMENTE: DA FALTA DE DIALETICIDADE RECURSAL. APELANTE QUE NÃO SE INSURGIU QUANTO AO DECISUM RECORRIDO
+    H> IV – MÉRITO: DO IMÓVEL ADQUIRIDO QUE SE ENCONTRA DENTRO DE APP
+    H> V – DA INSUBSISTÊNCIA DO ARGUMENTO DO RÉU DE QUE A AÇÃO É FUNDAMENTADA NA NEGATIVA DE INSTALAÇÃO DA ENERGIA ELÉTRICA
+    H> VI – DA SUA CONDIÇÃO DE FORNECEDOR (art. 3º do CDC) E DO LOTEAMENTO IRREGULAR PROMOVIDO PELO RÉU
+    H> VII – DA INDIFERENÇA DO AJUIZAMENTO DA AÇÃO CIVIL PÚBLICA APÓS A CELEBRAÇÃO DO NEGÓCIO JURÍDICO PARA A PROCEDÊNCIA DA DEMANDA
+    H> VIII – DA INSUBSISTÊNCIA DAS ALEGAÇÕES DO RÉU RELATIVAS AO DESPROVIMENTO DA DEMANDA
+    H> IX – DA INEXISTÊNCIA DE PRESCRIÇÃO DO DIREITO À INDENIZAÇÃO POR DANOS MORAIS
+    H> X – DA PRETENSÃO DE ENTREGA DE BEM SIMILAR AO VENDIDO AOS AUTORES
+    H> XI – REQUERIMENTOS
+
+===== Contestacao_Elierri =====
+  TOTAL: 100 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DA 5ª VARA CÍVEL DA COMARCA DA CAPITAL/SC.
+    | Autos n. 5090138-44.2022.8.24.0023
+    | ELIERRI MEDEIROS DE OLIVEIRA, já qualificado nos autos da ação de reintegração de posse n. 5090138-44.2022.8.24.0023, ajuizada pela CONSTRUTORA ALLIANÇA LTDA., 
+    | I – BREVE ESCORÇO DA DEMANDA
+    | Ao ajuizar a presente ação, a Construtora Alliança Ltda. argumentou que seria proprietária de um “Terreno com área de 464,40m², situado em Coqueiros, subdistrit
+    | Na sequência, aduziu a demandante que foi surpreendida com a tomada irregular deste terreno, supostamente realizada pelo réu Elierri Medeiros de Oliveira, que o
+    | Narrou, ademais, que a matrícula do imóvel e o Laudo Técnico e o TRT (Termo de Responsabilidade Técnica) anexados à exordial demonstrariam que a autora é a legí
+    | Ao prosseguir, a autora afirmou que a propositura da ação de reintegração de posse seria a alternativa para pôr fim à suposta invasão ao seu imóvel, tendo em vi
+    | Informou a demandante, também, que a demarcação do terreno supostamente seu foi feita com base em memorial descritivo comparado com a matrícula n. 12.503, o que
+    | Por fim, deduziu, ainda, pedido de liminar, pois entendeu que estariam presentes os requisitos autorizadores do art. 561 do CPC (evento 1, INIC1, p. 7/8).
+  CLOSE[-8..-1]:
+    | Doc. 2: Certidão de baixa de inscrição no CNPJ da empresa autora perante a Receita Federal;
+    | Doc. 3: Pesquisa sobre a autora na internet;
+    | Doc. 4: Fotos do terreno adquirido pelo réu, que demonstram o pleno exercício da posse;
+    | Doc. 5: Comprovantes de compra de materiais para a construção de cerca do imóvel;
+    | Doc. 6: Certidões de ocorrência dos Bombeiros Militares sobre o combate a incêndios na área objeto do litígio;
+    | Doc. 7: Boletim de ocorrência que noticia a tentativa de invasão do terreno adquirido pelo réu;
+    | Doc. 8: Requerimento para abertura de IPTU da área adquirida pelo réu, realizado perante a Prefeitura Municipal de Florianópolis;
+    | Doc. 9: Fotos atuais do imóvel adquirido pelo demandado.
+  HEADINGS:
+    H> I – BREVE ESCORÇO DA DEMANDA
+    H> II – FUNDAMENTOS JURÍDICOS DA DEMANDA
+    H> II.1 – PRELIMINARMENTE
+    H> II.1.1 – Impugnação ao valor da causa.
+    H> II.1.2 – Da ilegitimidade ativa ad causam, que conduz à extinção da demanda.
+    H> III – MÉRITO
+    H> III.1 – Flagrante ausência dos requisitos exigidos pelo art. 561 do CPC, o que conduz à improcedência da demanda.
+    H> III.2 – A comprovação da posse dos antigos proprietários e do réu.
+    H> IV – DA PRODUÇÃO DE PROVAS
+    H> V – REQUERIMENTOS
+
+===== Contestacao_reconvencao =====
+  TOTAL: 235 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DA 2ª VARA CÍVEL DE FLORIANÓPOLIS – SC
+    | Autos n. 5066626-61.2024.8.24.0023
+    | B.I. TAX CONTABILIDADE & CONSULTORIA EM NEGOCIOS LTDA., pessoa jurídica de direito privado, com sede na Rua General Liberato Bittencourt, nº 1885, sala 206, Can
+    | CONTESTAÇÃO C/C RECONVENÇÃO E PEDIDO LIMINAR
+    | Em face da presente Ação Declaratória de inexistência de débito e de obrigação contratual c/c ressarcimento de valores com Pedido de Tutela de Urgência que lhe 
+    | I – RESUMO DA INICIAL
+    | A AUTORA ajuíza “ação declaratória de inexistência de débito e de obrigação contratual c/c ressarcimento de valores com pedido de tutela de urgência” decorrente
+    | Alega ter contratado a RÉ para prestar serviços de consultoria contábil com o objetivo de identificar e recuperar créditos tributários, pelo prazo contratual de
+    | Afirma que as partes acordaram pela manutenção de uma procuração vigente em nome da RÉ, com outorga de poderes digitais para garantir o acesso irrestrito desta 
+    | Aclara, também, que pagou um total de R$20.000,00 (vinte mil reais) pela prestação do serviço e que, por força de cláusula contratual, a RÉ receberia o percentu
+  CLOSE[-8..-1]:
+    | k) A condenação da AUTORA/RECONVINTE nas despesas processuais e honorários advocatícios de 20% sobre o benefício econômico da reconvenção, a ser levantado em li
+    | l) Protesta provar o alegado por todos os meios de prova em direito admitidos.
+    | Dá-se à causa o valor de R$ 30.477,72 (trinta mil quatrocentos e setenta e sete reais e setenta e dois centavos), representado pela multa do não cumprimento da 
+    | Pleiteia, por fim, sejam todas as intimações doravante realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno
+    | Pede deferimento.
+    | Florianópolis, 12 de setembro de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+    H> I – RESUMO DA INICIAL
+    H> II – DO INTROITU – AÇÃO PRETÉRITA REPETITIVA
+    H> III – DO ESCLARECIMENTO FÁTICO
+    H> III.1 – DOS FATOS INCONTROVERSOS
+    H> III.1.1 – Fato Incontroverso nº 1
+    H> III.1.2 – Fato Incontroverso nº 2
+    H> III.1.3 – Fato Incontroverso nº 3
+    H> 7.	Tema 7 - exclusão do PIS e COFINS da própria base de cálculo.
+    H> III.1.4 – Fato Incontroverso nº 4
+    H> III.1.5 – Fato Incontroverso nº 5
+    H> III.1.6 – Resumo dos fatos incontroversos
+    H> III.2 – DA CONTINUIDADE DOS FATOS
+    H> III.2.1 – DA VIGÊNCIA DO CONTRATO
+    H> III.2.2 – DA COBRANÇA DEVIDA
+    H> III.2.3 – DA REVOGAÇÃO DA TUTELA ANTECIPADA
+    H> IV – DA RECONVENÇÃO
+    H> II - a alocação de riscos definida pelas partes deve ser respeitada e observada; e
+    H> III - a revisão contratual somente ocorrerá de maneira excepcional e limitada.
+    H> IV.1 – DA TUTELA DE EVIDÊNCIA
+    H> I - ficar caracterizado o abuso do direito de defesa ou o manifesto propósito protelatório da parte;
+    H> II - as alegações de fato puderem ser comprovadas apenas documentalmente e houver tese firmada em julgamento de casos repetitivos ou em súmula vinculante;
+    H> 1. Acessar PER/DCOMP WEB;
+    H> 2. Consulta Processamento PER/DCOMP;
+    H> 3. Declarações e Demonstrativos (Cópia de Declaração e Extrato do Processamento - DCTF);
+    H> 4. Declarações DCTF;
+    H> 5. Download EFD PIS/Cofins;
+    H> 6. Processos Digitais e Requerimentos Web;
+    H> 7. Cópia de Declaração.
+    H> IV.2 – DA TUTELA DE URGÊNCIA
+    H> Insta pontuar que os requisitos para a concessão da tutela provisória de urgência de natureza antecipada estão dispostos no artigo 300 do CPC:
+    H> 1. Acessar PER/DCOMP WEB;
+    H> 2. Consulta Processamento PER/DCOMP;
+    H> 3. Declarações e Demonstrativos (Cópia de Declaração e Extrato do Processamento - DCTF);
+    H> 4. Declarações DCTF;
+    H> 5. Download EFD PIS/Cofins;
+    H> 6. Processos Digitais e Requerimentos Web;
+    H> 7. Cópia de Declaração.
+    H> V – DOS PEDIDOS
+    H> 1. Acessar PER/DCOMP WEB
+    H> 2. Consulta Processamento PER/DCOMP
+    H> 3. Declarações e Demonstrativos (Cópia de Declaração e Extrato do Processamento - DCTF)
+    H> 4. Declarações DCTF
+    H> 5. Download EFD PIS/Cofins
+    H> 6. Processos Digitais e Requerimentos Web
+
+===== Manifestacao =====
+  TOTAL: 52 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DOUTOR JUIZ DE DIREITO DA 2ª VARA CÍVEL DE FLORIANÓPOLIS – SC
+    | Autos n. 5066626-61.2024.8.24.0023
+    | B.I. TAX CONTABILIDADE & CONSULTORIA EM NEGOCIOS LTDA., já devidamente qualificada, vem, respeitosamente, à elevada presença de Vossa Excelência, por seus advog
+    | I – DA IMPUGNAÇÃO À CONTESTAÇÃO À RECONVENÇÃO/RÉPLICA
+    | Considerando que o direito da Ré/Reconvinda em cobrar multas em face da Autora/Reconvinda é legítimo devido à validade, à eficácia e à vigência do contrato enta
+    | I.1 – Do serviço contratado e devidamente entregue
+    | Inicialmente, Excelência, insta aclarar que a contabilidade tributária, também conhecida como contabilidade fiscal, é um ramo da contabilidade que se dedica à g
+    | A Ré/Reconvinte cumpriu com a sua parte do acordo, enviou um plano de soluções/relatório de auditoria, em maio de 2020, à Autora/Reconvinda, nos termos em que f
+    | Se depois de receber as soluções contábeis, a Autora/Reconvinda não se contentou com elas por tê-las julgado como “uma compilação concisa das teses jurídicas qu
+    | A própria Autora/Reconvinda admite que teria crédito a recuperar com uma das soluções propostas pela Ré/Reconvinte, no importe de R$37.930,81 (trinta e sete mil
+  CLOSE[-8..-1]:
+    | Pelo certo e pelo justo, o contrato deve ser totalmente adimplido, o que respalda a defesa em sede de contestação e a acusação em sede de reconvenção, ou seja, 
+    | II – DAS CONSIDERAÇÕES FINAIS E DOS PEDIDOS
+    | Como visto, Excelência, resta evidente que a Ré/Reconvinte almeja tão somente alcançar os possíveis bônus oriundos do seu próprio trabalho realizado e entregue 
+    | Assim, reitera a improcedência dos pedidos da inicial proposta pela Autora/Reconvinda por estarem desconectados da realidade fática e por confrontarem com ímpet
+    | Pede deferimento.
+    | Florianópolis, 19 de novembro de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+    H> I – DA IMPUGNAÇÃO À CONTESTAÇÃO À RECONVENÇÃO/RÉPLICA
+    H> I.1 – Do serviço contratado e devidamente entregue
+    H> I.2 – Dos fatos incontroversos que constituem o cerne da controvérsia e impedem, modificam ou extinguem o direito da Autora/Reconvinda
+    H> I.3 – Da execução do trabalho por parte da Ré/Reconvinte e do suposto desinteresse da Autora/Reconvinda sobre o mesmo
+    H> II – DAS CONSIDERAÇÕES FINAIS E DOS PEDIDOS
+
+===== Resposta_acusacao_Daniel =====
+  TOTAL: 10 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DOUTORA JUÍZA DE DIREITO DO JUIZADO ESPECIAL CRIMINAL E DE VIOLÊNCIA CONTRA A MULHER DA COMARCA DE SÃO JOSÉ/SC
+    | Autos n. 5007284-93.2024.8.24.0064
+    | DANIEL DE SENA JANKO PLETIKOS, já qualificado nos autos da ação penal n. 5007284-93.2024.8.24.0064, movida pelo MINISTÉRIO PÚBLICO DO ESTADO DE SANTA CATARINA, 
+    | Todas as questões relacionadas ao fato apurado serão devidamente tratadas ao longo da instrução criminal, sendo que, uma vez encerrada, restará provada a inocên
+    | No mais, neste momento processual, a defesa requer seja marcada a audiência de instrução, conforme determinado pelo art. 411 do CPP, reservando-se no direito de
+    | Pleiteia, por fim, sejam todas as intimações doravante realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno
+    | Pede deferimento.
+    | Florianópolis, 12 de abril de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  CLOSE[-8..-1]:
+    | DANIEL DE SENA JANKO PLETIKOS, já qualificado nos autos da ação penal n. 5007284-93.2024.8.24.0064, movida pelo MINISTÉRIO PÚBLICO DO ESTADO DE SANTA CATARINA, 
+    | Todas as questões relacionadas ao fato apurado serão devidamente tratadas ao longo da instrução criminal, sendo que, uma vez encerrada, restará provada a inocên
+    | No mais, neste momento processual, a defesa requer seja marcada a audiência de instrução, conforme determinado pelo art. 411 do CPP, reservando-se no direito de
+    | Pleiteia, por fim, sejam todas as intimações doravante realizadas em nome dos advogados Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, e Bruno
+    | Pede deferimento.
+    | Florianópolis, 12 de abril de 2024.
+    | Paulo Ekke Moukarzel Junior			Bruno Gastão da Rosa
+    | OAB/SC 36.591					OAB/SC 47.774
+  HEADINGS:
+
+===== Resposta_acusacao_Geraldo =====
+  ERROR: Package not found at 'C:\Users\paulo\OneDrive\Documentos\teste_IA\Clientes\Geraldo Otto Weber\Ação penal\Geraldo Weber - Resposta à acusação_vf.docx'
+
+===== Agravo_interno =====
+  TOTAL: 53 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMA SENHORA DESEMBARGADORA HAIDÉE DENISE GRIN, DIGNÍSSIMA RELATORA DA APELAÇÃO CÍVEL N. 5000349-75.2025.8.24.0040
+    | Autos n. 5000349-75.2025.8.24.0040
+    | ANNA CLARA CARVALHO RODRIGUEZ, representada por sua mãe e segunda agravante, KATIA CABRAL CARVALHO, já qualificadas na apelação cível n. 5000349-75.2025.8.24.00
+    | Requer, regularmente processado, que Vossa Excelência proceda ao juízo de retratação e, não sendo o caso de reconsideração da decisão agravada, que sejam remeti
+    | Pede deferimento.
+    | Florianópolis, 10 de fevereiro de 2026.
+    | Paulo Ekke Moukarzel Junior
+    | OAB/SC 36.591
+    | AgInt na AC n. 5000349-75.2025.8.24.0040
+    | Agravantes: Anna Clara Carvalho Rodriguez e outra
+  CLOSE[-8..-1]:
+    | determinar que a agravada/apelada forneça o medicamento CDB MARCA FITOSIL FULL SPECTRUM 3000MG à Anna Clara, sobretudo porque a ANVISA autorizou a importação de
+    | condenar à agravada/apelada ao pagamento dos danos morais causados à parte recorrente, no valor sugerido na inicial (R$ 20.000,00);
+    | inverter os ônus sucumbenciais, que deve considerar, também, a majoração dos honorários de sucumbência em decorrência do trabalho adicional realizado nesta fase
+    | Pleiteia, por fim, sejam todas as intimações doravante realizadas em nome do advogado Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, sob pena 
+    | Pede deferimento.
+    | Florianópolis, 10 de fevereiro de 2026.
+    | Paulo Ekke Moukarzel Junior
+    | OAB/SC 36.591
+  HEADINGS:
+    H> I – SÍNTESE DA DEMANDA
+    H> II – RAZÕES DE REFORMA DA DECISÃO AGRAVADA
+    H> II.1 – Indispensabilidade do tratamento e prevalência da indicação médica adequada. Falha na prestação dos serviços contratados diante da negativa indevida
+    H> II.2 – Da necessidade de condenação ao dano moral
+    H> III – REQUERIMENTOS
+
+===== EDs =====
+  TOTAL: 67 paras
+  OPEN[0..9]:
+    | EXCELENTÍSSIMO SENHOR DESEMBARGADOR NORIVAL ACÁCIO ENGEL, DIGNÍSSIMO RELATOR DA APELAÇÃO CRIMINAL N. 5024557-68.2021.8.24.0039
+    | Autos n. 5024557-68.2021.8.24.0039
+    | ARIEL RAMOS ROSA FARIAS, já qualificado nos autos da apelação criminal n. 5024557-68.2021.8.24.0039, em que é recorrente o MINISTÉRIO PÚBLICO DE SANTA CATARINA 
+    | I – SÍNTESE DA DEMANDA
+    | Após ser absolvido em sede de 1º grau por falta de provas suficientes para a condenação em relação aos fatos narrados na denúncia (evento 67 – 1º grau), o embar
+    | Ocorre, no entanto, que o acórdão condenatório padece de diversas omissões, como será exposto a seguir, que possuem, inclusive, o condão de afastar a conclusão 
+    | Além disso, o decisum também não levou em consideração diversas informações relevantes que constam na oitiva das testemunhas que estavam presentes no recinto, a
+    | II – DAS OMISSÕES EM RELAÇÃO ÀS VERSÕES APRESENTADAS PELA VÍTIMA, QUE EVIDENCIAM, NO MÍNIMO, DÚVIDA QUANTO À EXISTÊNCIA DO FATO
+    | Ao fundamentar a condenação do embargante, o aresto objeto de complementação afirmou que, “Da análise do conjunto probatório, e com a devida vênia ao posicionam
+    | Na sequência, o acórdão embargado passa a discorrer sobre as declarações de Priscila Tavares (suposta vítima) e argumenta que, “embora o Magistrado de origem te
+  CLOSE[-8..-1]:
+    | esclarecer as omissões apontadas com relação ao relato de Priscila no boletim de ocorrência e às divergências quanto aos seus depoimentos posteriores, assim com
+    | subsidiariamente, na remota hipótese de rejeição dos vícios indicados no tópico II e manutenção do decreto condenatório, sanar as omissões relativas à absoluta 
+    | subsidiariamente, acaso não acolhidos os pleitos anteriores, sanar a omissão em relação à agravante do art. 61, II, f, do CP, tendo em vista que o aresto não co
+    | Pleiteia, por fim, sejam todas as intimações doravante realizadas em nome do advogado Paulo Ekke Moukarzel Junior, inscrito na OAB/SC sob o nº 36.591, sob pena 
+    | Pede deferimento.
+    | Florianópolis, 19 de fevereiro de 2026.
+    | Paulo Ekke Moukarzel Junior
+    | OAB/SC 36.591
+  HEADINGS:
+    H> I – SÍNTESE DA DEMANDA
+    H> II – DAS OMISSÕES EM RELAÇÃO ÀS VERSÕES APRESENTADAS PELA VÍTIMA, QUE EVIDENCIAM, NO MÍNIMO, DÚVIDA QUANTO À EXISTÊNCIA DO FATO
+    H> III – SUBSIDIARIAMENTE: DA OMISSÃO EM RELAÇÃO À ADEQUAÇÃO DO TIPO PENAL APLICÁVEL AO CASO
+    H> V – REQUERIMENTOS
