@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Gastão da Rosa & Moukarzel Advogados</title>
+  <meta name="description" content="Entre em contato com o escritório Gastão da Rosa & Moukarzel Advogados Associados. Atendimento sigiloso e personalizado em Florianópolis, SC.">
+  <link rel="icon" type="image/png" href="assets/img/logo_symbol.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SVG Gradient Definition (hidden) -->
+  <svg style="position:absolute;width:0;height:0;">
+    <defs>
+      <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#bf953f"/>
+        <stop offset="25%" stop-color="#dcc37a"/>
+        <stop offset="50%" stop-color="#b38728"/>
+        <stop offset="75%" stop-color="#d4b872"/>
+        <stop offset="100%" stop-color="#aa771c"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Navigation -->
+  <header class="header header--scrolled" id="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-name">Gastão da Rosa & Moukarzel</span>
+        <span class="header__logo-sub">Advogados Associados</span>
+      </a>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="escritorio.html" class="header__nav-link">O Escritório</a></li>
+          <li><a href="areas.html" class="header__nav-link">Áreas de Atuação</a></li>
+          <li><a href="equipe.html" class="header__nav-link">Equipe</a></li>
+          <li><a href="contato.html" class="header__nav-link active">Contato</a></li>
+        </ul>
+      </nav>
+      <a href="en/contato.html" class="header__lang-switch"><span class="active">PT</span> | EN</a>
+      <button class="header__menu-btn" id="menu-btn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <p class="breadcrumb"><a href="index.html">Início</a> &nbsp;›&nbsp; Contato</p>
+    <h1>Contato</h1>
+  </section>
+
+  <!-- Contato Section -->
+  <section class="contato-page">
+    <!-- Coluna Esquerda — Formulário -->
+    <div>
+      <span class="section__label">Fale Conosco</span>
+      <h2 class="section__title" style="text-align:left; font-size:2.2rem;">Entre em Contato</h2>
+      <div class="section__divider" style="margin:24px 0 0 0;"></div>
+      <p style="font-size:0.85rem; line-height:1.8; color:var(--color-text-light); margin:24px 0 36px;">Preencha o formulário abaixo para agendar uma consulta ou obter mais informações sobre nossos serviços. Sua mensagem será tratada com absoluto sigilo profissional.</p>
+
+      <form id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" required>
+              <option value="">Selecione o assunto</option>
+              <option value="penal">Direito Penal</option>
+              <option value="civil">Direito Cível</option>
+              <option value="empresarial">Direito Empresarial</option>
+              <option value="improbidade">Improbidade Administrativa</option>
+              <option value="imobiliario">Direito Imobiliário</option>
+              <option value="familia">Família e Sucessões</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Descreva brevemente como podemos ajudá-lo..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Enviar Mensagem</button>
+        <p class="form-lgpd">Ao enviar este formulário, você concorda com nossa política de privacidade. Seus dados são protegidos conforme a LGPD (Lei 13.709/2018).</p>
+      </form>
+    </div>
+
+    <!-- Coluna Direita — Info -->
+    <div>
+      <div class="contato-info-block" style="text-align:center;">
+        <p class="info-label" style="font-size:0.75rem;font-weight:600;">Bruno Gastão da Rosa</p>
+        <p><strong>OAB/SC 47.774</strong><br>Tel: +55 (48) 99986-3292<br>contato@gastaoemoukarzel.adv.br</p>
+      </div>
+      <div class="contato-info-block" style="text-align:center;">
+        <p class="info-label" style="font-size:0.75rem;font-weight:600;">Paulo Ekke Moukarzel Jr.</p>
+        <p><strong>OAB/SC 36.591</strong><br>Tel: +55 (48) 99603-5988<br>contato@gastaoemoukarzel.adv.br</p>
+      </div>
+      <div class="contato-info-block" style="text-align:center;">
+        <p class="info-label" style="font-size:0.75rem;font-weight:600;">Horário de Atendimento</p>
+        <p>Segunda a Sexta: 9h às 18h<br>24 horas em situações urgentes</p>
+      </div>
+      <div class="whatsapp-block">
+        <a href="https://wa.me/5548996035988" target="_blank" style="display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;justify-content:center;">
+          <div class="whatsapp-block__icon">💬</div>
+          <div style="text-align:center;">
+            <p><strong>WhatsApp</strong></p>
+            <p>Atendimento rápido e sigiloso</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo-name">Gastão da Rosa & Moukarzel</span>
+          <span class="footer__logo-sub">Advogados Associados</span>
+          <p class="footer__desc">Advocacia criminal, cível e empresarial personalizada e de alta qualidade em Florianópolis e em todo o Brasil. Ética, sigilo e compromisso irrestrito e intransigente na defesa dos direitos de nossos clientes.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="escritorio.html">O Escritório</a></li>
+            <li><a href="areas.html">Áreas de Atuação</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Áreas</h4>
+          <ul>
+            <li><a href="areas.html">Direito Penal</a></li>
+            <li><a href="areas.html">Direito Cível</a></li>
+            <li><a href="areas.html">Direito Empresarial</a></li>
+            <li><a href="areas.html">Improbidade Administrativa</a></li>
+            <li><a href="areas.html">Direito Imobiliário</a></li>
+            <li><a href="areas.html">Família e Sucessões</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Contato</h4>
+          <ul>
+            <li>Bruno Gastão da Rosa</li>
+            <li>Tel: +55 (48) 99986-3292</li>
+            <li>bruno.gastao@gastaoemoukarzel.adv.br</li>
+            <li style="margin-top:8px;" class="gold-shimmer-text">contato@gastaoemoukarzel.adv.br</li>
+            <li style="margin-top:8px;">Paulo Ekke Moukarzel Jr.</li>
+            <li>Tel: +55 (48) 99603-5988</li>
+            <li>paulo.moukarzel@gastaoemoukarzel.adv.br</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Gastão da Rosa & Moukarzel Advogados Associados. Todos os direitos reservados.</p>
+        <p>CNPJ: 47.748.760/0001-45</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- Cookie Consent LGPD -->
+  <div id="cookie-consent" style="display:none; position:fixed; bottom:0; left:0; right:0; background:rgba(15,26,46,0.97); padding:20px 40px; z-index:9999; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+    <p style="font-size:0.8rem; color:rgba(255,255,255,0.7); line-height:1.6; max-width:800px;">Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#" style="color:#b8945f;">Política de Privacidade</a> conforme a LGPD (Lei 13.709/2018).</p>
+    <button onclick="document.getElementById('cookie-consent').style.display='none'; localStorage.setItem('cookieConsent','true');" style="font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; background:#b8945f; color:#0f1a2e; border:none; padding:12px 32px; cursor:pointer; white-space:nowrap;">Aceitar</button>
+  </div>
+  <script>
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-consent').style.display = 'flex';
+  }
+  </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice Areas — Gastão da Rosa & Moukarzel</title>
+  <meta name="description" content="Practice areas of Gastão da Rosa & Moukarzel: Criminal Law, Civil Law, Corporate Law, Administrative Improbity, Real Estate and Family & Succession Law.">
+  <link rel="icon" type="image/png" href="../assets/img/logo_symbol.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .page-banner {
+      background: linear-gradient(165deg, var(--color-primary-dark), var(--color-primary), #1e2440);
+      padding: 80px 0;
+      position: relative;
+    }
+    .page-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    }
+    .page-banner .breadcrumb {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 20px;
+    }
+    .page-banner .breadcrumb a {
+      color: var(--color-accent);
+      text-decoration: none;
+    }
+    .page-banner .breadcrumb a:hover {
+      color: var(--color-accent-light);
+    }
+    .page-banner h1 {
+      font-family: var(--font-heading);
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: #fff;
+    }
+    .areas-intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 48px;
+      font-size: 1.05rem;
+      color: var(--color-text-light);
+      line-height: 1.8;
+    }
+    .footer-simple {
+      background: var(--color-primary-dark);
+      padding: 40px 0;
+      border-top: 1px solid rgba(201,164,62,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-simple .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .footer-simple p {
+      font-family: var(--font-body);
+      font-size: 10px;
+      color: rgba(255,255,255,0.2);
+    }
+    @media (max-width: 768px) {
+      .page-banner { padding: 60px 0; }
+      .page-banner h1 { font-size: 2rem; }
+      .footer-simple .container {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG Gradient Definition (hidden) -->
+  <svg style="position:absolute;width:0;height:0;">
+    <defs>
+      <linearGradient id="gold-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#bf953f"/>
+        <stop offset="25%" stop-color="#dcc37a"/>
+        <stop offset="50%" stop-color="#b38728"/>
+        <stop offset="75%" stop-color="#d4b872"/>
+        <stop offset="100%" stop-color="#aa771c"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Navigation -->
+  <header class="header" id="header">
+    <div class="container header__container">
+      <a href="index.html" class="header__logo">
+        <span class="header__logo-name">Gastão da Rosa & Moukarzel</span>
+        <span class="header__logo-sub">Advogados Associados</span>
+      </a>
+      <nav class="header__nav" id="nav">
+        <ul class="header__nav-list">
+          <li><a href="escritorio.html" class="header__nav-link">The Firm</a></li>
+          <li><a href="areas.html" class="header__nav-link active">Practice Areas</a></li>
+          <li><a href="equipe.html" class="header__nav-link">Team</a></li>
+          <li><a href="contato.html" class="header__nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="../areas.html" class="header__lang-switch">PT | <span class="active">EN</span></a>
+      <button class="header__menu-btn" id="menu-btn" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;›&nbsp; Practice Areas</p>
+      <h1>Practice Areas</h1>
+    </div>
+  </section>
+
+  <!-- Practice Areas -->
+  <section class="section areas">
+    <div class="container">
+      <p class="areas-intro">We practice in diverse areas of Law, with specialization and consolidated experience in criminal, civil, corporate, and administrative matters. Learn about our specialties.</p>
+      <div class="areas__grid">
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="area-card__title">Criminal Law</h3>
+          <p class="area-card__text">Criminal defense at all court levels, including Jury Trials for intentional crimes against life, money laundering, and crimes against the economic and financial order. Practice from the phase preceding the investigation through superior courts.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="area-card__title">Civil Law</h3>
+          <p class="area-card__text">Advisory and litigation in civil matters, including civil liability, contracts, obligations, and indemnification claims. Comprehensive support from the preventive and pre-litigation phase through judgment enforcement.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+          </div>
+          <h3 class="area-card__title">Corporate Law</h3>
+          <p class="area-card__text">Preventive and contentious corporate legal consulting and advisory, including corporate and contract law. Practice from the establishment of the legal relationship through conflict resolution.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 7l9-4 9 4M3 7v4a9 9 0 006 0V7M15 7v4a9 9 0 006 0V7"/></svg>
+          </div>
+          <h3 class="area-card__title">Administrative Improbity & Disciplinary Proceedings</h3>
+          <p class="area-card__text">Defense in administrative improbity actions and administrative disciplinary proceedings. Strategic practice from the phase preceding the initiation of proceedings through appeals to superior courts.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="area-card__title">Real Estate & Property Law</h3>
+          <p class="area-card__text">Comprehensive advisory on real estate and property matters, including adverse possession, land regularization, purchase and sale agreements, leasing, and real estate development. Support from the pre-contractual phase through dispute resolution.</p>
+        </div>
+        <div class="area-card">
+          <div class="area-card__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="area-card__title">Family & Succession Law</h3>
+          <p class="area-card__text">Practice in divorce, dissolution of stable unions, custody, alimony, probate, estate division, and wills. Advisory from the mediation and extrajudicial negotiation phase through the conclusion of proceedings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo-name">Gastão da Rosa & Moukarzel</span>
+          <span class="footer__logo-sub">Advogados Associados</span>
+          <p class="footer__desc">Personalized, high-quality criminal, civil, and corporate law practice in Florianópolis and throughout Brazil. Ethics, confidentiality, and unwavering, uncompromising commitment to the defense of our clients' rights.</p>
+        </div>
+        <div class="footer__links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="escritorio.html">The Firm</a></li>
+            <li><a href="areas.html">Practice Areas</a></li>
+            <li><a href="equipe.html">Team</a></li>
+            <li><a href="contato.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Practice Areas</h4>
+          <ul>
+            <li><a href="areas.html">Criminal Law</a></li>
+            <li><a href="areas.html">Civil Law</a></li>
+            <li><a href="areas.html">Corporate Law</a></li>
+            <li><a href="areas.html">Administrative Improbity</a></li>
+            <li><a href="areas.html">Real Estate Law</a></li>
+            <li><a href="areas.html">Family & Succession Law</a></li>
+          </ul>
+        </div>
+        <div class="footer__links">
+          <h4>Contact</h4>
+          <ul>
+            <li>Bruno Gastão da Rosa</li>
+            <li>Tel: +55 (48) 99986-3292</li>
+            <li>bruno.gastao@gastaoemoukarzel.adv.br</li>
+            <li style="margin-top:8px;" class="gold-shimmer-text">contato@gastaoemoukarzel.adv.br</li>
+            <li style="margin-top:8px;">Paulo Ekke Moukarzel Jr.</li>
+            <li>Tel: +55 (48) 99603-5988</li>
+            <li>paulo.moukarzel@gastaoemoukarzel.adv.br</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 Gastão da Rosa & Moukarzel Advogados Associados. All rights reserved.</p>
+        <p>CNPJ: 47.748.760/0001-45</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+
+  <!-- Cookie Consent LGPD -->
+  <div id="cookie-consent" style="display:none; position:fixed; bottom:0; left:0; right:0; background:rgba(15,26,46,0.97); padding:20px 40px; z-index:9999; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+    <p style="font-size:0.8rem; color:rgba(255,255,255,0.7); line-height:1.6; max-width:800px;">This website uses cookies to improve your experience. By continuing to browse, you agree to our <a href="#" style="color:#b8945f;">Privacy Policy</a> under LGPD (Law 13.709/2018).</p>
+    <button onclick="document.getElementById('cookie-consent').style.display='none'; localStorage.setItem('cookieConsent','true');" style="font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; background:#b8945f; color:#0f1a2e; border:none; padding:12px 32px; cursor:pointer; white-space:nowrap;">Accept</button>
+  </div>
+  <script>
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-consent').style.display = 'flex';
+  }
+  </script>
+</body>
+</html>
