@@ -1281,6 +1281,40 @@ ul {
   margin-top: 16px;
 }
 
+.form-success-banner {
+  text-align: center;
+  padding: 48px 32px;
+  border: 1px solid var(--color-accent);
+  background: rgba(184, 148, 95, 0.07);
+}
+
+.form-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 56px;
+  margin: 0 auto 20px;
+}
+
+.form-success-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.form-success-text {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
 /* ============================================
    FOOTER CONTACT COLUMN
    ============================================ */

@@ -122,14 +122,10 @@
         .then(function (res) { return res.json(); })
         .then(function (json) {
           if (json.success === 'true' || json.success === true) {
-            btn.textContent = isEN ? 'Message Sent!' : 'Mensagem Enviada!';
-            btn.style.background = '#b8945f';
             form.reset();
-            setTimeout(function () {
-              btn.textContent = originalText;
-              btn.style.background = '';
-              btn.disabled = false;
-            }, 3000);
+            form.style.display = 'none';
+            var banner = document.getElementById('form-success');
+            if (banner) banner.style.display = 'block';
           } else {
             alert(isEN ? 'Error sending message. Please try again.' : 'Erro ao enviar. Tente novamente.');
             btn.textContent = originalText;
