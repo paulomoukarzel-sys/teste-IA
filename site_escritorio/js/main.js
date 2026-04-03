@@ -104,23 +104,23 @@
       btn.textContent = isEN ? 'Sending...' : 'Enviando...';
       btn.disabled = true;
 
-      var data = new FormData(form);
+      var payload = {
+        nome:     document.getElementById('nome').value.trim(),
+        email:    document.getElementById('email').value.trim(),
+        telefone: (document.getElementById('telefone') || {}).value || '',
+        assunto:  (document.getElementById('assunto')  || {}).value || '',
+        mensagem: document.getElementById('mensagem').value.trim(),
+        _subject: 'Contato via Site — Gastão da Rosa & Moukarzel'
+      };
 
-      // mail.php is always at site root
-      var phpPath = window.location.pathname.indexOf('/en/') !== -1 ? '../mail.php' : 'mail.php';
-
-      fetch(phpPath, { method: 'POST', body: data })
-        .then(function (res) {
-          return res.text().then(function (text) {
-            try {
-              return JSON.parse(text);
-            } catch (e) {
-              throw new Error('Resposta inválida do servidor: ' + text.substring(0, 200));
-            }
-          });
-        })
+      fetch('https://formsubmit.co/ajax/contato@gastaoemoukarzel.adv.br', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (res) { return res.json(); })
         .then(function (json) {
-          if (json.success) {
+          if (json.success === 'true' || json.success === true) {
             btn.textContent = isEN ? 'Message Sent!' : 'Mensagem Enviada!';
             btn.style.background = '#b8945f';
             form.reset();
@@ -130,13 +130,13 @@
               btn.disabled = false;
             }, 3000);
           } else {
-            alert(json.message || (isEN ? 'Error sending message.' : 'Erro ao enviar mensagem.'));
+            alert(isEN ? 'Error sending message. Please try again.' : 'Erro ao enviar. Tente novamente.');
             btn.textContent = originalText;
             btn.disabled = false;
           }
         })
-        .catch(function (err) {
-          alert(err.message || (isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.'));
+        .catch(function () {
+          alert(isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.');
           btn.textContent = originalText;
           btn.disabled = false;
         });
