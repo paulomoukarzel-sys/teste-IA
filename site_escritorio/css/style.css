@@ -1074,7 +1074,8 @@ ul {
   width: 13px;
   height: 9px;
   border-radius: 1px;
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
 }
 .header__lang-switch .lang-opt {
   display: inline-flex;
