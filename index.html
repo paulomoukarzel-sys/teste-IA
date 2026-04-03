@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Jurídico — Gastão da Rosa & Moukarzel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0c1528;
+      --surface: #0f1a2e;
+      --surface2: #132040;
+      --border: #1e2e50;
+      --gold: #b8945f;
+      --gold-light: #d4b27a;
+      --text: #e8e4dc;
+      --text-sec: #7a8fba;
+      --green: #3db97a;
+      --amber: #d4882a;
+      --red: #c0392b;
+      --blue: #4a9eff;
+      --opus-color: #d4b27a;
+      --sonnet-color: #4a9eff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes goldShimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.6; }
+    }
+
+    @keyframes arrowFlow {
+      0%   { stroke-dashoffset: 20; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .animate-fade-up { animation: fadeInUp 0.7s ease both; }
+    .animate-fade    { animation: fadeIn 0.5s ease both; }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(180deg, #08101f 0%, var(--surface) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 40px 32px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(184,148,95,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .logo-escritorio {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      background: linear-gradient(90deg,
+        var(--gold) 0%,
+        var(--gold-light) 25%,
+        #f0dba8 50%,
+        var(--gold-light) 75%,
+        var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 4s linear infinite;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .header-rule {
+      width: 120px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 12px auto;
+    }
+
+    .header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .header-subtitle {
+      font-size: 12px;
+      color: var(--text-sec);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .version-badge {
+      display: inline-block;
+      background: rgba(184,148,95,0.12);
+      border: 1px solid rgba(184,148,95,0.3);
+      color: var(--gold-light);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-top: 8px;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .section-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      min-width: 32px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border), transparent);
+    }
+
+    section { margin-bottom: 64px; }
+
+    /* ── OVERVIEW CARDS ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    @media (max-width: 900px) {
+      .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .overview-grid { grid-template-columns: 1fr; }
+    }
+
+    .stat-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 24px 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: var(--text-sec);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 8px;
+      display: block;
+    }
+
+    .stat-icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* ── PIPELINE CONTAINER ── */
+    .pipeline-container {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      position: relative;
+    }
+
+    .pipeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── STAGE ── */
+    .stage {
+      margin-bottom: 8px;
+    }
+
+    .stage-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .stage-badge {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+    }
+
+    .badge-parallel {
+      background: rgba(74,158,255,0.12);
+      border: 1px dashed rgba(74,158,255,0.5);
+      color: var(--blue);
+    }
+
+    .badge-sequential {
+      background: rgba(212,178,122,0.1);
+      border: 1px solid rgba(212,178,122,0.3);
+      color: var(--gold-light);
+    }
+
+    .stage-name {
+      font-size: 11px;
+      color: var(--text-sec);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── AGENT BOXES ── */
+    .agents-row {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .agent-box {
+      flex: 1;
+      min-width: 220px;
+      max-width: 360px;
+      border-radius: 8px;
+      padding: 18px 20px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .agent-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+    }
+
+    /* PARALLEL agent — dashed border */
+    .agent-box.parallel {
+      background: rgba(74,158,255,0.04);
+      border: 2px dashed rgba(74,158,255,0.35);
+    }
+
+    /* SEQUENTIAL agent — solid border */
+    .agent-box.sequential {
+      background: rgba(212,178,122,0.04);
+      border: 2px solid rgba(212,178,122,0.25);
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .agent-box.full-width {
+      max-width: 100%;
+    }
+
+    .agent-icon {
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .agent-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .agent-model {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .model-opus {
+      color: var(--opus-color);
+      background: rgba(212,178,122,0.1);
+      border: 1px solid rgba(212,178,122,0.2);
+    }
+
+    .model-sonnet {
+      color: var(--sonnet-color);
+      background: rgba(74,158,255,0.08);
+      border: 1px solid rgba(74,158,255,0.2);
+    }
+
+    .model-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 2s ease infinite;
+    }
+
+    .model-opus .model-dot   { background: var(--opus-color); }
+    .model-sonnet .model-dot { background: var(--sonnet-color); }
+
+    .agent-desc {
+      font-size: 12px;
+      color: var(--text-sec);
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .agent-output {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: var(--green);
+      background: rgba(61,185,122,0.06);
+      border: 1px solid rgba(61,185,122,0.15);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    .agent-output::before {
+      content: '→ ';
+      opacity: 0.7;
+    }
+
+    /* ── CONNECTOR ARROWS ── */
+    .connector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 12px 0;
+      position: relative;
+    }
+
+    .connector svg {
+      display: block;
+    }
+
+    .connector-line {
+      stroke: var(--border);
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: 6 3;
+      animation: arrowFlow 1.5s linear infinite;
+    }
+
+    .connector-solid {
+      stroke: var(--gold);
+      stroke-width: 2;
+      fill: none;
+      stroke-dasharray: none;
+    }
+
+    .connector-arrow-head {
+      fill: var(--gold);
+    }
+
+    .connector-arrow-head-blue {
+      fill: var(--blue);
+    }
+
+    .connector-merge {
+      display: flex;
+      justify-content: center;
+      margin: 8px 0;
+    }
+
+    /* ── PARALLEL JOIN visual ── */
+    .parallel-join {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      margin: 12px 0;
+    }
+
+    .join-label {
+      font-size: 9px;
+      color: var(--text-sec);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* ── DATA STRUCTURE ── */
+    .data-structure {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      line-height: 2;
+      overflow-x: auto;
+    }
+
+    .ds-folder {
+      color: var(--gold-light);
+      font-weight: bold;
+    }
+
+    .ds-subfolder {
+      color: var(--blue);
+    }
+
+    .ds-file {
+      color: var(--text);
+    }
+
+    .ds-comment {
+      color: var(--text-sec);
+      font-style: italic;
+    }
+
+    .ds-tree {
+      color: var(--border);
+      user-select: none;
+    }
+
+    .ds-highlight {
+      color: var(--green);
+    }
+
+    /* ── COMMANDS GRID ── */
+    .commands-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .commands-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .commands-grid { grid-template-columns: 1fr; }
+    }
+
+    .command-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 18px;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: default;
+    }
+
+    .command-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(184,148,95,0.15);
+    }
+
+    .command-trigger {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .command-desc {
+      font-size: 12px;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    .command-type {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-top: 10px;
+    }
+
+    .type-pipeline {
+      background: rgba(61,185,122,0.1);
+      border: 1px solid rgba(61,185,122,0.25);
+      color: var(--green);
+    }
+
+    .type-query {
+      background: rgba(74,158,255,0.08);
+      border: 1px solid rgba(74,158,255,0.2);
+      color: var(--blue);
+    }
+
+    .type-setup {
+      background: rgba(212,136,42,0.1);
+      border: 1px solid rgba(212,136,42,0.25);
+      color: var(--amber);
+    }
+
+    /* ── INFRA SECTION ── */
+    .infra-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 700px) {
+      .infra-grid { grid-template-columns: 1fr; }
+    }
+
+    .infra-card {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+
+    .infra-title {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--gold-light);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .infra-desc {
+      font-size: 12px;
+      color: var(--text-sec);
+      line-height: 1.5;
+    }
+
+    .infra-tag {
+      display: inline-block;
+      font-size: 9px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1px 7px;
+      border-radius: 3px;
+      margin-top: 8px;
+    }
+
+    /* ── LEGEND ── */
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 14px 20px;
+      background: rgba(30,46,80,0.4);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: 24px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-sec);
+    }
+
+    .legend-swatch {
+      width: 28px;
+      height: 14px;
+      border-radius: 3px;
+    }
+
+    .legend-swatch.parallel-sw {
+      border: 2px dashed rgba(74,158,255,0.6);
+      background: rgba(74,158,255,0.06);
+    }
+
+    .legend-swatch.sequential-sw {
+      border: 2px solid rgba(212,178,122,0.4);
+      background: rgba(212,178,122,0.06);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-sec);
+      letter-spacing: 0.06em;
+    }
+
+    footer strong {
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+    }
+
+    /* ── UTILS ── */
+    .text-center { text-align: center; }
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mb-8  { margin-bottom: 8px; }
+
+    .glow-gold {
+      box-shadow: 0 0 20px rgba(184,148,95,0.15);
+    }
+
+    /* Stagger animations */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+
+    /* ── SVG ARROW CONNECTOR ── */
+    .arrow-down {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px 0;
+      height: 40px;
+    }
+
+    .arrow-down-parallel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px 0;
+      height: 32px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header>
+  <span class="logo-escritorio">Gastão da Rosa &amp; Moukarzel</span>
+  <div class="header-rule"></div>
+  <div class="header-title">Sistema de Workflow Jurídico</div>
+  <div class="header-subtitle">Arquitetura de Agentes e Pipelines</div>
+  <div class="version-badge">v2.0 — Abril 2026</div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     MAIN
+══════════════════════════════════════════ -->
+<main>
+
+  <!-- ══ SECTION 1: VISÃO GERAL ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">I</span>
+      <h2 class="section-title">Visão Geral do Sistema</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="stat-card animate-fade-up stagger-1">
+        <span class="stat-icon">🤖</span>
+        <span class="stat-number">14</span>
+        <span class="stat-label">Agentes Especializados</span>
+      </div>
+      <div class="stat-card animate-fade-up stagger-2">
+        <span class="stat-icon">⚙️</span>
+        <span class="stat-number">2</span>
+        <span class="stat-label">Pipelines Automatizados</span>
+      </div>
+      <div class="stat-card animate-fade-up stagger-3">
+        <span class="stat-icon">📁</span>
+        <span class="stat-number">668</span>
+        <span class="stat-label">Peças _vf Indexadas</span>
+      </div>
+      <div class="stat-card animate-fade-up stagger-4">
+        <span class="stat-icon">💬</span>
+        <span class="stat-number">8</span>
+        <span class="stat-label">Comandos /caso</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SECTION 2: PIPELINE CONTESTAÇÃO ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">II</span>
+      <h2 class="section-title">Pipeline de Contestação</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend animate-fade">
+      <div class="legend-item">
+        <div class="legend-swatch parallel-sw"></div>
+        <span>Execução paralela (borda tracejada)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch sequential-sw"></div>
+        <span>Execução sequencial (borda sólida)</span>
+      </div>
+      <div class="legend-item">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--opus-color);"></span>
+        <span>claude-opus-4-6 (dourado)</span>
+      </div>
+      <div class="legend-item">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--sonnet-color);"></span>
+        <span>claude-sonnet-4-6 (azul)</span>
+      </div>
+    </div>
+
+    <div class="pipeline-container glow-gold animate-fade-up">
+      <div class="pipeline-title">Pipeline Contestação — 5 Etapas</div>
+
+      <!-- ETAPA 1: PARALELO -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-parallel">Etapa 1</span>
+          <span class="stage-badge badge-parallel">Paralelo</span>
+          <span class="stage-name">Dois agentes executam simultaneamente</span>
+        </div>
+        <div class="agents-row">
+          <div class="agent-box parallel">
+            <span class="agent-icon">🔍</span>
+            <div class="agent-name">Analista Jurídico</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Lê todos os documentos do caso. Extrai fatos, argumentos da parte adversa, dispositivos legais e cronologia processual.
+            </div>
+            <div class="agent-output">analysis_&lt;caso&gt;.txt</div>
+          </div>
+          <div class="agent-box parallel">
+            <span class="agent-icon">⚖️</span>
+            <div class="agent-name">Pesquisador do Magistrado</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Pesquisa o padrão decisório do juiz responsável. Identifica tendências, sensibilidades e precedentes do magistrado.
+            </div>
+            <div class="agent-output">perfil_magistrado.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 1→2 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 2: SEQUENCIAL -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-sequential">Etapa 2</span>
+          <span class="stage-badge badge-sequential">Sequencial</span>
+          <span class="stage-name">Aguarda outputs da Etapa 1</span>
+        </div>
+        <div class="agents-row" style="justify-content:center;">
+          <div class="agent-box sequential full-width">
+            <span class="agent-icon">✍️</span>
+            <div class="agent-name">Redator Principal</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Recebe a análise jurídica + perfil do magistrado. Redige a contestação completa no estilo Paulo Moukarzel — narrativa fática objetiva, argumentação incisiva, conectivos do corpus, sem bullet points no corpo argumentativo, seções em algarismos romanos.
+            </div>
+            <div class="agent-output">contestacao_&lt;caso&gt;_v1.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 2→3 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 3: PARALELO -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-parallel">Etapa 3</span>
+          <span class="stage-badge badge-parallel">Paralelo</span>
+          <span class="stage-name">Revisão dupla simultânea</span>
+        </div>
+        <div class="agents-row">
+          <div class="agent-box parallel">
+            <span class="agent-icon">📋</span>
+            <div class="agent-name">Revisor Jurídico</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Verifica cobertura de todas as teses, artigos de lei, jurisprudência citada, cadeia documental "(doc. X)" e checklist de completude.
+            </div>
+            <div class="agent-output">review_juridico.txt</div>
+          </div>
+          <div class="agent-box parallel">
+            <span class="agent-icon">📝</span>
+            <div class="agent-name">Revisor Linguístico</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Verifica aderência ao estilo Paulo Moukarzel: vocabulário do corpus, frequência de conectivos, citações inline, ausência de "Trata-se", sem "v. acórdão".
+            </div>
+            <div class="agent-output">review_linguistico.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 3→4 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 4: SEQUENCIAL -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-sequential">Etapa 4</span>
+          <span class="stage-badge badge-sequential">Sequencial</span>
+          <span class="stage-name">Consolidação e correção final</span>
+        </div>
+        <div class="agents-row" style="justify-content:center;">
+          <div class="agent-box sequential full-width">
+            <span class="agent-icon">🎯</span>
+            <div class="agent-name">Auditor Final</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Recebe a v1 + os dois relatórios de revisão. Aplica todas as correções de forma coerente, sem introduzir novos erros. Produz o texto definitivo da peça.
+            </div>
+            <div class="agent-output">contestacao_&lt;caso&gt;_final.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 4→5 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 5: SEQUENCIAL -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-sequential">Etapa 5</span>
+          <span class="stage-badge badge-sequential">Sequencial</span>
+          <span class="stage-name">Geração do arquivo final</span>
+        </div>
+        <div class="agents-row" style="justify-content:center;">
+          <div class="agent-box sequential full-width" style="border-color: rgba(61,185,122,0.4); background: rgba(61,185,122,0.03);">
+            <span class="agent-icon">📄</span>
+            <div class="agent-name">Gerador .docx</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6 + gerar_peticao.py
+            </span>
+            <div class="agent-desc">
+              Converte o texto final em documento Word com identidade visual do escritório. Arial 12pt, 1,5 espaçamento, margens jurídicas (3cm E/S, 2cm D/I), timbre automático, rodapé com numeração de páginas.
+            </div>
+            <div class="agent-output" style="color: var(--green);">output_claude/CONTESTACAO_CLIENTE_DATA.docx</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pipeline-container -->
+  </section>
+
+  <!-- ══ SECTION 3: PIPELINE RECURSOS ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">III</span>
+      <h2 class="section-title">Pipeline de Recursos — REsp / RE</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="pipeline-container glow-gold animate-fade-up">
+      <div class="pipeline-title">Pipeline Recursos — 4 Etapas</div>
+
+      <!-- ETAPA 1: PARALELO (3 agentes) -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-parallel">Etapa 1</span>
+          <span class="stage-badge badge-parallel">Paralelo</span>
+          <span class="stage-name">Pesquisa + rascunhos simultâneos</span>
+        </div>
+        <div class="agents-row">
+          <div class="agent-box parallel">
+            <span class="agent-icon">🔎</span>
+            <div class="agent-name">Pesquisador Jurisprudencial</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Pesquisa jurisprudência autenticada no STJ e STF. Verifica número, relator, data e ementa antes de incluir.
+            </div>
+            <div class="agent-output">jurisprudencia_resp.txt</div>
+          </div>
+          <div class="agent-box parallel">
+            <span class="agent-icon">📜</span>
+            <div class="agent-name">Redator REsp</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Rascunha o Recurso Especial. Abertura de cada seção: acórdão como sujeito, violação como predicado. Prequestionamento explícito.
+            </div>
+            <div class="agent-output">resp_&lt;caso&gt;_v1.txt</div>
+          </div>
+          <div class="agent-box parallel">
+            <span class="agent-icon">📜</span>
+            <div class="agent-name">Redator RE</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Rascunha o Recurso Extraordinário. Repercussão geral, violação direta à Constituição Federal. Teses subsidiárias incluídas.
+            </div>
+            <div class="agent-output">re_&lt;caso&gt;_v1.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 1→2 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 2: PARALELO -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-parallel">Etapa 2</span>
+          <span class="stage-badge badge-parallel">Paralelo</span>
+          <span class="stage-name">Revisão especializada dupla</span>
+        </div>
+        <div class="agents-row">
+          <div class="agent-box parallel">
+            <span class="agent-icon">🔬</span>
+            <div class="agent-name">Revisor Prequestionamento</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Verifica se todos os dispositivos foram debatidos no acórdão recorrido. Sinaliza ausência de prequestionamento por tese.
+            </div>
+            <div class="agent-output">review_preq.txt</div>
+          </div>
+          <div class="agent-box parallel">
+            <span class="agent-icon">🖊️</span>
+            <div class="agent-name">Revisor Estilo Jurídico</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6
+            </span>
+            <div class="agent-desc">
+              Verifica estilo Paulo Moukarzel: conectivos do corpus, abertura de seções, citações inline, ausência de enumerações alíneas a/b/c no corpo.
+            </div>
+            <div class="agent-output">review_estilo.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 2→3 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 3: SEQUENCIAL -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-sequential">Etapa 3</span>
+          <span class="stage-badge badge-sequential">Sequencial</span>
+        </div>
+        <div class="agents-row" style="justify-content:center;">
+          <div class="agent-box sequential full-width">
+            <span class="agent-icon">🎯</span>
+            <div class="agent-name">Auditor Final</div>
+            <span class="agent-model model-opus">
+              <span class="model-dot"></span>
+              claude-opus-4-6
+            </span>
+            <div class="agent-desc">
+              Consolida correções de prequestionamento + estilo em ambos os recursos. Produz versões finais do REsp e do RE.
+            </div>
+            <div class="agent-output">resp_final.txt &nbsp;|&nbsp; re_final.txt</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARROW 3→4 -->
+      <div class="arrow-down">
+        <svg width="40" height="40" viewBox="0 0 40 40">
+          <line x1="20" y1="0" x2="20" y2="28" stroke="#b8945f" stroke-width="2" stroke-dasharray="4 2"/>
+          <polygon points="20,40 14,26 26,26" fill="#b8945f"/>
+        </svg>
+      </div>
+
+      <!-- ETAPA 4: SEQUENCIAL -->
+      <div class="stage">
+        <div class="stage-label">
+          <span class="stage-badge badge-sequential">Etapa 4</span>
+          <span class="stage-badge badge-sequential">Sequencial</span>
+          <span class="stage-name">Geração dos dois documentos</span>
+        </div>
+        <div class="agents-row" style="justify-content:center;">
+          <div class="agent-box sequential full-width" style="border-color: rgba(61,185,122,0.4); background: rgba(61,185,122,0.03);">
+            <span class="agent-icon">📄</span>
+            <div class="agent-name">Gerador .docx</div>
+            <span class="agent-model model-sonnet">
+              <span class="model-dot"></span>
+              claude-sonnet-4-6 + gerar_peticao.py
+            </span>
+            <div class="agent-desc">
+              Gera dois arquivos .docx independentes — um para o REsp e um para o RE — com toda a formatação jurídica oficial.
+            </div>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+              <div class="agent-output" style="color:var(--green);">output_claude/RECURSO_ESPECIAL_CLIENTE_DATA.docx</div>
+              <div class="agent-output" style="color:var(--green);">output_claude/RECURSO_EXTRAORDINARIO_CLIENTE_DATA.docx</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /pipeline-container -->
+  </section>
+
+  <!-- ══ SECTION 4: ESTRUTURA DE DADOS ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">IV</span>
+      <h2 class="section-title">Estrutura de Dados por Caso</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="data-structure animate-fade-up">
+<span class="ds-folder">Clientes/NOME_CLIENTE/</span>
+<span class="ds-tree">│</span>
+<span class="ds-tree">├── </span><span class="ds-highlight">caso.json</span>          <span class="ds-comment">← Fonte única de verdade do caso</span>
+<span class="ds-tree">│       </span><span class="ds-comment">{ "numero": "...", "parte_adversa": "...", "magistrado": "...",</span>
+<span class="ds-tree">│         </span><span class="ds-comment">"tipo_acao": "...", "prazo": "...", "vara": "...", "status": "..." }</span>
+<span class="ds-tree">│</span>
+<span class="ds-tree">├── </span><span class="ds-subfolder">pipeline/</span>             <span class="ds-comment">← Artefatos intermediários dos agentes</span>
+<span class="ds-tree">│   ├── </span><span class="ds-file">analysis_&lt;caso&gt;.txt</span>        <span class="ds-comment">← Analista Jurídico (Etapa 1)</span>
+<span class="ds-tree">│   ├── </span><span class="ds-file">perfil_magistrado_&lt;caso&gt;.txt</span> <span class="ds-comment">← Pesquisador Magistrado (Etapa 1)</span>
+<span class="ds-tree">│   ├── </span><span class="ds-file">contestacao_&lt;caso&gt;_v1.txt</span>  <span class="ds-comment">← Redator (Etapa 2)</span>
+<span class="ds-tree">│   ├── </span><span class="ds-file">review_juridico_&lt;caso&gt;.txt</span> <span class="ds-comment">← Revisor Jurídico (Etapa 3)</span>
+<span class="ds-tree">│   ├── </span><span class="ds-file">review_linguistico_&lt;caso&gt;.txt</span> <span class="ds-comment">← Revisor Linguístico (Etapa 3)</span>
+<span class="ds-tree">│   └── </span><span class="ds-file">contestacao_&lt;caso&gt;_final.txt</span> <span class="ds-comment">← Auditor Final (Etapa 4)</span>
+<span class="ds-tree">│</span>
+<span class="ds-tree">└── </span><span class="ds-subfolder">output_claude/</span>        <span class="ds-comment">← Documentos prontos para protocolo</span>
+<span class="ds-tree">    └── </span><span class="ds-highlight">CONTESTACAO_CLIENTE_DATA.docx</span> <span class="ds-comment">← Output final (Etapa 5)</span>
+    </div>
+
+    <!-- Nota sobre caso.json -->
+    <div style="margin-top:16px; padding:16px 20px; background:rgba(212,136,42,0.07); border:1px solid rgba(212,136,42,0.25); border-left:3px solid var(--amber); border-radius:6px; font-size:12px; color:var(--text-sec);">
+      <strong style="color:var(--amber);">caso.json — Fonte Única de Verdade</strong><br>
+      Todo agente do pipeline lê o caso.json antes de iniciar. Nunca duplicar informação: número do processo, partes, prazos e status existem apenas neste arquivo. O comando <code style="color:var(--gold-light);">/caso status</code> exibe o caso.json formatado.
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: COMANDOS ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">V</span>
+      <h2 class="section-title">Comandos Disponíveis</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="commands-grid animate-fade-up">
+
+      <div class="command-card">
+        <span class="command-trigger">/novo-caso</span>
+        <div class="command-desc">
+          Cria caso.json com metadados do processo e a estrutura de pastas pipeline/ e output_claude/
+        </div>
+        <span class="command-type type-setup">Setup</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso listar</span>
+        <div class="command-desc">
+          Exibe painel de todos os casos ativos com status, tipo de ação e prazo de cada um
+        </div>
+        <span class="command-type type-query">Consulta</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso status</span>
+        <div class="command-desc">
+          Status detalhado de um caso: partes, número, magistrado, artefatos gerados e pendências
+        </div>
+        <span class="command-type type-query">Consulta</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso prazos</span>
+        <div class="command-desc">
+          Lista todos os casos ordenados por urgência de prazo — do mais urgente ao mais distante
+        </div>
+        <span class="command-type type-query">Consulta</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso contestacao</span>
+        <div class="command-desc">
+          Dispara o pipeline completo de Contestação (5 etapas). Produz .docx pronto para protocolo
+        </div>
+        <span class="command-type type-pipeline">Pipeline</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso recurso</span>
+        <div class="command-desc">
+          Dispara o pipeline de Recursos (4 etapas). Gera REsp e RE simultaneamente em .docx
+        </div>
+        <span class="command-type type-pipeline">Pipeline</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso placeholders</span>
+        <div class="command-desc">
+          Lista todas as pendências [PLACEHOLDER] nos documentos do caso — dados faltantes para completar
+        </div>
+        <span class="command-type type-query">Consulta</span>
+      </div>
+
+      <div class="command-card">
+        <span class="command-trigger">/caso indexar</span>
+        <div class="command-desc">
+          Atualiza o índice indice_vf.json com todas as peças _vf disponíveis para referência de estilo
+        </div>
+        <span class="command-type type-setup">Manutenção</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION 6: INFRAESTRUTURA ══ -->
+  <section>
+    <div class="section-header animate-fade-up">
+      <span class="section-number">VI</span>
+      <h2 class="section-title">Infraestrutura de Referência</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="infra-grid animate-fade-up">
+
+      <div class="infra-card">
+        <span class="infra-title">data/indice_vf.json</span>
+        <div class="infra-desc">
+          668 peças _vf indexadas por tipo de documento (contestação, apelação, REsp, HC, etc.). Consultado pelos agentes redatores para replicar estrutura argumentativa de peças reais assinadas por Dr. Paulo.
+        </div>
+        <span class="infra-tag" style="background:rgba(212,178,122,0.1);border:1px solid rgba(212,178,122,0.2);color:var(--gold);">Referência de Estilo</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="infra-title">data/placeholders.json</span>
+        <div class="infra-desc">
+          Registro centralizado de todas as pendências por caso. Atualizado automaticamente pelo script placeholder_scan.py ao fim de cada pipeline. Base para o comando /caso placeholders.
+        </div>
+        <span class="infra-tag" style="background:rgba(212,136,42,0.1);border:1px solid rgba(212,136,42,0.25);color:var(--amber);">Controle de Qualidade</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="infra-title">scripts/gerar_peticao.py</span>
+        <div class="infra-desc">
+          Gerador .docx com timbre do escritório. Parâmetros: --titulo, --cliente, --conteudo, --cidade, --advogado, --oab. Flag --sem-timbre desativa o cabeçalho. Output automático em output_claude/.
+        </div>
+        <span class="infra-tag" style="background:rgba(61,185,122,0.1);border:1px solid rgba(61,185,122,0.2);color:var(--green);">python-docx ≥ 0.8.11</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="infra-title">scripts/indexar_vf.py</span>
+        <div class="infra-desc">
+          Varre as pastas de clientes, identifica arquivos com sufixo _vf, classifica por tipo de peça e atualiza o indice_vf.json. Executado via /caso indexar.
+        </div>
+        <span class="infra-tag" style="background:rgba(74,158,255,0.08);border:1px solid rgba(74,158,255,0.2);color:var(--blue);">Manutenção</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="infra-title">scripts/placeholder_scan.py</span>
+        <div class="infra-desc">
+          Escaneia todos os arquivos .txt e .docx em busca de padrões [PLACEHOLDER] e [VERIFICAR]. Gera relatório por caso e salva em placeholders.json.
+        </div>
+        <span class="infra-tag" style="background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.25);color:var(--red);">Pendências</span>
+      </div>
+
+      <div class="infra-card">
+        <span class="infra-title">references/perfil-estilo.md</span>
+        <div class="infra-desc">
+          Perfil de estilo extraído de 292 petições (3,1M caracteres). Seções 2.1–2.9: conectivos, frequências, vocabulário fechado. Consultado obrigatoriamente por todos os agentes redatores.
+        </div>
+        <span class="infra-tag" style="background:rgba(212,178,122,0.1);border:1px solid rgba(212,178,122,0.2);color:var(--gold-light);">Corpus 292 peças</span>
+      </div>
+
+    </div>
+
+    <!-- Nota de modelo -->
+    <div style="margin-top:24px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:16px 20px; background:rgba(212,178,122,0.06); border:1px solid rgba(212,178,122,0.2); border-left:3px solid var(--gold); border-radius:6px; font-size:12px;">
+        <strong style="color:var(--opus-color);">claude-opus-4-6</strong> — Redação e auditoria final<br>
+        <span style="color:var(--text-sec);">Usado nos papéis que exigem raciocínio jurídico profundo, criatividade argumentativa e síntese complexa. Analista, Redatores, Auditores.</span>
+      </div>
+      <div style="padding:16px 20px; background:rgba(74,158,255,0.05); border:1px solid rgba(74,158,255,0.2); border-left:3px solid var(--blue); border-radius:6px; font-size:12px;">
+        <strong style="color:var(--sonnet-color);">claude-sonnet-4-6</strong> — Pesquisa, revisão e geração<br>
+        <span style="color:var(--text-sec);">Usado nos papéis de verificação, pesquisa jurisprudencial, revisão de estilo e geração de documentos .docx. Custo-benefício otimizado.</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer>
+  <strong>Gastão da Rosa &amp; Moukarzel</strong><br>
+  <span>Sistema de Workflow Jurídico — v2.0 &nbsp;·&nbsp; Abril 2026 &nbsp;·&nbsp; Paulo Ekke Moukarzel Junior &nbsp;·&nbsp; OAB/SC</span>
+</footer>
+
+</body>
+</html>
