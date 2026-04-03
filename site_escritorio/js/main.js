@@ -85,31 +85,53 @@
   // --- Contact form handler ---
   var form = document.getElementById('contact-form');
   if (form) {
+    var isEN = window.location.pathname.indexOf('/en/') !== -1;
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var nome = document.getElementById('nome').value.trim();
-      var email = document.getElementById('email').value.trim();
+      var nome     = document.getElementById('nome').value.trim();
+      var email    = document.getElementById('email').value.trim();
       var mensagem = document.getElementById('mensagem').value.trim();
 
       if (!nome || !email || !mensagem) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
+        alert(isEN ? 'Please fill in all required fields.' : 'Por favor, preencha todos os campos obrigatórios.');
         return;
       }
 
-      // Show success message (static site — no backend)
       var btn = form.querySelector('button[type="submit"]');
       var originalText = btn.textContent;
-      btn.textContent = 'Mensagem Enviada!';
-      btn.style.background = '#b8945f';
+      btn.textContent = isEN ? 'Sending...' : 'Enviando...';
       btn.disabled = true;
 
-      setTimeout(function () {
-        btn.textContent = originalText;
-        btn.style.background = '';
-        btn.disabled = false;
-        form.reset();
-      }, 3000);
+      var data = new FormData(form);
+
+      // mail.php is always at site root
+      var phpPath = window.location.pathname.indexOf('/en/') !== -1 ? '../mail.php' : 'mail.php';
+
+      fetch(phpPath, { method: 'POST', body: data })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (json.success) {
+            btn.textContent = isEN ? 'Message Sent!' : 'Mensagem Enviada!';
+            btn.style.background = '#b8945f';
+            form.reset();
+            setTimeout(function () {
+              btn.textContent = originalText;
+              btn.style.background = '';
+              btn.disabled = false;
+            }, 3000);
+          } else {
+            alert(json.message || (isEN ? 'Error sending message.' : 'Erro ao enviar mensagem.'));
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }
+        })
+        .catch(function () {
+          alert(isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.');
+          btn.textContent = originalText;
+          btn.disabled = false;
+        });
     });
   }
 
