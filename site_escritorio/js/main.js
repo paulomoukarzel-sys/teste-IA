@@ -82,6 +82,28 @@
     });
   }
 
+  // --- Phone mask (DDD) ---
+  var telInput = document.getElementById('telefone');
+  if (telInput) {
+    telInput.addEventListener('input', function () {
+      var digits = this.value.replace(/\D/g, '').slice(0, 11);
+      var v = '';
+      if (digits.length === 0) {
+        v = '';
+      } else if (digits.length <= 2) {
+        v = '(' + digits;
+      } else if (digits.length <= 6) {
+        v = '(' + digits.slice(0, 2) + ') ' + digits.slice(2);
+      } else if (digits.length <= 10) {
+        v = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 6) + '-' + digits.slice(6);
+      } else {
+        // 11 digits — celular com 9
+        v = '(' + digits.slice(0, 2) + ') ' + digits.slice(2, 7) + '-' + digits.slice(7);
+      }
+      this.value = v;
+    });
+  }
+
   // --- Contact form handler ---
   var form = document.getElementById('contact-form');
   if (form) {
@@ -99,11 +121,6 @@
         return;
       }
 
-      var btn = form.querySelector('button[type="submit"]');
-      var originalText = btn.textContent;
-      btn.textContent = isEN ? 'Sending...' : 'Enviando...';
-      btn.disabled = true;
-
       var payload = {
         nome:     document.getElementById('nome').value.trim(),
         email:    document.getElementById('email').value.trim(),
@@ -114,29 +131,17 @@
         _cc:      'bruno.gastao@gastaoemoukarzel.adv.br'
       };
 
+      // Mostra banner imediatamente (UX otimista), envia email em background
+      form.reset();
+      form.style.display = 'none';
+      var banner = document.getElementById('form-success');
+      if (banner) banner.style.display = 'block';
+
       fetch('https://formsubmit.co/ajax/paulo.moukarzel@gastaoemoukarzel.adv.br', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
-      })
-        .then(function (res) { return res.json(); })
-        .then(function (json) {
-          if (json.success === 'true' || json.success === true) {
-            form.reset();
-            form.style.display = 'none';
-            var banner = document.getElementById('form-success');
-            if (banner) banner.style.display = 'block';
-          } else {
-            alert(isEN ? 'Error sending message. Please try again.' : 'Erro ao enviar. Tente novamente.');
-            btn.textContent = originalText;
-            btn.disabled = false;
-          }
-        })
-        .catch(function () {
-          alert(isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.');
-          btn.textContent = originalText;
-          btn.disabled = false;
-        });
+      }).catch(function () { /* silently ignore network errors */ });
     });
   }
 
