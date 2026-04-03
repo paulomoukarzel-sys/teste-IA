@@ -110,10 +110,11 @@
         telefone: (document.getElementById('telefone') || {}).value || '',
         assunto:  (document.getElementById('assunto')  || {}).value || '',
         mensagem: document.getElementById('mensagem').value.trim(),
-        _subject: 'Contato via Site — Gastão da Rosa & Moukarzel'
+        _subject: 'Contato via Site — Gastão da Rosa & Moukarzel',
+        _cc:      'bruno.gastao@gastaoemoukarzel.adv.br'
       };
 
-      fetch('https://formsubmit.co/ajax/contato@gastaoemoukarzel.adv.br', {
+      fetch('https://formsubmit.co/ajax/paulo.moukarzel@gastaoemoukarzel.adv.br', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify(payload)
