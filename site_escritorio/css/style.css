@@ -858,6 +858,27 @@ ul {
 }
 
 @media (max-width: 768px) {
+  /* Títulos e cabeçalhos — centralizados no mobile */
+  .hero__title-line,
+  .hero__title-line--highlight,
+  .hero__title-sub,
+  .section__title,
+  .section__subtitle,
+  .sobre__heading {
+    text-align: center;
+  }
+
+  /* Parágrafos e textos corridos — justificados no mobile */
+  .hero__text,
+  .sobre__text p,
+  .valor-card__text,
+  .area-card p,
+  .membro-card__bio,
+  .aviso-box p,
+  .disclaimer-box p {
+    text-align: justify;
+  }
+
   .hero__container {
     flex-direction: column;
     gap: 32px;
@@ -1426,6 +1447,7 @@ ul {
 .perfil-photo {
   width: 300px;
   height: 400px;
+  overflow: hidden;
   background: linear-gradient(145deg, var(--color-primary) 0%, #1E2848 100%);
   display: flex;
   align-items: center;
@@ -1433,13 +1455,8 @@ ul {
   flex-direction: column;
   gap: 12px;
   position: relative;
-}
-.perfil-photo::after {
-  content: '';
-  position: absolute;
-  top: 8px; left: 8px; right: -8px; bottom: -8px;
-  border: 1px solid var(--color-accent);
-  z-index: -1;
+  outline: 1px solid var(--color-accent);
+  outline-offset: 2px;
 }
 .perfil-photo span {
   font-size: 0.56rem;
