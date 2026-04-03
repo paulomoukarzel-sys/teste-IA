@@ -110,7 +110,15 @@
       var phpPath = window.location.pathname.indexOf('/en/') !== -1 ? '../mail.php' : 'mail.php';
 
       fetch(phpPath, { method: 'POST', body: data })
-        .then(function (res) { return res.json(); })
+        .then(function (res) {
+          return res.text().then(function (text) {
+            try {
+              return JSON.parse(text);
+            } catch (e) {
+              throw new Error('Resposta inválida do servidor: ' + text.substring(0, 200));
+            }
+          });
+        })
         .then(function (json) {
           if (json.success) {
             btn.textContent = isEN ? 'Message Sent!' : 'Mensagem Enviada!';
@@ -127,8 +135,8 @@
             btn.disabled = false;
           }
         })
-        .catch(function () {
-          alert(isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.');
+        .catch(function (err) {
+          alert(err.message || (isEN ? 'Connection error. Please try again.' : 'Erro de conexão. Tente novamente.'));
           btn.textContent = originalText;
           btn.disabled = false;
         });
