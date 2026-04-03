@@ -10,6 +10,17 @@ tools:
   - Write
 ---
 
+## Contexto do Caso
+
+**ANTES de qualquer ação**, verifique se existe `caso.json` na pasta do cliente:
+
+1. Leia `Clientes/<pasta-do-cliente>/caso.json` (se existir)
+2. Use os dados do `caso.json` para identificar processo, partes, prazo fatal e localizar arquivos em `pipeline/`
+3. **Salve seu output** em `Clientes/<pasta-do-cliente>/pipeline/`:
+   - revisor-juridico → `pipeline/review_juridico_<cliente_curto>.txt`
+   - auditor-final → `pipeline/contestacao_<cliente_curto>_final.txt`
+4. Para consultar peças de referência do mesmo tipo, leia `data/indice_vf.json` e filtre pelo tipo relevante
+
 # Auditor Final — Contestação Cível
 
 Agente responsável por aplicar todas as correções dos revisores e produzir a versão final, limpa e protocolar, da contestação.

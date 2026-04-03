@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Prazos — Gastão da Rosa & Moukarzel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── Variables ─────────────────────────────────────────────── */
+    :root {
+      --bg:        #0c1528;
+      --surface:   #0f1a2e;
+      --card:      #132040;
+      --border:    #1e2e50;
+      --border-lg: #2a3f6e;
+      --gold:      #b8945f;
+      --gold-lt:   #d4b27a;
+      --gold-dk:   #96753d;
+      --gold-sh:   #dcc37a;
+      --text:      #e8e4dc;
+      --text-dim:  #7a8fba;
+      --text-mid:  #a0b0d0;
+      --green:     #3db97a;
+      --amber:     #d4882a;
+      --red:       #c0392b;
+      --red-lt:    #e74c3c;
+      --yellow:    #f0c040;
+      --navy:      #1a2744;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 17px; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; color: inherit; }
+    input, textarea, select {
+      font-family: Arial, sans-serif;
+      font-size: 0.85rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 5px;
+      outline: none;
+      padding: 8px 12px;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold-dk); }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-lg); border-radius: 2px; }
+
+    /* ── Animations ─────────────────────────────────────────────── */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes goldShimmer { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(184,148,95,.4); } 50% { box-shadow: 0 0 0 6px rgba(184,148,95,0); } }
+    @keyframes slideIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 32px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .header-brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .brand-text h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #bf953f, #dcc37a, #b38728, #d4b872);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: goldShimmer 4s linear infinite;
+      line-height: 1.2;
+    }
+    .brand-text p {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    #notif-btn {
+      position: relative;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      transition: background .2s;
+    }
+    #notif-btn:hover { background: var(--navy); }
+    #notif-badge {
+      position: absolute;
+      top: -4px; right: -4px;
+      background: var(--red-lt);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 700;
+      min-width: 17px; height: 17px;
+      border-radius: 9px;
+      display: none;
+      align-items: center; justify-content: center;
+      padding: 0 4px;
+      animation: pulse 2s infinite;
+    }
+    #hoje-label {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+    #hoje-label span {
+      color: var(--gold-lt);
+      font-weight: 600;
+    }
+    .btn-novo {
+      background: linear-gradient(135deg, var(--gold-dk), var(--gold));
+      color: #0c1528;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: flex; align-items: center; gap: 8px;
+      transition: filter .2s;
+      letter-spacing: .02em;
+    }
+    .btn-novo:hover { filter: brightness(1.1); }
+
+    /* ── Stats Bar ───────────────────────────────────────────────── */
+    .stats-bar {
+      display: flex;
+      gap: 16px;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .stat-card {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: fadeIn .4s ease both;
+    }
+    .stat-icon {
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .stat-icon.gold   { background: rgba(184,148,95,.15); }
+    .stat-icon.red    { background: rgba(192,57,43,.15); }
+    .stat-icon.amber  { background: rgba(212,136,42,.15); }
+    .stat-icon.yellow { background: rgba(240,192,64,.12); }
+    .stat-icon.green  { background: rgba(61,185,122,.12); }
+    .stat-num {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-top: 2px;
+    }
+
+    /* ── Filters ─────────────────────────────────────────────────── */
+    .filters {
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px;
+    }
+    .tab {
+      padding: 7px 16px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    .tab:hover { color: var(--text); background: var(--navy); }
+    .tab.active { background: var(--gold-dk); color: #0c1528; font-weight: 700; }
+    .filter-sep { width: 1px; height: 28px; background: var(--border); margin: 0 4px; }
+    #busca {
+      flex: 1;
+      max-width: 280px;
+      padding: 8px 14px;
+    }
+    #tipo-filter {
+      padding: 8px 12px;
+    }
+
+    /* ── Table ───────────────────────────────────────────────────── */
+    .table-wrap {
+      padding: 0 32px 40px;
+      animation: fadeIn .4s ease both;
+    }
+    .table-meta {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      margin-bottom: 10px;
+      padding: 0 2px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    thead {
+      background: var(--navy);
+    }
+    thead th {
+      text-align: left;
+      padding: 13px 16px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background .15s;
+    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: var(--navy); }
+    tbody td {
+      padding: 13px 16px;
+      font-size: 0.82rem;
+      vertical-align: middle;
+    }
+
+    /* urgência — destaque na linha */
+    tr.urg-vencido td:first-child { border-left: 3px solid var(--red-lt); }
+    tr.urg-hoje    td:first-child { border-left: 3px solid var(--amber); }
+    tr.urg-amanha  td:first-child { border-left: 3px solid var(--yellow); }
+    tr.urg-normal  td:first-child { border-left: 3px solid transparent; }
+    tr.urg-concluido td:first-child { border-left: 3px solid var(--green); }
+    tr.urg-concluido td { opacity: .55; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+      white-space: nowrap;
+    }
+    .badge-vencido  { background: rgba(231,76,60,.18); color: var(--red-lt); }
+    .badge-hoje     { background: rgba(212,136,42,.18); color: var(--amber); }
+    .badge-amanha   { background: rgba(240,192,64,.15); color: var(--yellow); }
+    .badge-normal   { background: rgba(122,143,186,.12); color: var(--text-mid); }
+    .badge-sem_data { background: rgba(100,100,140,.15); color: #9090bb; border: 1px dashed #44447a; }
+    .badge-concluido{ background: rgba(61,185,122,.15); color: var(--green); }
+
+    .tipo-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      background: rgba(184,148,95,.12);
+      color: var(--gold-lt);
+      border: 1px solid rgba(184,148,95,.2);
+    }
+    .tipo-badge.audiencia  { background: rgba(74,158,255,.12); color: #6ab4ff; border-color: rgba(74,158,255,.2); }
+    .tipo-badge.reuniao    { background: rgba(61,185,122,.1); color: var(--green); border-color: rgba(61,185,122,.2); }
+    .tipo-badge.diligencia { background: rgba(212,136,42,.12); color: var(--amber); border-color: rgba(212,136,42,.2); }
+
+    .col-data      { width: 100px; }
+    .col-cliente   { width: 160px; font-weight: 600; }
+    .col-tipo      { width: 95px; }
+    .col-tribunal  { width: 80px; color: var(--text-mid); font-size: 0.78rem; }
+    .col-comp      { min-width: 180px; }
+    .col-partes    { width: 200px; color: var(--text-mid); font-size: 0.78rem; }
+    .col-resumo    { color: var(--text-mid); font-size: 0.78rem; }
+    .col-status    { width: 115px; }
+    .col-acoes     { width: 95px; text-align: right; }
+    .partes-cliente { color: var(--gold-lt); font-weight: 600; }
+
+    .resumo-text {
+      max-width: 320px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+    .resumo-text:hover { white-space: normal; overflow: visible; }
+
+    .btn-icon {
+      width: 30px; height: 30px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      transition: background .15s;
+    }
+    .btn-icon:hover { background: var(--border-lg); }
+    .btn-concluir { color: var(--green); }
+    .btn-editar   { color: var(--gold); }
+    .btn-deletar  { color: var(--red-lt); }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-dim);
+    }
+    .empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .empty-state p { font-size: 0.85rem; }
+
+    /* ── Modal ───────────────────────────────────────────────────── */
+    .overlay {
+      position: fixed; inset: 0;
+      background: rgba(5,10,20,.8);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .overlay.open { display: flex; }
+    .modal {
+      background: var(--surface);
+      border: 1px solid var(--border-lg);
+      border-radius: 12px;
+      padding: 32px;
+      width: 100%;
+      max-width: 580px;
+      animation: slideIn .25s ease;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--gold-lt);
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: 1/-1; }
+    label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+    input[type="date"] { color-scheme: dark; }
+    textarea { resize: vertical; min-height: 90px; }
+    .form-actions {
+      margin-top: 24px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+    .btn-cancel {
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: all .2s;
+    }
+    .btn-cancel:hover { color: var(--text); border-color: var(--border-lg); }
+    .btn-salvar {
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-dk), var(--gold));
+      color: #0c1528;
+      transition: filter .2s;
+    }
+    .btn-salvar:hover { filter: brightness(1.1); }
+
+    /* ── Botão e barra de sync ──────────────────────────────────── */
+    .btn-sync {
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      background: var(--card);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; gap: 7px;
+      transition: all .2s;
+    }
+    .btn-sync:hover { border-color: var(--gold-dk); color: var(--gold-lt); }
+    .btn-sync.syncing { color: var(--amber); border-color: var(--amber); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .btn-sync.syncing #sync-icon { display: inline-block; animation: spin 1s linear infinite; }
+    #sync-bar {
+      background: rgba(212,136,42,.1);
+      border-bottom: 1px solid rgba(212,136,42,.25);
+      padding: 8px 32px;
+    }
+    .sync-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--amber);
+    }
+    #sync-bar-ultimo { color: var(--text-dim); font-size: 0.7rem; }
+
+    /* ── Toast de Alerta ─────────────────────────────────────────── */
+    #toast-container {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      z-index: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 360px;
+    }
+    .toast {
+      background: var(--card);
+      border: 1px solid var(--border-lg);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      animation: slideIn .3s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5);
+    }
+    .toast.hoje   { border-left: 4px solid var(--amber); }
+    .toast.amanha { border-left: 4px solid var(--yellow); }
+    .toast-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .toast-body { flex: 1; }
+    .toast-title { font-size: 0.75rem; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+    .toast-sub   { font-size: 0.72rem; color: var(--text-mid); }
+    .toast-close {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      flex-shrink: 0;
+      line-height: 1;
+      transition: color .15s;
+    }
+    .toast-close:hover { color: var(--text); }
+
+    /* ── Painel de alertas ───────────────────────────────────────── */
+    #alerta-panel {
+      position: fixed;
+      top: 72px; right: 0;
+      width: 340px;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0 0 0 10px;
+      box-shadow: -8px 8px 32px rgba(0,0,0,.4);
+      z-index: 100;
+      display: none;
+      animation: fadeIn .2s ease;
+      max-height: calc(100vh - 80px);
+      overflow-y: auto;
+    }
+    #alerta-panel.open { display: block; }
+    .alerta-header {
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .alerta-item {
+      padding: 13px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: background .15s;
+    }
+    .alerta-item:hover { background: var(--card); }
+    .alerta-item:last-child { border-bottom: none; }
+    .alerta-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .alerta-dot.hoje   { background: var(--amber); }
+    .alerta-dot.amanha { background: var(--yellow); }
+    .alerta-item-body p { font-size: 0.78rem; color: var(--text); margin-bottom: 2px; }
+    .alerta-item-body small { font-size: 0.68rem; color: var(--text-dim); }
+    .alerta-empty { padding: 24px 20px; text-align: center; font-size: 0.78rem; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-brand">
+    <img src="/static/img/logo_symbol.png" alt="Logo" onerror="this.style.display='none'">
+    <div class="brand-text">
+      <h1>Gastão da Rosa &amp; Moukarzel</h1>
+      <p>Controle de Prazos e Compromissos</p>
+    </div>
+  </div>
+  <div class="header-right">
+    <div id="hoje-label">Hoje: <span id="data-hoje"></span></div>
+    <button id="notif-btn" title="Alertas" onclick="toggleAlertaPanel()">
+      🔔
+      <span id="notif-badge"></span>
+    </button>
+    <button id="btn-sync" class="btn-sync" onclick="sincronizarEmail()" title="Sincronizar e-mails de tribunais">
+      <span id="sync-icon">📧</span> Sincronizar E-mails
+    </button>
+    <button class="btn-novo" onclick="abrirModal()">+ Novo Prazo/Compromisso</button>
+  </div>
+</header>
+<div id="sync-bar" style="display:none">
+  <div class="sync-bar-inner">
+    <span id="sync-bar-msg">Sincronizando e-mails de tribunais...</span>
+    <span id="sync-bar-ultimo"></span>
+  </div>
+</div>
+
+<!-- ═══ PAINEL DE ALERTAS ═══ -->
+<div id="alerta-panel">
+  <div class="alerta-header">Alertas de Prazo</div>
+  <div id="alerta-list"><div class="alerta-empty">Nenhum alerta no momento.</div></div>
+</div>
+
+<!-- ═══ STATS BAR ═══ -->
+<div class="stats-bar">
+  <div class="stat-card" style="animation-delay:.05s">
+    <div class="stat-icon gold">📋</div>
+    <div><div class="stat-num" id="st-total">0</div><div class="stat-label">Pendentes</div></div>
+  </div>
+  <div class="stat-card" style="animation-delay:.1s">
+    <div class="stat-icon red">🔴</div>
+    <div><div class="stat-num" id="st-vencidos">0</div><div class="stat-label">Vencidos</div></div>
+  </div>
+  <div class="stat-card" style="animation-delay:.15s">
+    <div class="stat-icon amber">⚠️</div>
+    <div><div class="stat-num" id="st-hoje">0</div><div class="stat-label">Vencem Hoje</div></div>
+  </div>
+  <div class="stat-card" style="animation-delay:.2s">
+    <div class="stat-icon yellow">📅</div>
+    <div><div class="stat-num" id="st-amanha">0</div><div class="stat-label">Vencem Amanhã</div></div>
+  </div>
+  <div class="stat-card" style="animation-delay:.25s">
+    <div class="stat-icon green">✅</div>
+    <div><div class="stat-num" id="st-concluidos">0</div><div class="stat-label">Concluídos</div></div>
+  </div>
+</div>
+
+<!-- ═══ FILTROS ═══ -->
+<div class="filters">
+  <div class="filter-tabs">
+    <button class="tab active" data-filter="todos" onclick="setFiltro(this,'todos')">Todos</button>
+    <button class="tab" data-filter="vencidos" onclick="setFiltro(this,'vencidos')">Vencidos</button>
+    <button class="tab" data-filter="hoje" onclick="setFiltro(this,'hoje')">Hoje</button>
+    <button class="tab" data-filter="amanha" onclick="setFiltro(this,'amanha')">Amanhã</button>
+    <button class="tab" data-filter="semana" onclick="setFiltro(this,'semana')">Esta Semana</button>
+    <button class="tab" data-filter="sem_data" onclick="setFiltro(this,'sem_data')">📌 Sem Data</button>
+    <button class="tab" data-filter="concluido" onclick="setFiltro(this,'concluido')">Concluídos</button>
+  </div>
+  <div class="filter-sep"></div>
+  <input id="busca" type="text" placeholder="🔍  Buscar cliente ou compromisso..." oninput="renderTable()">
+  <select id="tipo-filter" onchange="renderTable()">
+    <option value="">Todos os tipos</option>
+    <option value="prazo">Prazo Processual</option>
+    <option value="audiencia">Audiência</option>
+    <option value="reuniao">Reunião</option>
+    <option value="peticao">Petição</option>
+    <option value="diligencia">Diligência</option>
+  </select>
+</div>
+
+<!-- ═══ TABELA ═══ -->
+<div class="table-wrap">
+  <div class="table-meta" id="table-meta"></div>
+  <table>
+    <thead>
+      <tr>
+        <th class="col-data">Data / Prazo</th>
+        <th class="col-cliente">Cliente</th>
+        <th class="col-tipo">Tipo</th>
+        <th class="col-tribunal">Tribunal</th>
+        <th class="col-comp">Compromisso / Providência</th>
+        <th class="col-partes">Partes</th>
+        <th class="col-resumo">Resumo do Ato</th>
+        <th class="col-status">Status</th>
+        <th class="col-acoes">Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+</div>
+
+<!-- ═══ MODAL ═══ -->
+<div class="overlay" id="overlay" onclick="fecharModalFora(event)">
+  <div class="modal">
+    <h2 id="modal-title">Novo Prazo / Compromisso</h2>
+    <form id="prazo-form" onsubmit="salvar(event)">
+      <input type="hidden" id="f-id">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Data do Prazo <span style="color:var(--text-dim);font-weight:400">(opcional)</span></label>
+          <input type="date" id="f-data">
+          <small style="color:var(--text-dim);font-size:0.65rem;margin-top:2px">Deixe em branco se a data ainda será definida</small>
+        </div>
+        <div class="form-group">
+          <label>Tipo *</label>
+          <select id="f-tipo" required>
+            <option value="prazo">Prazo Processual</option>
+            <option value="audiencia">Audiência</option>
+            <option value="reuniao">Reunião</option>
+            <option value="peticao">Petição</option>
+            <option value="diligencia">Diligência</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label>Cliente *</label>
+          <input type="text" id="f-cliente" required placeholder="Nome completo do cliente">
+        </div>
+        <div class="form-group full">
+          <label>Compromisso / Providência *</label>
+          <input type="text" id="f-compromisso" required placeholder="Ex: Elaborar contestação no prazo legal">
+        </div>
+        <div class="form-group">
+          <label>Tribunal</label>
+          <input type="text" id="f-tribunal" placeholder="Ex: TJSC, STJ, TRF4...">
+        </div>
+        <div class="form-group">
+          <label>Partes <span style="color:var(--text-dim);font-weight:400">(destaque o cliente)</span></label>
+          <input type="text" id="f-partes" placeholder="Ex: *CLIENTE* × Parte Adversa">
+          <small style="color:var(--text-dim);font-size:0.65rem;margin-top:2px">Use *asteriscos* para destacar o cliente do escritório</small>
+        </div>
+        <div class="form-group full">
+          <label>Resumo</label>
+          <textarea id="f-resumo" placeholder="Teor da intimação, decisão ou contexto do ato processual..."></textarea>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" onclick="fecharModal()">Cancelar</button>
+        <button type="submit" class="btn-salvar">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ═══ TOAST ═══ -->
+<div id="toast-container"></div>
+
+<script>
+// ── Estado ──────────────────────────────────────────────────────────
+let todos = [];
+let filtroAtivo = 'todos';
+let alertasAtuais = [];
+
+// ── Data de hoje no header ───────────────────────────────────────────
+(function() {
+  const d = new Date();
+  const opts = { weekday:'long', day:'2-digit', month:'long', year:'numeric' };
+  document.getElementById('data-hoje').textContent = d.toLocaleDateString('pt-BR', opts);
+})();
+
+// ── Formatação de data ───────────────────────────────────────────────
+function fmtData(iso) {
+  const [y,m,d] = iso.split('-');
+  return `${d}/${m}/${y}`;
+}
+
+function urgLabel(u) {
+  const map = {
+    vencido:  ['🔴 Vencido',  'badge-vencido'],
+    hoje:     ['⚠️ Hoje',     'badge-hoje'],
+    amanha:   ['📅 Amanhã',   'badge-amanha'],
+    sem_data: ['📌 Sem data', 'badge-sem_data'],
+    normal:   ['Pendente',    'badge-normal'],
+    concluido:['✅ Concluído','badge-concluido'],
+    cancelado:['Cancelado',   'badge-normal'],
+  };
+  return map[u] || ['—','badge-normal'];
+}
+
+function tipoLabel(t) {
+  const map = {
+    prazo:      'Prazo',
+    audiencia:  'Audiência',
+    reuniao:    'Reunião',
+    peticao:    'Petição',
+    diligencia: 'Diligência',
+  };
+  return map[t] || t;
+}
+
+// ── Filtro ──────────────────────────────────────────────────────────
+function setFiltro(btn, f) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  filtroAtivo = f;
+  renderTable();
+}
+
+function aplicarFiltro(itens) {
+  const busca = document.getElementById('busca').value.toLowerCase();
+  const tipo  = document.getElementById('tipo-filter').value;
+  return itens.filter(p => {
+    if (tipo && p.tipo !== tipo) return false;
+    if (busca && !p.cliente.toLowerCase().includes(busca) &&
+                 !p.compromisso.toLowerCase().includes(busca) &&
+                 !(p.resumo||'').toLowerCase().includes(busca)) return false;
+    if (filtroAtivo === 'todos')    return p.status !== 'concluido';
+    if (filtroAtivo === 'sem_data') return p.status !== 'concluido' && !p.data_prazo;
+    if (filtroAtivo === 'vencidos') return p.urgencia === 'vencido';
+    if (filtroAtivo === 'hoje')     return p.urgencia === 'hoje';
+    if (filtroAtivo === 'amanha')   return p.urgencia === 'amanha';
+    if (filtroAtivo === 'semana') {
+      if (p.status === 'concluido' || !p.data_prazo) return false;
+      const dp = new Date(p.data_prazo + 'T00:00:00');
+      const hoje = new Date(); hoje.setHours(0,0,0,0);
+      const fim  = new Date(hoje); fim.setDate(fim.getDate() + 7);
+      return dp >= hoje && dp <= fim;
+    }
+    if (filtroAtivo === 'concluido') return p.status === 'concluido';
+    return true;
+  });
+}
+
+// ── Render ─────────────────────────────────────────────────────────
+function renderTable() {
+  const lista = aplicarFiltro(todos);
+  const tbody = document.getElementById('tbody');
+  document.getElementById('table-meta').textContent =
+    `${lista.length} registro${lista.length !== 1 ? 's' : ''} encontrado${lista.length !== 1 ? 's' : ''}`;
+
+  if (!lista.length) {
+    tbody.innerHTML = `<tr><td colspan="9"><div class="empty-state">
+      <div class="icon">📂</div>
+      <p>Nenhum prazo encontrado para este filtro.</p>
+    </div></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = lista.map(p => {
+    const [lbl, cls] = urgLabel(p.urgencia);
+    const tipoCls = ['audiencia','reuniao','diligencia'].includes(p.tipo) ? p.tipo : '';
+    const acaoConcluir = p.status !== 'concluido'
+      ? `<button class="btn-icon btn-concluir" title="Marcar como concluído" onclick="concluir(${p.id})">✓</button>`
+      : `<button class="btn-icon" title="Reabrir" onclick="reabrir(${p.id})" style="color:var(--text-dim)">↩</button>`;
+    // Partes: destaca o cliente (entre *asteriscos*)
+    const partesHtml = (p.partes || '').replace(/\*([^*]+)\*/g,
+      '<span class="partes-cliente">$1</span>');
+    const partesCell = p.partes
+      ? `<span class="resumo-text" title="${p.partes.replace(/"/g,'&quot;')}">${partesHtml}</span>`
+      : '<span style="color:var(--border-lg)">—</span>';
+    const resumoCell = p.resumo
+      ? `<span class="resumo-text" title="${p.resumo.replace(/"/g,'&quot;')}">${p.resumo}</span>`
+      : '<span style="color:var(--border-lg)">—</span>';
+    return `<tr class="urg-${p.urgencia}">
+      <td class="col-data"><strong>${p.data_prazo ? fmtData(p.data_prazo) : '<span style="color:var(--text-dim);font-style:italic">A definir</span>'}</strong></td>
+      <td class="col-cliente">${p.cliente}</td>
+      <td class="col-tipo"><span class="tipo-badge ${tipoCls}">${tipoLabel(p.tipo)}</span></td>
+      <td class="col-tribunal">${p.tribunal || '<span style="color:var(--border-lg)">—</span>'}</td>
+      <td class="col-comp">${p.compromisso}</td>
+      <td class="col-partes">${partesCell}</td>
+      <td class="col-resumo">${resumoCell}</td>
+      <td class="col-status"><span class="badge ${cls}">${lbl}</span></td>
+      <td class="col-acoes" style="text-align:right">
+        ${acaoConcluir}
+        <button class="btn-icon btn-editar" title="Editar" onclick="editar(${p.id})">✏️</button>
+        <button class="btn-icon btn-deletar" title="Excluir" onclick="confirmarDeletar(${p.id})">🗑</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+// ── CRUD ────────────────────────────────────────────────────────────
+async function carregarTodos() {
+  const res = await fetch('/api/prazos');
+  todos = await res.json();
+  renderTable();
+  carregarStats();
+}
+
+async function carregarStats() {
+  const s = await fetch('/api/stats').then(r => r.json());
+  document.getElementById('st-total').textContent     = s.total;
+  document.getElementById('st-hoje').textContent      = s.hoje;
+  document.getElementById('st-amanha').textContent    = s.amanha;
+  document.getElementById('st-vencidos').textContent  = s.vencidos;
+  document.getElementById('st-concluidos').textContent= s.concluidos;
+}
+
+async function salvar(e) {
+  e.preventDefault();
+  const id = document.getElementById('f-id').value;
+  const body = {
+    data_prazo:   document.getElementById('f-data').value,
+    cliente:      document.getElementById('f-cliente').value,
+    compromisso:  document.getElementById('f-compromisso').value,
+    tipo:         document.getElementById('f-tipo').value,
+    tribunal:     document.getElementById('f-tribunal').value,
+    partes:       document.getElementById('f-partes').value,
+    resumo:       document.getElementById('f-resumo').value,
+  };
+  const url    = id ? `/api/prazos/${id}` : '/api/prazos';
+  const method = id ? 'PUT' : 'POST';
+  await fetch(url, { method, headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+  fecharModal();
+  carregarTodos();
+}
+
+async function concluir(id) {
+  await fetch(`/api/prazos/${id}`, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({status:'concluido'})
+  });
+  carregarTodos();
+}
+
+async function reabrir(id) {
+  await fetch(`/api/prazos/${id}`, {
+    method: 'PUT',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({status:'pendente'})
+  });
+  carregarTodos();
+}
+
+function confirmarDeletar(id) {
+  const p = todos.find(x => x.id === id);
+  if (!p) return;
+  if (confirm(`Excluir o prazo de "${p.cliente}"?\n"${p.compromisso}"\n\nEsta ação não pode ser desfeita.`)) {
+    fetch(`/api/prazos/${id}`, {method:'DELETE'}).then(carregarTodos);
+  }
+}
+
+function editar(id) {
+  const p = todos.find(x => x.id === id);
+  if (!p) return;
+  document.getElementById('modal-title').textContent = 'Editar Prazo';
+  document.getElementById('f-id').value          = p.id;
+  document.getElementById('f-data').value        = p.data_prazo || '';
+  document.getElementById('f-cliente').value     = p.cliente;
+  document.getElementById('f-compromisso').value = p.compromisso;
+  document.getElementById('f-tipo').value        = p.tipo;
+  document.getElementById('f-tribunal').value    = p.tribunal || '';
+  document.getElementById('f-partes').value      = p.partes || '';
+  document.getElementById('f-resumo').value      = p.resumo || '';
+  document.getElementById('overlay').classList.add('open');
+}
+
+// ── Modal ───────────────────────────────────────────────────────────
+function abrirModal() {
+  document.getElementById('modal-title').textContent = 'Novo Prazo / Compromisso';
+  document.getElementById('prazo-form').reset();
+  document.getElementById('f-id').value = '';
+  document.getElementById('f-data').value = '';
+  document.getElementById('overlay').classList.add('open');
+}
+
+function fecharModal() {
+  document.getElementById('overlay').classList.remove('open');
+}
+
+function fecharModalFora(e) {
+  if (e.target === document.getElementById('overlay')) fecharModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fecharModal(); });
+
+// ── Alertas ─────────────────────────────────────────────────────────
+function showToast(alerta) {
+  const isHoje = alerta.tipo === 'hoje';
+  const id = `toast-${Date.now()}`;
+  const div = document.createElement('div');
+  div.className = `toast ${alerta.tipo}`;
+  div.id = id;
+  div.innerHTML = `
+    <div class="toast-icon">${isHoje ? '⚠️' : '📅'}</div>
+    <div class="toast-body">
+      <div class="toast-title">${isHoje ? 'PRAZO VENCE HOJE' : 'Prazo vence amanhã'}</div>
+      <div class="toast-sub"><strong>${alerta.cliente}</strong></div>
+      <div class="toast-sub">${alerta.compromisso}</div>
+    </div>
+    <button class="toast-close" onclick="document.getElementById('${id}').remove()">✕</button>
+  `;
+  document.getElementById('toast-container').prepend(div);
+  setTimeout(() => { if (document.getElementById(id)) document.getElementById(id).remove(); }, 12000);
+}
+
+function toggleAlertaPanel() {
+  document.getElementById('alerta-panel').classList.toggle('open');
+}
+
+document.addEventListener('click', e => {
+  const panel = document.getElementById('alerta-panel');
+  const btn   = document.getElementById('notif-btn');
+  if (!panel.contains(e.target) && !btn.contains(e.target)) {
+    panel.classList.remove('open');
+  }
+});
+
+function renderAlertasPanel(alertas) {
+  const list = document.getElementById('alerta-list');
+  const badge = document.getElementById('notif-badge');
+  if (!alertas.length) {
+    list.innerHTML = '<div class="alerta-empty">✓ Nenhum prazo urgente.</div>';
+    badge.style.display = 'none';
+    return;
+  }
+  badge.textContent = alertas.length;
+  badge.style.display = 'flex';
+  list.innerHTML = alertas.map(a => `
+    <div class="alerta-item">
+      <div class="alerta-dot ${a.tipo}"></div>
+      <div class="alerta-item-body">
+        <p><strong>${a.cliente}</strong></p>
+        <p>${a.compromisso}</p>
+        <small>${a.tipo === 'hoje' ? '⚠️ Vence hoje' : '📅 Vence amanhã'} — ${fmtData(a.data)}</small>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function solicitarNotificacao() {
+  if ('Notification' in window && Notification.permission === 'default') {
+    await Notification.requestPermission();
+  }
+}
+
+function dispararNotificacaoSistema(alerta) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    const titulo = alerta.tipo === 'hoje' ? '⚠️ Prazo vence HOJE!' : '📅 Prazo vence amanhã';
+    new Notification(titulo, {
+      body: `${alerta.cliente} — ${alerta.compromisso}`,
+      icon: '/static/img/logo_symbol.png',
+    });
+  }
+}
+
+// Carrega alertas ao abrir e exibe toasts
+async function verificarAlertasIniciais() {
+  const alertas = await fetch('/api/alertas/pendentes').then(r => r.json());
+  alertasAtuais = alertas;
+  renderAlertasPanel(alertas);
+  alertas.forEach(a => {
+    showToast(a);
+    dispararNotificacaoSistema(a);
+  });
+}
+
+// SSE: alertas em tempo real
+function conectarSSE() {
+  const es = new EventSource('/api/alertas/stream');
+  es.onmessage = e => {
+    const msg = JSON.parse(e.data);
+    if (msg.ping) return;
+    alertasAtuais.push(msg);
+    renderAlertasPanel(alertasAtuais);
+    showToast(msg);
+    dispararNotificacaoSistema(msg);
+    carregarTodos();
+  };
+  es.onerror = () => setTimeout(conectarSSE, 5000);
+}
+
+// ── Sincronização de E-mail ──────────────────────────────────────────
+async function sincronizarEmail() {
+  const btn = document.getElementById('btn-sync');
+  btn.classList.add('syncing');
+  document.getElementById('sync-icon').textContent = '🔄';
+  document.getElementById('sync-bar').style.display = 'block';
+  document.getElementById('sync-bar-msg').textContent = 'Sincronizando e-mails de tribunais...';
+
+  try {
+    const res = await fetch('/api/email/sync', {method:'POST'});
+    const data = await res.json();
+    if (!data.ok) {
+      document.getElementById('sync-bar-msg').textContent = '⚠️ ' + data.msg;
+      document.getElementById('sync-bar').style.backgroundImage = 'none';
+      document.getElementById('sync-bar').style.background = 'rgba(192,57,43,.1)';
+      setTimeout(() => { document.getElementById('sync-bar').style.display='none'; }, 5000);
+      return;
+    }
+    // Aguarda conclusão
+    await _aguardarSync();
+  } catch(e) {
+    document.getElementById('sync-bar-msg').textContent = '✗ Erro ao conectar ao servidor.';
+  } finally {
+    btn.classList.remove('syncing');
+    document.getElementById('sync-icon').textContent = '📧';
+  }
+}
+
+async function _aguardarSync() {
+  for (let i = 0; i < 120; i++) {
+    await new Promise(r => setTimeout(r, 2000));
+    const st = await fetch('/api/email/status').then(r => r.json());
+    if (!st.rodando) {
+      const res = st.resultado || {};
+      document.getElementById('sync-bar-msg').textContent =
+        `✓ ${res.msg || 'Sincronização concluída.'}`;
+      if (st.ultimo) {
+        document.getElementById('sync-bar-ultimo').textContent = `Última sync: ${st.ultimo}`;
+      }
+      setTimeout(() => { document.getElementById('sync-bar').style.display='none'; }, 6000);
+      if (res.novos > 0) carregarTodos();
+      return;
+    }
+    const dots = '.'.repeat((i % 3) + 1);
+    document.getElementById('sync-bar-msg').textContent = `Sincronizando e-mails${dots}`;
+  }
+}
+
+async function verificarStatusEmail() {
+  try {
+    const st = await fetch('/api/email/status').then(r => r.json());
+    if (st.configurado && st.ultimo) {
+      document.getElementById('sync-bar-ultimo').textContent = `Última sync: ${st.ultimo}`;
+    }
+    if (!st.configurado) {
+      document.getElementById('btn-sync').title =
+        'E-mail não configurado. Execute: python configurar_email.py';
+    }
+  } catch(e) {}
+}
+
+// ── Init ─────────────────────────────────────────────────────────────
+(async function init() {
+  await solicitarNotificacao();
+  await carregarTodos();
+  await verificarAlertasIniciais();
+  await verificarStatusEmail();
+  conectarSSE();
+  setInterval(carregarTodos, 300_000);
+})();
+</script>
+</body>
+</html>

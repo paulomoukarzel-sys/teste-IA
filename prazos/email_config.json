@@ -1,0 +1,8 @@
+{
+  "email": "paulomoukarzel@hotmail.com",
+  "senha": "euozvffcmursqofq",
+  "imap_server": "outlook.office365.com",
+  "imap_port": 993,
+  "intervalo_minutos": 30,
+  "apenas_nao_lidos": true
+}

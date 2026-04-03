@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>Story Instagram — Gastão da Rosa & Moukarzel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    background: #0a1525;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .story {
+    width: 1080px;
+    height: 1920px;
+    position: relative;
+    background: #0a1525;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Background texture */
+  .story::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 900px 600px at 50% 0%, rgba(184,148,95,0.10) 0%, transparent 70%),
+      radial-gradient(ellipse 600px 400px at 50% 100%, rgba(184,148,95,0.07) 0%, transparent 70%);
+    z-index: 0;
+  }
+
+  /* Thin gold border frame */
+  .frame {
+    position: absolute;
+    inset: 36px;
+    border: 1px solid rgba(184,148,95,0.3);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .frame::before {
+    content: '';
+    position: absolute;
+    inset: 8px;
+    border: 1px solid rgba(184,148,95,0.12);
+  }
+
+  /* Corner ornaments */
+  .corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+  }
+  .corner--tl { top: 28px; left: 28px; border-top: 2px solid #b8945f; border-left: 2px solid #b8945f; }
+  .corner--tr { top: 28px; right: 28px; border-top: 2px solid #b8945f; border-right: 2px solid #b8945f; }
+  .corner--bl { bottom: 28px; left: 28px; border-bottom: 2px solid #b8945f; border-left: 2px solid #b8945f; }
+  .corner--br { bottom: 28px; right: 28px; border-bottom: 2px solid #b8945f; border-right: 2px solid #b8945f; }
+
+  /* Content */
+  .content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 80px 60px;
+  }
+
+  /* Top — logo */
+  .top-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #bf953f, #dcc37a, #b38728, #d4b872, #aa771c);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+  }
+
+  .logo-sub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(184,148,95,0.75);
+    text-align: center;
+    margin-top: 6px;
+  }
+
+  .gold-rule {
+    width: 320px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b8945f, transparent);
+  }
+
+  /* Announcement */
+  .announce-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #b8945f;
+    margin-bottom: 24px;
+  }
+
+  .announce-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 92px;
+    font-weight: 300;
+    line-height: 1.0;
+    color: #f0e8da;
+    text-align: center;
+    letter-spacing: -1px;
+  }
+
+  .announce-title em {
+    font-style: italic;
+    color: #b8945f;
+  }
+
+  .announce-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(240,232,218,0.6);
+    text-align: center;
+    margin-top: 12px;
+    letter-spacing: 1px;
+  }
+
+  /* Photos section */
+  .photos-section {
+    display: flex;
+    gap: 64px;
+    align-items: flex-end;
+  }
+
+  .member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .photo-ring {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px solid rgba(184,148,95,0.5);
+    padding: 6px;
+    position: relative;
+  }
+
+  .photo-ring::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,148,95,0.2);
+  }
+
+  .photo-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(15%) contrast(1.05);
+  }
+
+  .member-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #f0e8da;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .member-oab {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: #b8945f;
+    text-align: center;
+    margin-top: -12px;
+  }
+
+  /* Divider between photos */
+  .photos-divider {
+    width: 1px;
+    height: 200px;
+    background: linear-gradient(180deg, transparent, rgba(184,148,95,0.4), transparent);
+    align-self: center;
+  }
+
+  /* URL / CTA section */
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .cta-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(184,148,95,0.7);
+    margin-bottom: 20px;
+  }
+
+  .cta-url {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-align: center;
+    background: linear-gradient(90deg,
+      #b8945f 0%,
+      #b8945f 22%,
+      #f0e8da 34%,
+      #f0e8da 66%,
+      #b8945f 78%,
+      #b8945f 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Bottom tagline */
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .bottom-rule-full {
+    width: 600px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b8945f 30%, #b8945f 70%, transparent);
+  }
+
+  .bottom-corners {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 0;
+  }
+
+  .bc {
+    width: 32px;
+    height: 32px;
+  }
+
+  .bc--l {
+    border-bottom: 2px solid #b8945f;
+    border-left: 2px solid #b8945f;
+  }
+
+  .bc--r {
+    border-bottom: 2px solid #b8945f;
+    border-right: 2px solid #b8945f;
+  }
+</style>
+</head>
+<body>
+<div class="story">
+
+  <!-- Background -->
+  <div class="frame"></div>
+  <div class="corner corner--tl"></div>
+  <div class="corner corner--tr"></div>
+  <div class="corner corner--bl"></div>
+  <div class="corner corner--br"></div>
+
+  <div class="content">
+
+    <!-- Logo -->
+    <div class="top-section">
+      <p class="logo-name">Gastão da Rosa &amp; Moukarzel</p>
+      <p class="logo-sub">Advogados Associados</p>
+    </div>
+
+    <div class="gold-rule"></div>
+
+    <!-- Title -->
+    <h1 class="announce-title">Novo<br><em>Site</em><br>no Ar</h1>
+    <p class="announce-subtitle">Conheça nossa história e atuação</p>
+
+    <!-- Photos -->
+    <div class="photos-section">
+      <div class="member">
+        <div class="photo-ring">
+          <img src="assets/img/bruno_inicial.jpeg" alt="Bruno Gastão da Rosa">
+        </div>
+        <p class="member-name">Bruno Gastão da Rosa</p>
+        <p class="member-oab">Sócio-Fundador — OAB/SC 47.774</p>
+      </div>
+
+      <div class="photos-divider"></div>
+
+      <div class="member">
+        <div class="photo-ring">
+          <img src="assets/img/paulo_inicial.png" alt="Paulo Ekke Moukarzel Jr.">
+        </div>
+        <p class="member-name">Paulo Ekke Moukarzel Jr.</p>
+        <p class="member-oab">Sócio-Fundador — OAB/SC 36.591</p>
+      </div>
+    </div>
+
+    <!-- URL -->
+    <div class="cta-section">
+      <span class="cta-label">Acesse agora</span>
+      <p class="cta-url">gastaoemoukarzel.adv.br</p>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <div class="bottom-rule-full"></div>
+      <div class="bottom-corners">
+        <div class="bc bc--l"></div>
+        <div class="bc bc--r"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

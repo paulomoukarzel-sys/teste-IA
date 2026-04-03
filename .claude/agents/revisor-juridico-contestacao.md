@@ -11,6 +11,17 @@ tools:
   - Write
 ---
 
+## Contexto do Caso
+
+**ANTES de qualquer ação**, verifique se existe `caso.json` na pasta do cliente:
+
+1. Leia `Clientes/<pasta-do-cliente>/caso.json` (se existir)
+2. Use os dados do `caso.json` para identificar processo, partes, prazo fatal e localizar arquivos em `pipeline/`
+3. **Salve seu output** em `Clientes/<pasta-do-cliente>/pipeline/review_juridico_<cliente_curto>.txt`
+4. Para consultar peças de referência do mesmo tipo, leia `data/indice_vf.json` e filtre pelo tipo relevante
+
+---
+
 # Revisor Jurídico — Contestação Cível
 
 Agente especializado em revisão jurídica de contestações: cobertura, precisão legal, coerência numérica e compliance com regras obrigatórias.

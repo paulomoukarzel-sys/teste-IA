@@ -89,6 +89,50 @@ pip install -r .claude/skills/paulo-estilo-juridico/scripts/requirements.txt
 - **Client folders**: Documents organized by client name in UPPERCASE with underscores (e.g., `JOAO_DA_SILVA/output_claude/`)
 - **No tempestividade**: Never include "tempestividade" boilerplate in any legal document
 - **Skill activation**: Use `/doit_like_me` or any trigger keyword listed in SKILL.md frontmatter to activate the legal writing skill
+
+## Workflow de Casos (Novo)
+
+### Comandos de Gestão
+- `/novo-caso` — cria caso.json + estrutura de pastas para um novo cliente
+- `/caso listar` — painel de todos os casos ativos com prazo e etapa
+- `/caso prazos` — casos ordenados por urgência
+- `/caso status <cliente>` — status detalhado de um caso específico
+- `/caso contestacao <cliente>` — dispara pipeline completo de contestação
+- `/caso recurso <cliente>` — dispara pipeline de recursos (REsp/RE)
+- `/caso placeholders` — lista placeholders não resolvidos em todas as peças
+- `/caso indexar` — atualiza índice de arquivos _vf
+
+### Estrutura de Pastas por Cliente
+```
+Clientes/<NOME_CLIENTE>/
+  caso.json              ← fonte única de verdade do caso
+  pipeline/              ← arquivos intermediários (análise, rascunhos, revisões)
+  output_claude/         ← .docx finais gerados
+```
+
+### Arquivos de Infraestrutura
+- `data/indice_vf.json` — índice de 668 arquivos _vf por tipo de peça
+- `data/placeholders.json` — placeholders pendentes por caso
+- Scripts: `indexar_vf.py`, `placeholder_scan.py` em `.claude/skills/paulo-estilo-juridico/scripts/`
+
+### Pipeline de Contestação (Automatizado)
+O agente `orquestrador-contestacao` executa todo o pipeline automaticamente:
+1. (Paralelo) Analista Jurídico + Pesquisador do Magistrado
+2. Redator Principal
+3. (Paralelo) Revisor Jurídico + Revisor Linguístico
+4. Auditor Final
+5. Gerador .docx
+
+Use `/caso contestacao <cliente>` para disparar ou chame o agente `orquestrador-contestacao` diretamente.
+
+## Scripts Utilitários
+
+| Script | Função | Executar com |
+|---|---|---|
+| `gerar_peticao.py` | Gera .docx formatado | `python ... --titulo ... --cliente ...` |
+| `indexar_vf.py` | Indexa 668+ arquivos _vf | `python .claude/skills/.../indexar_vf.py` |
+| `placeholder_scan.py` | Lista placeholders pendentes | `python .claude/skills/.../placeholder_scan.py` |
+
 ### Regras caso-específicas (aplicar quando o caso envolver esses temas)
 
 - **Verificar cronologia contra cautelar antecedente** — Antes de usar BO, reclamação extrajudicial ou qualquer ato pré-judicial como prova principal de boa-fé, verificar a data desse ato em relação a TODOS os atos judiciais — inclusive a cautelar antecedente (art. 308 CPC), que costuma ser anterior à petição principal. Um BO registrado após a cautelar antecedente serve apenas como prova corroborativa, não como prova principal.

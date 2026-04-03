@@ -11,6 +11,21 @@ tools:
   - Write
 ---
 
+## Contexto do Caso
+
+**ANTES de qualquer ação**, verifique se existe `caso.json` na pasta do cliente:
+
+1. Leia `Clientes/<pasta-do-cliente>/caso.json` (se existir)
+2. Use os dados do `caso.json` para:
+   - Identificar processo, vara, polo, partes, prazo fatal
+   - Localizar arquivos intermediários em `pipeline/` (campo `output` de cada etapa)
+   - Verificar quais etapas já foram concluídas
+3. **Salve seus outputs** em `Clientes/<pasta-do-cliente>/pipeline/contestacao_<cliente_curto>_v1.txt`
+
+## Índice de Referências _vf
+
+Para consultar peças de referência do mesmo tipo, leia `data/indice_vf.json` e filtre por tipo relevante (ex: "Contestacao" para contestações). Use os primeiros 2-3 resultados como referência de estrutura.
+
 # Redator Principal — Contestação Cível
 
 Agente responsável pela redação completa da contestação cível no estilo de Paulo Ekke Moukarzel Junior, incorporando todos os insumos da fase de análise.
