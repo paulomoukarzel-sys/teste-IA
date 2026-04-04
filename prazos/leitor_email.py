@@ -406,28 +406,72 @@ def _limpar_corpo(corpo):
     texto = re.sub(r'[ \t]{2,}', ' ', texto)
     return texto.strip()
 
+_CORTA_PARTE = re.compile(
+    r'\s+(?:advogado[s]?|adv\.|oab|login|\(sc\d*|\bsc\d{4,6}\b|x\s+execut|\d{7}-\d{2})',
+    re.IGNORECASE
+)
+
+def _limpar_nome_parte(nome):
+    corte = _CORTA_PARTE.search(nome)
+    if corte:
+        nome = nome[:corte.start()]
+    return nome.strip()[:70]
+
 def _extrair_partes(corpo):
-    """Tenta extrair polo ativo e passivo da intimação, sem advogados."""
-    padroes = [
-        r'(?:autor[a]?|requerente|reclamante|impetrante|exequente|agravante|apelante)\s*[:\-]?\s+([A-ZÀ-Ú][A-ZÀ-Úa-zà-ú\s]{4,60})',
-        r'(?:réu|ré|requerido[a]?|reclamado[a]?|impetrado[a]?|executado[a]?|agravado[a]?|apelado[a]?)\s*[:\-]?\s+([A-ZÀ-Ú][A-ZÀ-Úa-zà-ú\s]{4,60})',
-    ]
-    partes = []
-    _CORTA_PARTE = re.compile(
-        r'\s+(?:advogado[s]?|adv\.|oab|login|sc\d{4}|\(sc|x\s+execut|\d{7}-\d{2})',
+    """
+    Extrai os dois polos com seus papéis rotulados.
+    Retorna dict com 'ativo' e 'passivo'.
+    """
+    polo_ativo = re.compile(
+        r'(?:autor[a]?|requerente|reclamante|impetrante|exequente|agravante|apelante)\s*[:\-]?\s+([A-ZÀ-Ú][A-ZÀ-Úa-zà-ú\s]{4,70})',
         re.IGNORECASE
     )
-    for pat in padroes:
-        m = re.search(pat, corpo, re.IGNORECASE)
-        if m:
-            nome = m.group(1).strip()
-            # Remove tudo a partir de "Advogado(s)", OAB, parênteses de código
-            corte = _CORTA_PARTE.search(nome)
-            if corte:
-                nome = nome[:corte.start()].strip()
-            if len(nome) > 3:
-                partes.append(nome[:60])
-    return partes
+    polo_passivo = re.compile(
+        r'(?:r[eé]u|r[eé]|requerido[a]?|reclamado[a]?|impetrado[a]?|executado[a]?|agravado[a]?|apelado[a]?)\s*[:\-]?\s+([A-ZÀ-Ú][A-ZÀ-Úa-zà-ú\s]{4,70})',
+        re.IGNORECASE
+    )
+    resultado = {}
+    m = polo_ativo.search(corpo)
+    if m:
+        nome = _limpar_nome_parte(m.group(1))
+        if len(nome) > 3:
+            resultado['ativo'] = nome
+    m = polo_passivo.search(corpo)
+    if m:
+        nome = _limpar_nome_parte(m.group(1))
+        if len(nome) > 3:
+            resultado['passivo'] = nome
+    return resultado
+
+def _parte_contraria(partes_dict, cliente):
+    """
+    Dado o dict com polo ativo/passivo e o nome do cliente,
+    retorna apenas a parte contrária (quem NÃO é o cliente).
+    Se não souber quem é o cliente, retorna ambos separados por ×.
+    """
+    ativo   = partes_dict.get('ativo', '')
+    passivo = partes_dict.get('passivo', '')
+
+    # Cliente desconhecido — retorna os dois separados
+    if not cliente or cliente.lower().startswith('processo') or cliente.lower().startswith('cliente'):
+        partes = [p for p in [ativo, passivo] if p]
+        return ' × '.join(partes)
+
+    # Verifica se algum polo bate com o nome do cliente (fuzzy: palavras em comum)
+    def _bate(nome_a, nome_b):
+        a = set(nome_a.lower().split())
+        b = set(nome_b.lower().split())
+        comuns = a & b - {'de','da','do','dos','das','e','a','o'}
+        return len(comuns) >= 2
+
+    if ativo and _bate(ativo, cliente):
+        return passivo  # cliente é o polo ativo, retorna passivo
+    if passivo and _bate(passivo, cliente):
+        return ativo    # cliente é o polo passivo, retorna ativo
+
+    # Não conseguiu identificar — retorna os dois
+    partes = [p for p in [ativo, passivo] if p]
+    return ' × '.join(partes)
 
 def _extrair_data_publicacao(corpo):
     """Extrai data de publicação/disponibilização do corpo."""
@@ -729,10 +773,10 @@ def processar_email(msg):
             tipo_ato_raw = kw
             break
 
-    compromisso = construir_compromisso(tipo_ato_raw, texto_lower)
-    resumo      = construir_resumo(tribunal, assunto, corpo, processo, data_email)
-    partes_list = _extrair_partes(corpo)
-    partes      = " × ".join(partes_list) if partes_list else ""
+    compromisso  = construir_compromisso(tipo_ato_raw, texto_lower)
+    resumo       = construir_resumo(tribunal, assunto, corpo, processo, data_email)
+    partes_dict  = _extrair_partes(corpo)
+    partes       = _parte_contraria(partes_dict, cliente)
 
     return {
         "msg_id":     msg_id,
