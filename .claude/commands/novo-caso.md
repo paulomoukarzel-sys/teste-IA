@@ -106,7 +106,14 @@ Crie o arquivo `Clientes/<NOME_PASTA>/caso.json` com o seguinte conteúdo, subst
     }
   },
   "placeholders": [],
-  "vf_referencia": []
+  "vf_referencia": [],
+  "status": "ativo",
+  "tipo_acao": null,
+  "prazos": [],
+  "comunicacoes": [],
+  "audiencias": [],
+  "decisao_recorrida": null,
+  "viabilidade": null
 }
 ```
 

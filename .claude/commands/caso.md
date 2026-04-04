@@ -15,6 +15,8 @@ Exemplos:
 - `recurso Márcio Klaus` → sub-comando `recurso`, cliente `Márcio Klaus`
 - `placeholders` → sub-comando `placeholders`, sem parâmetros
 - `indexar` → sub-comando `indexar`, sem parâmetros
+- `agravo Le Motos` → sub-comando `agravo`, cliente `Le Motos`
+- `audiencia Márcio Klaus` → sub-comando `audiencia`, cliente `Márcio Klaus`
 
 Se nenhum sub-comando reconhecido for passado, exiba o menu de ajuda (seção final deste arquivo).
 
@@ -284,6 +286,173 @@ Destacar visualmente as linhas VENCIDO e URGENTE com prefixo entre colchetes.
 
 ---
 
+
+## SUB-COMANDO: `embargos`
+
+**Propósito:** Disparar o pipeline de agentes para elaboração de Embargos de Declaração.
+
+**Parâmetro:** nome parcial do cliente.
+
+**Execução:**
+
+1. Localize a pasta do cliente em `Clientes/` (busca parcial, case-insensitive) e leia o `caso.json`.
+
+2. Verifique se existe uma decisão para embargar:
+   - Campo `decisao_recorrida` no caso.json
+   - Ou flag `--decisao <path>` nos argumentos
+   - Se nenhuma encontrada, perguntar ao usuário o caminho da decisão
+
+3. Verifique se o agente `orquestrador-embargos` existe em `.claude/agents/orquestrador-embargos.md`.
+
+4. Parse flags adicionais:
+   - `--decisao <path>`: caminho da decisão judicial a embargar
+   - `--prequestionamento`: forçar inclusão de prequestionamento nos embargos
+
+5. Se tudo estiver em ordem, invoque o agente `orquestrador-embargos` via Agent tool, passando:
+   - Conteúdo completo do caso.json
+   - Caminho da pasta do cliente
+   - Caminho da decisão a embargar
+   - Flag de prequestionamento (se presente)
+
+6. Exiba ao usuário:
+   ```
+   Iniciando pipeline de Embargos de Declaração para [cliente].
+   Caso: [processo]
+   Decisão: [path da decisão]
+   Prequestionamento: [sim/não]
+   
+   O orquestrador-embargos foi ativado.
+   ```
+
+---
+
+## SUB-COMANDO: `relatorio`
+
+**Propósito:** Gerar relatório de andamento para envio ao cliente.
+
+**Parâmetro:** nome parcial do cliente.
+
+**Execução:**
+
+1. Localize a pasta do cliente e leia o caso.json.
+
+2. Invoque o agente `comunicador-cliente` via Agent tool com modo "relatorio", passando:
+   - Conteúdo completo do caso.json
+   - Caminho da pasta do cliente
+   - Instrução: "Gere relatório de andamento (técnico + cliente)"
+
+3. Após o agente concluir, exiba o resumo-cliente ao usuário.
+
+4. GATE HUMANO: Pergunte ao usuário se o texto está aprovado para envio ao cliente.
+   ```
+   O relatório foi gerado. Textos salvos em:
+   - Técnico: Clientes/<PASTA>/comunicacoes/relatorio_tecnico_YYYYMMDD.txt
+   - Cliente: Clientes/<PASTA>/comunicacoes/relatorio_cliente_YYYYMMDD.txt
+   
+   Deseja visualizar o texto do cliente antes de aprovar? (s/n)
+   ```
+
+---
+
+## SUB-COMANDO: `explicar`
+
+**Propósito:** Explicar uma decisão judicial em linguagem acessível para o cliente.
+
+**Parâmetro:** nome parcial do cliente + texto ou path da decisão.
+
+**Execução:**
+
+1. Localize a pasta do cliente e leia o caso.json.
+
+2. Identifique o texto a explicar:
+   - Se argumento contém caminho de arquivo: ler o arquivo
+   - Se argumento contém texto direto: usar como input
+   - Se só o nome do cliente: verificar campo `decisao_recorrida` no caso.json
+
+3. Invoque o agente `comunicador-cliente` via Agent tool com modo "explicar", passando:
+   - Conteúdo do caso.json
+   - Texto da decisão
+   - Instrução: "Explique esta decisão em linguagem acessível para o cliente"
+
+4. GATE HUMANO: Exibir texto gerado e pedir aprovação antes de considerar pronto para envio.
+
+---
+
+## SUB-COMANDO: `agravo`
+
+**Propósito:** Disparar o pipeline de agentes para elaboração de Agravo de Instrumento.
+
+**Parâmetro:** nome parcial do cliente.
+
+**Execução:**
+
+1. Localize a pasta do cliente em `Clientes/` (busca parcial, case-insensitive) e leia o `caso.json`.
+
+2. Verifique se existe uma decisão interlocutória para agravar:
+   - Campo `decisao_recorrida` no caso.json
+   - Ou flag `--decisao <path>` nos argumentos
+   - Se nenhuma encontrada, perguntar ao usuário
+
+3. Verifique se o agente `orquestrador-agravo` existe em `.claude/agents/orquestrador-agravo.md`.
+
+4. Se tudo estiver em ordem, invoque o agente `orquestrador-agravo` via Agent tool, passando:
+   - Conteúdo completo do caso.json
+   - Caminho da pasta do cliente
+   - Caminho da decisão interlocutória
+   - Instrução: "Elabore o Agravo de Instrumento para este caso."
+
+5. Exiba ao usuário:
+   ```
+   Iniciando pipeline de Agravo de Instrumento para [cliente].
+   Caso: [processo]
+   Decisão interlocutória: [path]
+   
+   O orquestrador-agravo foi ativado.
+   ```
+
+---
+
+## SUB-COMANDO: `audiencia`
+
+**Propósito:** Gerar briefing estratégico para preparação de audiência.
+
+**Parâmetro:** nome parcial do cliente + tipo de audiência (instrução/conciliação/julgamento).
+
+**Execução:**
+
+1. Localize a pasta do cliente e leia o caso.json.
+
+2. Identifique o tipo de audiência nos argumentos. Se não especificado, perguntar.
+
+3. Pipeline leve embutido (sem orquestrador separado):
+
+   a. Invocar Agent `analista-juridico-contestacao` [REUTILIZADO] para resumo do caso:
+      ```
+      Resuma o caso para preparação de audiência de [tipo].
+      Foque em: fatos relevantes, provas disponíveis, teses.
+      ```
+
+   b. Em PARALELO, invocar Agent `estrategista-audiencia` para estratégia:
+      ```
+      Prepare briefing estratégico para audiência de [tipo].
+      Caso: [caso.json]
+      Pasta: Clientes/<PASTA>/
+      
+      Gere: roteiro de perguntas, argumentos orais, pontos de atenção, riscos.
+      Salve em: Clientes/<PASTA>/audiencias/briefing_<tipo>_YYYYMMDD.txt
+      ```
+
+   c. Consolidar briefing
+
+   d. Gerar .docx via:
+      ```bash
+      python .claude/skills/paulo-estilo-juridico/scripts/gerar_peticao.py         --titulo "BRIEFING_AUDIENCIA" --cliente "[cliente]"         --conteudo "Clientes/<PASTA>/audiencias/briefing_<tipo>_YYYYMMDD.txt"         --cidade "Florianopolis" --advogado "Paulo Ekke Moukarzel Junior" --oab "36.591"
+      ```
+
+4. Exibir resultado ao usuário.
+
+---
+
 ## Menu de ajuda (sub-comando não reconhecido ou sem argumentos)
 
 Se os `$ARGUMENTS` estiverem vazios ou contiverem um sub-comando não reconhecido, exiba:
@@ -303,6 +472,11 @@ Sub-comandos disponíveis:
   prazos                  Casos ordenados por urgência do prazo
   contestacao <cliente>   Dispara o pipeline de contestação
   recurso <cliente>       Dispara o pipeline de recursos (REsp/RE/apelação)
+  agravo <cliente>        Dispara o pipeline de Agravo de Instrumento
+  audiencia <cliente>     Gera briefing estratégico para audiência
+  embargos <cliente>      Dispara o pipeline de Embargos de Declaração
+  relatorio <cliente>     Gera relatório de andamento para o cliente
+  explicar <cliente>      Explica decisão judicial em linguagem acessível
   placeholders            Lista todos [PLACEHOLDERS] não resolvidos
   indexar                 Reindexar peças _vf (atualiza data/indice_vf.json)
 
@@ -313,6 +487,11 @@ Exemplos:
   /caso prazos
   /caso contestacao Le Motos
   /caso recurso Márcio Klaus
+  /caso agravo Le Motos
+  /caso audiencia Márcio Klaus instrucao
+  /caso embargos Le Motos
+  /caso relatorio Márcio Klaus
+  /caso explicar Le Motos
   /caso placeholders
   /caso indexar
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

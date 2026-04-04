@@ -226,9 +226,37 @@ Após concluir:
 
 ---
 
+### ETAPA 4.5 — VERIFICAÇÃO DE JURISPRUDÊNCIA
+
+Aguardar Etapa 4. Antes de gerar o .docx, verificar todas as citações de jurisprudência:
+
+1. Executar via Bash:
+   ```bash
+   python .claude/skills/verificador-jurisprudencia/scripts/extrair_citacoes.py "Clientes/<NOME_PASTA>/pipeline/contestacao_<prefixo>_final.txt" --output "Clientes/<NOME_PASTA>/pipeline/citacoes_<prefixo>.json"
+   ```
+
+2. Ler o JSON de citações gerado
+
+3. Para CADA citação com status "pendente":
+   - Invocar Agent `pesquisador-jurisprudencial` com a citação como query de verificação
+   - Atualizar status para "confirmada", "nao_encontrada" ou "divergente"
+
+4. Se QUALQUER citação não confirmada:
+   - Marcar no texto final com [VERIFICAR — citação não confirmada: <motivo>]
+   - PARAR pipeline e reportar ao Dr. Paulo com lista das citações problemáticas
+   - NÃO prosseguir para ETAPA 5 até resolução manual
+
+5. Se TODAS confirmadas: prosseguir normalmente
+
+6. Salvar relatório: `Clientes/<NOME_PASTA>/pipeline/verificacao_jurisp_<prefixo>.txt`
+
+7. Atualizar caso.json: adicionar etapa `verificacao_jurisp` com status "concluido" e output com caminho do relatório
+
+---
+
 ### ETAPA 5 — SEQUENCIAL: Geração do .docx
 
-Aguardar Etapa 4. Então lançar:
+Aguardar Etapa 4.5. Então lançar:
 
 **Agente: `gerador-docx`**
 
@@ -264,15 +292,16 @@ CONTESTAÇÃO CONCLUÍDA — [CLIENTE]
 Processo nº [número]
 
 STATUS DO PIPELINE:
-| Etapa                   | Status    | Arquivo de saída                          |
-|-------------------------|-----------|-------------------------------------------|
-| Análise jurídica        | CONCLUÍDO | pipeline/analysis_<prefixo>.txt           |
-| Pesquisa do magistrado  | CONCLUÍDO | pipeline/perfil_magistrado_<prefixo>.txt  |
-| Redação (v1)            | CONCLUÍDO | pipeline/contestacao_<prefixo>_v1.txt     |
-| Revisão jurídica        | CONCLUÍDO | pipeline/review_juridico_<prefixo>.txt    |
-| Revisão linguística     | CONCLUÍDO | pipeline/review_linguistico_<prefixo>.txt |
-| Auditoria final         | CONCLUÍDO | pipeline/contestacao_<prefixo>_final.txt  |
-| Geração .docx           | CONCLUÍDO | output_claude/<nome>.docx                 |
+| Etapa                       | Status    | Arquivo de saída                                |
+|-----------------------------|-----------|--------------------------------------------------|
+| Análise jurídica            | CONCLUÍDO | pipeline/analysis_<prefixo>.txt                  |
+| Pesquisa do magistrado      | CONCLUÍDO | pipeline/perfil_magistrado_<prefixo>.txt         |
+| Redação (v1)                | CONCLUÍDO | pipeline/contestacao_<prefixo>_v1.txt            |
+| Revisão jurídica            | CONCLUÍDO | pipeline/review_juridico_<prefixo>.txt           |
+| Revisão linguística         | CONCLUÍDO | pipeline/review_linguistico_<prefixo>.txt        |
+| Auditoria final             | CONCLUÍDO | pipeline/contestacao_<prefixo>_final.txt         |
+| Verificação jurisprudência  | CONCLUÍDO | pipeline/verificacao_jurisp_<prefixo>.txt        |
+| Geração .docx               | CONCLUÍDO | output_claude/<nome>.docx                        |
 
 ARQUIVO FINAL:
 Clientes/<NOME_PASTA>/output_claude/<TIPO>_<CLIENTE>_<DATA>.docx
@@ -299,6 +328,7 @@ PRAZO FATAL: [prazo_fatal do caso.json] ([prazo_tipo])
 6. **Prefixo de arquivos**: Usar sempre o `cliente_curto` normalizado (minúsculas, underscores) como prefixo dos nomes de arquivo no `pipeline/`.
 7. **Contradições entre revisores**: Em caso de contradição, aplicar a correção mais conservadora e alertar o Dr. Paulo no relatório final.
 8. **Placeholders**: Ao ler o arquivo `contestacao_<prefixo>_final.txt`, escanear e listar todos os padrões `[TEXTO EM MAIÚSCULAS]` ou `[VERIFICAR]` como placeholders pendentes no relatório final.
+9. **Verificação de jurisprudência obrigatória**: A Etapa 4.5 (verificação de jurisprudência) é OBRIGATÓRIA antes da geração do .docx. Nenhuma peça pode ser gerada em .docx sem que todas as citações de jurisprudência estejam confirmadas ou sinalizadas para revisão manual.
 
 ---
 
@@ -330,6 +360,8 @@ PRAZO FATAL: [prazo_fatal do caso.json] ([prazo_tipo])
 9. Aguardar ambos → verificar veredictos → atualizar caso.json
 10. Etapa 4 — lançar: `auditor-final-contestacao`
 11. Aguardar → atualizar caso.json
-12. Etapa 5 — lançar: `gerador-docx`
-13. Aguardar → atualizar caso.json
-14. Exibir relatório final com caminho do .docx e placeholders pendentes
+12. Etapa 4.5 — executar verificação de jurisprudência via `extrair_citacoes.py` + `pesquisador-jurisprudencial`
+13. Aguardar → se citações não confirmadas, PARAR e reportar; senão atualizar caso.json
+14. Etapa 5 — lançar: `gerador-docx`
+15. Aguardar → atualizar caso.json
+16. Exibir relatório final com caminho do .docx e placeholders pendentes

@@ -99,8 +99,19 @@ pip install -r .claude/skills/paulo-estilo-juridico/scripts/requirements.txt
 - `/caso status <cliente>` — status detalhado de um caso específico
 - `/caso contestacao <cliente>` — dispara pipeline completo de contestação
 - `/caso recurso <cliente>` — dispara pipeline de recursos (REsp/RE)
+- `/caso embargos <cliente>` — dispara pipeline de Embargos de Declaração (WF#3)
+- `/caso agravo <cliente>` — dispara pipeline de Agravo de Instrumento (WF#5)
+- `/caso audiencia <cliente> <tipo>` — gera briefing estratégico para audiência (WF#6)
+- `/caso relatorio <cliente>` — gera relatório de andamento para o cliente (WF#4)
+- `/caso explicar <cliente>` — explica decisão em linguagem acessível (WF#4)
 - `/caso placeholders` — lista placeholders não resolvidos em todas as peças
 - `/caso indexar` — atualiza índice de arquivos _vf
+- `/prazos [hoje|semana|criticos|todos]` — monitor de prazos processuais (WF#1)
+- `/pesquisa <tema> [--tribunal] [--caso]` — pesquisa jurisprudencial sob demanda (WF#2)
+- `/triagem <cliente>` — triagem de viabilidade para casos novos (WF#7)
+- `/legislacao [semana|impacto <caso>]` — monitoramento legislativo (WF#8)
+- `/parecer <tema> [--caso]` — pipeline de pareceres jurídicos internos (WF#9)
+- `/verificar-jurisp <arquivo>` — verificação de citações jurisprudenciais (WF#10)
 
 ### Estrutura de Pastas por Cliente
 ```
@@ -121,9 +132,74 @@ O agente `orquestrador-contestacao` executa todo o pipeline automaticamente:
 2. Redator Principal
 3. (Paralelo) Revisor Jurídico + Revisor Linguístico
 4. Auditor Final
+4.5. Verificação Jurisprudencial (WF#10)
 5. Gerador .docx
 
 Use `/caso contestacao <cliente>` para disparar ou chame o agente `orquestrador-contestacao` diretamente.
+
+### Pipeline de Embargos de Declaração (WF#3)
+
+```
+1. analista-vicios-decisorios (Opus) → vicios_decisorios.txt
+2. redator-embargos (Opus) → embargos_v1.txt
+3. revisor-estilo-juridico (Sonnet) [REUTILIZADO]
+4. auditor-final (Opus) [REUTILIZADO]
+4.5. Verificação Jurisprudencial (WF#10)
+5. GATE HUMANO
+6. gerador-docx (Sonnet) [REUTILIZADO]
+```
+
+Use `/caso embargos <cliente>` — flags: `--decisao <path>`, `--prequestionamento`
+
+### Pipeline de Agravo de Instrumento (WF#5)
+
+```
+1. (Paralelo) analista-decisao-interlocutoria (Opus) + pesquisador-jurisprudencial (Sonnet)
+2. redator-agravo (Opus)
+3. (Paralelo) revisor-estilo-juridico (Sonnet) + validação jurídica
+4. auditor-final (Opus) [REUTILIZADO]
+4.5. Verificação Jurisprudencial (WF#10)
+5. GATE HUMANO
+6. gerador-docx (Sonnet) [REUTILIZADO]
+```
+
+Use `/caso agravo <cliente>` — flag: `--decisao <path>`
+
+### Pipeline de Pareceres (WF#9)
+
+```
+1. analista-tematico (Opus) → pesquisa_tema.txt
+2. redator-parecer (Opus) → parecer_v1.txt
+3. revisor-estilo-juridico (Sonnet) [REUTILIZADO]
+4. auditor-final (Opus) [REUTILIZADO]
+5. gerador-docx (Sonnet) [REUTILIZADO]
+```
+
+Use `/parecer <tema> [--caso NOME]`
+
+### Novos Agentes (13 total)
+
+| Agente | Workflow | Model | Papel |
+|---|---|---|---|
+| `analista-vicios-decisorios` | WF#3 | Opus | Identifica vícios decisórios (art. 1.022 CPC) |
+| `redator-embargos` | WF#3 | Opus | Redige Embargos de Declaração |
+| `orquestrador-embargos` | WF#3 | Sonnet | Coordena pipeline de embargos |
+| `comunicador-cliente` | WF#4 | Sonnet | Relatórios e explicações para clientes leigos |
+| `analista-decisao-interlocutoria` | WF#5 | Opus | Analisa decisões interlocutórias para agravo |
+| `redator-agravo` | WF#5 | Opus | Redige Agravo de Instrumento |
+| `orquestrador-agravo` | WF#5 | Sonnet | Coordena pipeline de agravo |
+| `estrategista-audiencia` | WF#6 | Sonnet | Briefing estratégico para audiências |
+| `analista-viabilidade` | WF#7 | Opus | Analisa viabilidade de casos novos |
+| `parecerista` | WF#7 | Opus | Parecer formal de viabilidade |
+| `monitor-legislativo` | WF#8 | Sonnet | Monitora mudanças legislativas |
+| `analista-tematico` | WF#9 | Opus | Pesquisa jurídica aprofundada |
+| `redator-parecer` | WF#9 | Opus | Redige pareceres internos |
+
+### Nova Skill: verificador-jurisprudencia (WF#10)
+
+Verifica autenticidade de TODAS as citações de jurisprudência antes da geração .docx. Integrado em todos os pipelines (contestação, recursos, embargos, agravo, pareceres).
+
+Use `/verificar-jurisp <arquivo>` para verificação manual.
 
 ## Scripts Utilitários
 
@@ -132,6 +208,9 @@ Use `/caso contestacao <cliente>` para disparar ou chame o agente `orquestrador-
 | `gerar_peticao.py` | Gera .docx formatado | `python ... --titulo ... --cliente ...` |
 | `indexar_vf.py` | Indexa 668+ arquivos _vf | `python .claude/skills/.../indexar_vf.py` |
 | `placeholder_scan.py` | Lista placeholders pendentes | `python .claude/skills/.../placeholder_scan.py` |
+| `extrair_citacoes.py` | Extrai citações jurisprudenciais | `python .claude/skills/verificador-jurisprudencia/scripts/extrair_citacoes.py <arquivo>` |
+| `prazos_monitor.py` | Monitor de prazos processuais | `python .claude/skills/.../prazos_monitor.py [hoje\|semana\|criticos\|todos]` |
+| `legislacao_monitor.py` | Cruza legislação com casos | `python .claude/skills/.../legislacao_monitor.py --base .` |
 
 ### Regras caso-específicas (aplicar quando o caso envolver esses temas)
 

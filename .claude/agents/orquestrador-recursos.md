@@ -44,7 +44,12 @@ Etapa 2 (PARALELO, após redação):
 └── revisor-estilo-juridico → audita conformidade de estilo
 
 Etapa 3 (SEQUENCIAL, após revisão):
-├── auditor-final → aplica correções e produz versão final
+└── auditor-final → aplica correções e produz versão final
+
+Etapa 3.5 (SEQUENCIAL, após auditoria):
+└── verificação-jurisprudencial → valida citações antes de gerar .docx
+
+Etapa 4 (SEQUENCIAL, após verificação):
 └── gerador-docx → gera .docx formatados
 ```
 
@@ -52,8 +57,13 @@ Etapa 3 (SEQUENCIAL, após revisão):
 
 1. **Etapa 1**: lançar os 3 agentes em PARALELO via Agent tool. Os redatores usam julgados como citados nos EDs_vf. Se o pesquisador retornar ALERTA, intervir antes da finalização.
 2. **Etapa 2**: só lançar após TODOS os redatores concluírem. Lançar os 2 revisores em PARALELO.
-3. **Etapa 3**: só lançar após AMBOS os revisores concluírem. Auditor primeiro, gerador depois.
-4. **Alertas**: qualquer agente que retornar bloqueio → interromper pipeline e reportar ao Dr. Paulo.
+3. **Etapa 3**: só lançar após AMBOS os revisores concluírem. Auditor primeiro.
+4. **Verificação de jurisprudência obrigatória (Etapa 3.5)**: Após o auditor-final e ANTES do gerador-docx, executar verificação de jurisprudência:
+   - Executar `extrair_citacoes.py` sobre `resp_final.txt` e `re_final.txt` (se existirem)
+   - Verificar cada citação via Agent `pesquisador-jurisprudencial`
+   - Se qualquer citação não confirmada: marcar com [VERIFICAR] e BLOQUEAR geração do .docx até resolução manual
+   - Salvar relatório em `pipeline/verificacao_jurisp_resp.txt` e/ou `pipeline/verificacao_jurisp_re.txt`
+5. **Alertas**: qualquer agente que retornar bloqueio → interromper pipeline e reportar ao Dr. Paulo.
 
 ## Formato de saída
 
@@ -71,6 +81,7 @@ AGENTES EXECUTADOS:
 | revisor-prequestionamento | OK/LACUNAS | X lacunas |
 | revisor-estilo-juridico | OK/CORREÇÕES | X correções |
 | auditor-final | OK | /tmp/resp_caso_final.txt, /tmp/re_caso_final.txt |
+| verificacao-jurisprudencial | OK | X citações confirmadas, Y pendentes |
 | gerador-docx | OK | caminhos dos .docx |
 
 PLACEHOLDERS PENDENTES:
