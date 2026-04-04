@@ -479,3 +479,129 @@
 2026-04-03 19:33:54,185 [INFO] 127.0.0.1 - - [03/Apr/2026 19:33:54] "GET /api/alertas/stream HTTP/1.1" 200 -
 2026-04-03 19:34:09,385 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
 2026-04-03 19:34:10,529 [ERROR] Falha na conexão IMAP: b'[Error="AuthFailed:LogonDenied-BasicAuthBlocked-<RequestId=f0d62f43-dd0d-4dae-8414-ee40ecc4fd19,ST=00:18:32><Process:Microsoft.Exchange.Security.BasicAuthService.Server><BG<UserType:OutlookCom><LogonFailed-BasicAuthBlocked><AS:BasicAuthBlocked><Tid=84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa><V1 User:paulomoukarzel@hotmail.com" AuthResult=28 Proxy=SJ2PR07MB9735.namprd07.prod.outlook.com:1993:SSL MailboxBE=SJ2PR07MB9735.namprd07.prod.outlook.com Service=Imap4] AUTHENTICATE failed.'
+2026-04-03 19:34:55,450 [INFO] 127.0.0.1 - - [03/Apr/2026 19:34:55] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:36:12,366 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:12] "GET / HTTP/1.1" 200 -
+2026-04-03 19:36:37,563 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:37] "GET / HTTP/1.1" 200 -
+2026-04-03 19:36:37,964 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:37] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:36:37,976 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:37] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 19:36:38,215 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:38] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:36:38,345 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:38] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:36:38,355 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:38] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:36:38,667 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:38] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:36:44,824 [INFO] 127.0.0.1 - - [03/Apr/2026 19:36:44] "GET / HTTP/1.1" 200 -
+2026-04-03 19:37:02,848 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 19:37:04,035 [ERROR] Falha na conexão IMAP: b'[Error="AuthFailed:LogonDenied-BasicAuthBlocked-<RequestId=db308b3d-bc20-491c-bdb6-65b437d80ff3,ST=00:18:32><Process:Microsoft.Exchange.Security.BasicAuthService.Server><BG<UserType:OutlookCom><LogonFailed-BasicAuthBlocked><AS:BasicAuthBlocked><Tid=84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa><V1 User:paulomoukarzel@hotmail.com" AuthResult=28 Proxy=SJ2PR07MB9735.namprd07.prod.outlook.com:1993:SSL MailboxBE=SJ2PR07MB9735.namprd07.prod.outlook.com Service=Imap4] AUTHENTICATE failed.'
+2026-04-03 19:37:12,598 [INFO] 127.0.0.1 - - [03/Apr/2026 19:37:12] "GET / HTTP/1.1" 200 -
+2026-04-03 19:41:10,018 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 19:41:14,916 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 19:41:23,242 [INFO] 127.0.0.1 - - [03/Apr/2026 19:41:23] "GET / HTTP/1.1" 200 -
+2026-04-03 19:41:38,706 [INFO] 127.0.0.1 - - [03/Apr/2026 19:41:38] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:41:39,031 [INFO] 127.0.0.1 - - [03/Apr/2026 19:41:39] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:45:32,396 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 19:45:37,387 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 19:46:04,543 [INFO] 127.0.0.1 - - [03/Apr/2026 19:46:04] "GET / HTTP/1.1" 200 -
+2026-04-03 19:47:14,273 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:14] "GET / HTTP/1.1" 200 -
+2026-04-03 19:47:14,474 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:14] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 19:47:14,529 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:14] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:47:14,973 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:14] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:47:14,976 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:14] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:47:15,213 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:15] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:47:15,299 [INFO] 127.0.0.1 - - [03/Apr/2026 19:47:15] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:49:09,117 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET / HTTP/1.1" 200 -
+2026-04-03 19:49:09,503 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:49:09,599 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:49:09,758 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:49:09,823 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:49:09,828 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:09] "GET /static/img/logo_symbol.png HTTP/1.1" 200 -
+2026-04-03 19:49:10,069 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:10] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:49:10,135 [INFO] 127.0.0.1 - - [03/Apr/2026 19:49:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-03 19:51:06,775 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:06] "GET / HTTP/1.1" 200 -
+2026-04-03 19:51:07,143 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:51:07,149 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 19:51:07,382 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:51:07,475 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:51:07,488 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:51:07,808 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:07] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:51:39,742 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:39] "GET / HTTP/1.1" 200 -
+2026-04-03 19:51:40,071 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:40] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:51:40,179 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:40] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:51:40,463 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:40] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 19:51:40,463 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:40] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:51:40,788 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:40] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:51:41,039 [INFO] 127.0.0.1 - - [03/Apr/2026 19:51:41] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:52:53,181 [INFO] 127.0.0.1 - - [03/Apr/2026 19:52:53] "GET / HTTP/1.1" 200 -
+2026-04-03 19:54:24,191 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 19:54:28,985 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 19:58:46,731 [INFO] 127.0.0.1 - - [03/Apr/2026 19:58:46] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:58:47,049 [INFO] 127.0.0.1 - - [03/Apr/2026 19:58:47] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:59:25,365 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:25] "GET / HTTP/1.1" 200 -
+2026-04-03 19:59:25,730 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:25] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:59:25,741 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:25] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 19:59:25,986 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:25] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:59:26,070 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:26] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:59:26,102 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:26] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:59:26,421 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:26] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:59:29,319 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:29] "GET / HTTP/1.1" 200 -
+2026-04-03 19:59:29,692 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:29] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 19:59:29,762 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:29] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 19:59:29,952 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:29] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 19:59:30,017 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:30] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 19:59:30,021 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:30] "GET /static/img/logo_symbol.png HTTP/1.1" 200 -
+2026-04-03 19:59:30,264 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:30] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 19:59:30,347 [INFO] 127.0.0.1 - - [03/Apr/2026 19:59:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-03 20:03:57,082 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 20:03:58,345 [ERROR] Falha na conexão IMAP: b'[Error="AuthFailed:LogonDenied-BasicAuthBlocked-<RequestId=5c17312e-2b08-4aca-bba9-e881b7d86c98,ST=00:18:32><Process:Microsoft.Exchange.Security.BasicAuthService.Server><BG<UserType:OutlookCom><LogonFailed-BasicAuthBlocked><AS:BasicAuthBlocked><Tid=84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa><V1 User:paulomoukarzel@hotmail.com" AuthResult=28 Proxy=SJ2PR07MB9735.namprd07.prod.outlook.com:1993:SSL MailboxBE=SJ2PR07MB9735.namprd07.prod.outlook.com Service=Imap4] AUTHENTICATE failed.'
+2026-04-03 20:04:30,749 [INFO] 127.0.0.1 - - [03/Apr/2026 20:04:30] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:04:31,075 [INFO] 127.0.0.1 - - [03/Apr/2026 20:04:31] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:09:30,741 [INFO] 127.0.0.1 - - [03/Apr/2026 20:09:30] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:09:31,062 [INFO] 127.0.0.1 - - [03/Apr/2026 20:09:31] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:14:30,763 [INFO] 127.0.0.1 - - [03/Apr/2026 20:14:30] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:14:31,081 [INFO] 127.0.0.1 - - [03/Apr/2026 20:14:31] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:19:30,759 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:30] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:19:31,084 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:31] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:19:50,990 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:50] "GET / HTTP/1.1" 200 -
+2026-04-03 20:19:51,354 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:51] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:19:51,453 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:51] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 20:19:51,605 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:51] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:19:51,676 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:51] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 20:19:51,686 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:51] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 20:19:52,000 [INFO] 127.0.0.1 - - [03/Apr/2026 20:19:52] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 20:24:52,758 [INFO] 127.0.0.1 - - [03/Apr/2026 20:24:52] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:24:53,081 [INFO] 127.0.0.1 - - [03/Apr/2026 20:24:53] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:29:52,763 [INFO] 127.0.0.1 - - [03/Apr/2026 20:29:52] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:29:53,090 [INFO] 127.0.0.1 - - [03/Apr/2026 20:29:53] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:33:58,424 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 20:34:02,895 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 20:51:40,778 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:40] "GET / HTTP/1.1" 200 -
+2026-04-03 20:51:40,848 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:40] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 20:51:41,043 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:41] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:51:41,537 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:41] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 20:51:41,539 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:41] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 20:51:41,798 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:41] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 20:51:41,854 [INFO] 127.0.0.1 - - [03/Apr/2026 20:51:41] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 20:56:42,776 [INFO] 127.0.0.1 - - [03/Apr/2026 20:56:42] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 20:56:43,102 [INFO] 127.0.0.1 - - [03/Apr/2026 20:56:43] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:04:02,965 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 21:04:07,748 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 21:31:04,959 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:04] "GET / HTTP/1.1" 200 -
+2026-04-03 21:31:05,035 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "[36mGET /static/img/logo_symbol.png HTTP/1.1[0m" 304 -
+2026-04-03 21:31:05,200 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:31:05,597 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "GET /api/alertas/pendentes HTTP/1.1" 200 -
+2026-04-03 21:31:05,598 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:31:05,845 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "GET /api/email/status HTTP/1.1" 200 -
+2026-04-03 21:31:05,916 [INFO] 127.0.0.1 - - [03/Apr/2026 21:31:05] "GET /api/alertas/stream HTTP/1.1" 200 -
+2026-04-03 21:34:07,822 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...
+2026-04-03 21:34:14,491 [ERROR] Falha na conexão IMAP: b'LOGIN failed.'
+2026-04-03 21:36:06,786 [INFO] 127.0.0.1 - - [03/Apr/2026 21:36:06] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:36:07,105 [INFO] 127.0.0.1 - - [03/Apr/2026 21:36:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:41:06,793 [INFO] 127.0.0.1 - - [03/Apr/2026 21:41:06] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:41:07,116 [INFO] 127.0.0.1 - - [03/Apr/2026 21:41:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:46:07,076 [INFO] 127.0.0.1 - - [03/Apr/2026 21:46:07] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:46:11,967 [INFO] 127.0.0.1 - - [03/Apr/2026 21:46:11] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:51:06,799 [INFO] 127.0.0.1 - - [03/Apr/2026 21:51:06] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:51:07,119 [INFO] 127.0.0.1 - - [03/Apr/2026 21:51:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 21:56:06,793 [INFO] 127.0.0.1 - - [03/Apr/2026 21:56:06] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 21:56:07,109 [INFO] 127.0.0.1 - - [03/Apr/2026 21:56:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 22:01:06,786 [INFO] 127.0.0.1 - - [03/Apr/2026 22:01:06] "GET /api/prazos HTTP/1.1" 200 -
+2026-04-03 22:01:07,113 [INFO] 127.0.0.1 - - [03/Apr/2026 22:01:07] "GET /api/stats HTTP/1.1" 200 -
+2026-04-03 22:04:14,629 [INFO] Conectando a outlook.office365.com:993 (paulomoukarzel@hotmail.com)...

@@ -194,9 +194,9 @@ def processar_email_graph(msg):
     compromisso = construir_compromisso(tipo_ato_raw, texto_lower)
     resumo      = construir_resumo(tribunal, assunto, corpo, processo, data_email)
 
-    from leitor_email import _extrair_partes
-    partes_list = _extrair_partes(corpo)
-    partes      = " × ".join(partes_list) if partes_list else ""
+    from leitor_email import _extrair_partes, _parte_contraria
+    partes_dict = _extrair_partes(corpo)
+    partes      = _parte_contraria(partes_dict, cliente)
 
     return {
         "msg_id":      msg_id,

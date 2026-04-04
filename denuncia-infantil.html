@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Você Não Está Sozinho</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Brand */
+      --indigo:       #4338CA;
+      --indigo-dark:  #312E81;
+      --indigo-pale:  #EEF2FF;
+      --violet:       #7C3AED;
+      --violet-pale:  #F5F3FF;
+
+      /* Warm accents */
+      --peach:        #FB923C;
+      --peach-pale:   #FFF7ED;
+      --amber:        #F59E0B;
+
+      /* Actions */
+      --emerald:      #059669;
+      --emerald-light:#10B981;
+      --emerald-pale: #ECFDF5;
+      --emerald-glow: 0 6px 22px rgba(5,150,105,.30);
+
+      /* Alert */
+      --red:          #DC2626;
+      --red-pale:     #FEF2F2;
+
+      /* Neutral */
+      --text:         #1E1B4B;
+      --text-mid:     #374151;
+      --text-soft:    #6B7280;
+      --border:       #E0E7FF;
+      --white:        #FFFFFF;
+      --bg:           #F8F7FF;
+
+      /* Shadows */
+      --card-shadow:  0 2px 28px rgba(67,56,202,.09);
+      --card-hover:   0 6px 36px rgba(67,56,202,.14);
+
+      /* Shape */
+      --r:    20px;
+      --r-sm: 13px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ─── Aurora blobs ─── */
+    .aurora { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; }
+    .a1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, #C7D2FE 0%, transparent 65%);
+      top: -200px; right: -180px;
+      animation: drift 24s ease-in-out infinite;
+    }
+    .a2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #FED7AA 0%, transparent 65%);
+      bottom: -140px; left: -120px;
+      animation: drift 28s ease-in-out infinite reverse;
+    }
+    .a3 {
+      width: 280px; height: 280px;
+      background: radial-gradient(circle, #A7F3D0 0%, transparent 65%);
+      top: 40%; left: -60px; opacity: .6;
+      animation: drift 20s ease-in-out infinite 8s;
+    }
+    @keyframes drift {
+      0%,100% { transform: translate(0,0) scale(1); }
+      35%      { transform: translate(-28px, 38px) scale(1.05); }
+      70%      { transform: translate(22px, -22px) scale(.95); }
+    }
+
+    /* ─── Layout ─── */
+    .wrap {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center;
+    }
+
+    /* ─── Header strip ─── */
+    .header {
+      width: 100%; max-width: 520px;
+      padding: 24px 24px 0;
+      display: flex; align-items: center; gap: 14px;
+    }
+
+    .logo {
+      width: 50px; height: 50px; flex-shrink: 0;
+      background: linear-gradient(145deg, var(--indigo) 0%, var(--violet) 100%);
+      border-radius: 15px;
+      box-shadow: 0 4px 18px rgba(67,56,202,.35);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo svg { width: 28px; height: 28px; fill: #fff; }
+
+    .logo-copy { display: flex; flex-direction: column; gap: 1px; }
+    .logo-label {
+      font-size: 9px; font-weight: 800; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--indigo); opacity: .7;
+    }
+    .logo-title {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 17px; font-weight: 800; color: var(--indigo-dark);
+    }
+
+    /* ─── Progress dots ─── */
+    .dots {
+      display: flex; gap: 7px; align-items: center;
+      justify-content: center;
+      padding: 20px 0 8px;
+    }
+    .dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--border);
+      transition: all .3s ease;
+    }
+    .dot.on {
+      background: var(--indigo);
+      transform: scale(1.25);
+      box-shadow: 0 0 0 3px rgba(67,56,202,.15);
+    }
+
+    /* ─── Main ─── */
+    .main {
+      width: 100%; max-width: 520px;
+      padding: 10px 24px 72px;
+      flex: 1;
+    }
+
+    /* ─── Screen transitions ─── */
+    .screen { display: none; }
+    .screen.active {
+      display: block;
+      animation: slideUp .38s cubic-bezier(.22,.6,.36,1) both;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── Cards ─── */
+    .card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 16px;
+    }
+
+    .card-violet {
+      background: linear-gradient(140deg, var(--violet-pale) 0%, var(--indigo-pale) 100%);
+      border: 1.5px solid rgba(124,58,237,.14);
+    }
+    .card-emerald {
+      background: linear-gradient(140deg, var(--emerald-pale) 0%, #F0FFF8 100%);
+      border: 1.5px solid rgba(5,150,105,.16);
+    }
+    .card-peach {
+      background: linear-gradient(140deg, var(--peach-pale) 0%, #FFF8F0 100%);
+      border: 1.5px solid rgba(251,146,60,.18);
+    }
+
+    /* ─── Typography ─── */
+    .hero-emoji { font-size: 52px; display: block; margin-bottom: 18px; line-height: 1; }
+
+    h1 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 28px; font-weight: 800; line-height: 1.25;
+      color: var(--indigo-dark); margin-bottom: 16px;
+    }
+    h2 {
+      font-family: 'Baloo 2', sans-serif;
+      font-size: 22px; font-weight: 800;
+      color: var(--indigo-dark); margin-bottom: 14px;
+    }
+    h3 {
+      font-size: 16px; font-weight: 800;
+      color: var(--text-mid); margin-bottom: 14px;
+    }
+    p {
+      font-size: 15.5px; line-height: 1.78;
+      color: var(--text-mid); margin-bottom: 12px;
+    }
+    p:last-child { margin-bottom: 0; }
+    strong { font-weight: 800; color: var(--text); }
+
+    .tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 4px 11px; border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .tag-violet { background: rgba(124,58,237,.1); color: var(--violet); }
+    .tag-emerald { background: rgba(5,150,105,.1); color: var(--emerald); }
+    .tag-peach   { background: rgba(251,146,60,.1); color: var(--peach); }
+
+    /* ─── Alert box ─── */
+    .alert {
+      border-radius: var(--r-sm);
+      padding: 15px 18px;
+      margin-top: 14px;
+      display: flex; gap: 11px; align-items: flex-start;
+    }
+    .alert-red  { background: var(--red-pale); border-left: 4px solid var(--red); }
+    .alert-red p { color: var(--red); font-weight: 700; font-size: 14.5px; margin: 0; }
+
+    /* ─── Worry cards ─── */
+    .worries { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+    .wcard {
+      background: var(--white);
+      border-radius: var(--r-sm);
+      padding: 15px 16px;
+      display: flex; gap: 14px; align-items: flex-start;
+      box-shadow: var(--card-shadow);
+      border-left: 4px solid transparent;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .wcard:active { transform: scale(.99); }
+    .wc-1 { border-left-color: #818CF8; }
+    .wc-2 { border-left-color: #FB923C; }
+    .wc-3 { border-left-color: #F472B6; }
+    .wc-4 { border-left-color: #34D399; }
+    .wcard .ico { font-size: 26px; line-height: 1; flex-shrink: 0; }
+    .wcard h4 { font-size: 14.5px; font-weight: 800; margin-bottom: 4px; color: var(--text); }
+    .wcard p  { font-size: 13.5px; color: var(--text-soft); margin: 0; line-height: 1.6; }
+
+    /* ─── Lock info box ─── */
+    .lock-box {
+      display: flex; gap: 13px; align-items: flex-start;
+      background: linear-gradient(135deg, var(--emerald-pale), var(--indigo-pale));
+      border: 1.5px solid rgba(5,150,105,.18);
+      border-radius: var(--r-sm); padding: 17px; margin-bottom: 22px;
+    }
+    .lock-box .ico { font-size: 24px; flex-shrink: 0; line-height: 1.1; }
+    .lock-box strong { font-size: 14.5px; display: block; margin-bottom: 5px; }
+    .lock-box p { font-size: 13px; color: var(--text-soft); margin: 0; line-height: 1.6; }
+
+    /* ─── Channels ─── */
+    .channels { display: flex; flex-direction: column; gap: 0; margin-bottom: 22px; }
+    .channel {
+      display: flex; gap: 14px; align-items: flex-start;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .channel:last-child { border-bottom: none; }
+    .channel .c-ico { font-size: 24px; flex-shrink: 0; }
+    .channel h4 { font-size: 14.5px; font-weight: 800; margin-bottom: 3px; }
+    .channel p  { font-size: 13px; color: var(--text-soft); margin: 0; line-height: 1.5; }
+    .channel a  {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 13px; font-weight: 800;
+      color: var(--indigo); text-decoration: none; margin-top: 5px;
+    }
+
+    /* ─── Divider ─── */
+    .sep { height: 1px; background: var(--border); margin: 20px 0; }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: block; width: 100%;
+      padding: 17px 24px; border: none; border-radius: 100px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px; font-weight: 800;
+      text-align: center; cursor: pointer;
+      transition: transform .18s, box-shadow .18s, background .18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active { transform: scale(.97); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--emerald-light) 0%, var(--emerald) 100%);
+      color: #fff;
+      box-shadow: var(--emerald-glow);
+      letter-spacing: .3px;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 8px 30px rgba(5,150,105,.38);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--indigo);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--indigo);
+      background: var(--indigo-pale);
+    }
+
+    .btn-gap { margin-bottom: 12px; }
+
+    .btn-back {
+      background: none; border: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14.5px; font-weight: 700;
+      color: var(--text-soft); cursor: pointer;
+      padding: 10px 0;
+      display: inline-flex; align-items: center; gap: 5px;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn-back:hover { color: var(--text-mid); }
+
+    .btn-row {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .btn-row .btn-back { flex-shrink: 0; }
+    .btn-row .btn      { flex: 1; }
+
+    /* ─── Form ─── */
+    .field { margin-bottom: 20px; }
+
+    label {
+      display: block;
+      font-size: 15px; font-weight: 800;
+      color: var(--text); margin-bottom: 9px;
+    }
+    label .opt { font-size: 12px; font-weight: 500; color: var(--text-soft); margin-left: 5px; }
+    label .req { color: var(--red); margin-left: 4px; }
+
+    input[type="text"], textarea {
+      width: 100%; padding: 15px 17px;
+      border: 2px solid var(--border); border-radius: var(--r-sm);
+      font-family: 'Nunito', sans-serif;
+      font-size: 15px; color: var(--text);
+      background: var(--white); outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      resize: vertical;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--indigo);
+      box-shadow: 0 0 0 4px rgba(67,56,202,.1);
+    }
+    input::placeholder, textarea::placeholder { color: #C4C9D4; }
+    textarea { min-height: 130px; }
+
+    .form-hint {
+      font-size: 12.5px; color: var(--text-soft);
+      text-align: center; margin-top: 14px;
+    }
+
+    /* ─── Screen 1 highlight block ─── */
+    .promise-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin-top: 22px;
+    }
+    .promise-item {
+      background: var(--indigo-pale);
+      border-radius: var(--r-sm);
+      padding: 14px;
+      display: flex; flex-direction: column; gap: 6px;
+      align-items: flex-start;
+    }
+    .promise-item .p-ico { font-size: 22px; }
+    .promise-item p {
+      font-size: 13px; font-weight: 700;
+      color: var(--indigo); margin: 0; line-height: 1.4;
+    }
+
+    /* ─── Sent screen ─── */
+    .sent {
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 48px 0 28px;
+    }
+    .sent-ring {
+      width: 100px; height: 100px;
+      background: linear-gradient(145deg, #34D399, var(--emerald));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 46px;
+      box-shadow: 0 10px 40px rgba(5,150,105,.35);
+      margin-bottom: 28px;
+      animation: popIn .5s cubic-bezier(.34,1.56,.64,1) both;
+    }
+    @keyframes popIn {
+      from { transform: scale(0) rotate(-15deg); opacity: 0; }
+      to   { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .sent h1 { margin-bottom: 14px; }
+    .sent p   { color: var(--text-soft); max-width: 300px; }
+    .sent-badge {
+      margin-top: 22px;
+      background: var(--emerald-pale);
+      color: var(--emerald);
+      font-weight: 800; font-size: 13.5px;
+      padding: 8px 18px; border-radius: 100px;
+      display: inline-block;
+    }
+
+    @media (min-width: 520px) {
+      .header, .main { padding-left: 32px; padding-right: 32px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="aurora a1"></div>
+  <div class="aurora a2"></div>
+  <div class="aurora a3"></div>
+
+  <div class="wrap">
+
+    <!-- ══ HEADER ══ -->
+    <header class="header">
+      <div class="logo">
+        <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5L12 1z"/></svg>
+      </div>
+      <div class="logo-copy">
+        <span class="logo-label">Promotoria de Justiça · Fraiburgo</span>
+        <span class="logo-title">Você não está sozinho</span>
+      </div>
+    </header>
+
+    <!-- ══ PROGRESS DOTS ══ -->
+    <div class="dots" id="dots">
+      <div class="dot on" id="d1"></div>
+      <div class="dot"    id="d2"></div>
+      <div class="dot"    id="d3"></div>
+    </div>
+
+    <main class="main">
+
+      <!-- ══════════════════════════════
+           TELA 1 — ACOLHIMENTO
+      ══════════════════════════════ -->
+      <div class="screen active" id="tela1">
+
+        <div class="card">
+          <span class="hero-emoji">🤗</span>
+          <h1>Olá! Este espaço é seguro e é para você.</h1>
+          <p>Se alguém tocou no seu corpo de um jeito que te deixou desconfortável, com medo ou confuso — <strong>você não tem culpa nenhuma.</strong></p>
+          <p>Aqui você pode entender melhor o que aconteceu ou pedir ajuda diretamente para a Promotoria de Justiça — de forma <strong>completamente sigilosa.</strong></p>
+
+          <div class="promise-row">
+            <div class="promise-item">
+              <span class="p-ico">🔒</span>
+              <p>Ninguém saberá que foi você</p>
+            </div>
+            <div class="promise-item">
+              <span class="p-ico">💙</span>
+              <p>Você será ouvido com cuidado</p>
+            </div>
+            <div class="promise-item">
+              <span class="p-ico">🤝</span>
+              <p>Não precisa se identificar</p>
+            </div>
+            <div class="promise-item">
+              <span class="p-ico">✅</span>
+              <p>A Promotoria vai levar a sério</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary btn-gap" onclick="ir('tela2', 2)">
+          Quero entender melhor →
+        </button>
+        <button class="btn btn-outline" onclick="ir('tela3', 3)">
+          Quero pedir ajuda agora
+        </button>
+
+      </div>
+
+      <!-- ══════════════════════════════
+           TELA 2 — INFORMAÇÕES
+      ══════════════════════════════ -->
+      <div class="screen" id="tela2">
+
+        <div class="card">
+          <div class="tag tag-violet">📖 Entendendo o que aconteceu</div>
+          <h2>O que é abuso sexual?</h2>
+          <p>É quando alguém — um adulto ou adolescente mais velho — <strong>toca partes íntimas do seu corpo</strong> sem que você queira, ou faz você tocar o corpo dele.</p>
+          <p>Também é abuso quando alguém te mostra fotos ou vídeos sexuais, filma seu corpo sem você saber, ou manda mensagens com esse tipo de conteúdo.</p>
+          <p>Isso inclui quando a pessoa usa presentes, ameaças ou carinhos para conseguir o que quer.</p>
+          <div class="alert alert-red">
+            <p>Mesmo que você tenha concordado, seja por medo, pressão ou qualquer outro motivo — <strong>a responsabilidade é sempre do adulto. Nunca sua.</strong></p>
+          </div>
+        </div>
+
+        <h3>Pode ser difícil falar. Isso é completamente normal.</h3>
+
+        <div class="worries">
+          <div class="wcard wc-1">
+            <span class="ico">😟</span>
+            <div>
+              <h4>Medo de não ser acreditado</h4>
+              <p>Muitas crianças sentem isso. A Promotoria de Justiça leva a sério tudo que você disser.</p>
+            </div>
+          </div>
+          <div class="wcard wc-2">
+            <span class="ico">😔</span>
+            <div>
+              <h4>Vergonha ou confusão</h4>
+              <p>O que aconteceu com você não define quem você é. Você não tem nada de que se envergonhar.</p>
+            </div>
+          </div>
+          <div class="wcard wc-3">
+            <span class="ico">😰</span>
+            <div>
+              <h4>Medo de prejudicar alguém da família</h4>
+              <p>Você não é responsável pelas consequências do que a outra pessoa fez. Isso não é culpa sua.</p>
+            </div>
+          </div>
+          <div class="wcard wc-4">
+            <span class="ico">😤</span>
+            <div>
+              <h4>Raiva ou desconfiança de adultos</h4>
+              <p>Faz todo sentido sentir isso. Mas existem pessoas que realmente querem te ajudar e proteger.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-emerald">
+          <div class="tag tag-emerald">🌿 Falar com a Promotoria</div>
+          <p style="margin-bottom:18px;">Envie uma mensagem direta e sigilosa para a Promotoria de Justiça. Você não precisa se identificar.</p>
+          <button class="btn btn-primary" onclick="ir('tela3', 3)">Quero pedir ajuda agora →</button>
+        </div>
+
+        <p style="font-size:13.5px; color:var(--text-soft); text-align:center; margin-bottom:14px;">
+          Outros canais de ajuda disponíveis
+        </p>
+
+        <div class="channels">
+          <div class="channel">
+            <span class="c-ico">📞</span>
+            <div>
+              <h4>Disque 100</h4>
+              <p>Denúncias de direitos humanos. Gratuito, 24 horas, pode ser anônimo.</p>
+              <a href="tel:100">Ligar agora ↗</a>
+            </div>
+          </div>
+          <div class="channel">
+            <span class="c-ico">🚔</span>
+            <div>
+              <h4>Polícia Militar — 190</h4>
+              <p>Se você estiver em perigo imediato.</p>
+              <a href="tel:190">Ligar agora ↗</a>
+            </div>
+          </div>
+          <div class="channel">
+            <span class="c-ico">🏠</span>
+            <div>
+              <h4>CREAS Fraiburgo</h4>
+              <p>Atendimento especializado e sigiloso para crianças, adolescentes e famílias.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+        <button class="btn-back" onclick="ir('tela1', 1)">← Voltar</button>
+      </div>
+
+      <!-- ══════════════════════════════
+           TELA 3 — FORMULÁRIO
+      ══════════════════════════════ -->
+      <div class="screen" id="tela3">
+
+        <div class="lock-box">
+          <span class="ico">🔒</span>
+          <div>
+            <strong>Mensagem direta e sigilosa à Promotoria de Justiça de Fraiburgo</strong>
+            <p>Você não precisa se identificar. Ninguém além da Promotoria terá acesso ao que você escrever aqui.</p>
+          </div>
+        </div>
+
+        <form id="formDenuncia" onsubmit="enviar(event)" novalidate>
+
+          <div class="field">
+            <label for="quem">Quem fez isso?</label>
+            <input type="text" id="quem" name="quem"
+              placeholder="Pode dizer o tipo de relação: familiar, conhecido, professor...">
+          </div>
+
+          <div class="field">
+            <label for="onde">Onde aconteceu?</label>
+            <input type="text" id="onde" name="onde"
+              placeholder="Em casa, na escola, na casa de outra pessoa...">
+          </div>
+
+          <div class="field">
+            <label for="oque">O que aconteceu?<span class="req">*</span></label>
+            <textarea id="oque" name="oque"
+              placeholder="Conte com suas palavras, do jeito que conseguir. Não precisa detalhar se não se sentir à vontade. Tudo bem."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="contato">
+              Como posso entrar em contato com você?
+              <span class="opt">(opcional)</span>
+            </label>
+            <input type="text" id="contato" name="contato"
+              placeholder="Telefone, WhatsApp ou e-mail — só se quiser e se for seguro para você.">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn-back" onclick="voltarForm()">← Voltar</button>
+            <button type="submit" class="btn btn-primary">Enviar agora 🛡️</button>
+          </div>
+
+          <p class="form-hint">Apenas "O que aconteceu" é obrigatório. Tudo o mais é opcional.</p>
+        </form>
+      </div>
+
+      <!-- ══════════════════════════════
+           TELA 4 — MENSAGEM ENVIADA
+      ══════════════════════════════ -->
+      <div class="screen" id="tela4">
+        <div class="sent">
+          <div class="sent-ring">✅</div>
+          <h1>Mensagem enviada!</h1>
+          <p>Você fez algo muito corajoso. A Promotoria de Justiça de Fraiburgo recebeu sua mensagem e vai cuidar dela com sigilo e atenção.</p>
+          <p style="margin-top:14px;"><strong>Isso não é culpa sua.</strong> Você merece ajuda e proteção.</p>
+          <span class="sent-badge">🛡️ Sua mensagem está protegida</span>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    let origemTela3 = 'tela1';
+
+    function ir(id, dot) {
+      if (id === 'tela3') origemTela3 = document.querySelector('.screen.active')?.id || 'tela1';
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      atualizarDots(dot);
+    }
+
+    function atualizarDots(n) {
+      ['d1','d2','d3'].forEach((id, i) => {
+        document.getElementById(id).classList.toggle('on', i + 1 === n);
+      });
+    }
+
+    function voltarForm() {
+      const prev = origemTela3;
+      const dot = prev === 'tela2' ? 2 : 1;
+      ir(prev, dot);
+    }
+
+    function enviar(e) {
+      e.preventDefault();
+      const campo = document.getElementById('oque');
+      if (!campo.value.trim()) {
+        campo.focus();
+        campo.style.borderColor = 'var(--red)';
+        campo.style.boxShadow = '0 0 0 4px rgba(220,38,38,.1)';
+        campo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => { campo.style.borderColor = ''; campo.style.boxShadow = ''; }, 2800);
+        return;
+      }
+      // Produção: fetch('/api/denuncia', { method:'POST', body: JSON.stringify({...}) })
+      document.getElementById('dots').style.display = 'none';
+      ir('tela4', 0);
+    }
+  </script>
+</body>
+</html>

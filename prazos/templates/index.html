@@ -327,20 +327,17 @@
     .col-tipo      { width: 95px; }
     .col-tribunal  { width: 80px; color: var(--text-mid); font-size: 0.78rem; }
     .col-comp      { min-width: 180px; }
-    .col-partes    { width: 200px; color: var(--text-mid); font-size: 0.78rem; }
-    .col-resumo    { color: var(--text-mid); font-size: 0.78rem; }
+    .col-partes    { width: 130px; color: var(--text-mid); font-size: 0.78rem; }
+    .col-resumo    { min-width: 300px; color: var(--text-mid); font-size: 0.78rem; }
     .col-status    { width: 115px; }
     .col-acoes     { width: 95px; text-align: right; }
     .partes-cliente { color: var(--gold-lt); font-weight: 600; }
 
     .resumo-text {
-      max-width: 320px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      cursor: pointer;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.45;
     }
-    .resumo-text:hover { white-space: normal; overflow: visible; }
 
     .btn-icon {
       width: 30px; height: 30px;
@@ -646,8 +643,8 @@
         <th class="col-tipo">Tipo</th>
         <th class="col-tribunal">Tribunal</th>
         <th class="col-comp">Compromisso / Providência</th>
-        <th class="col-partes">Partes</th>
         <th class="col-resumo">Resumo do Ato</th>
+        <th class="col-partes">Partes</th>
         <th class="col-status">Status</th>
         <th class="col-acoes">Ações</th>
       </tr>
@@ -823,8 +820,8 @@ function renderTable() {
       <td class="col-tipo"><span class="tipo-badge ${tipoCls}">${tipoLabel(p.tipo)}</span></td>
       <td class="col-tribunal">${p.tribunal || '<span style="color:var(--border-lg)">—</span>'}</td>
       <td class="col-comp">${p.compromisso}</td>
-      <td class="col-partes">${partesCell}</td>
       <td class="col-resumo">${resumoCell}</td>
+      <td class="col-partes">${partesCell}</td>
       <td class="col-status"><span class="badge ${cls}">${lbl}</span></td>
       <td class="col-acoes" style="text-align:right">
         ${acaoConcluir}

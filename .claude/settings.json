@@ -52,7 +52,20 @@
       "Bash(curl -s \"http://localhost:5001/api/prazos\")",
       "Bash(start \"\" \"c:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\teste_IA\\\\site_escritorio\\\\story_instagram.html\")",
       "Bash(pip show:*)",
-      "Bash(start \"\" \"c:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\teste_IA\\\\site_escritorio\\\\story_instagram.png\")"
+      "Bash(start \"\" \"c:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\teste_IA\\\\site_escritorio\\\\story_instagram.png\")",
+      "Bash(taskkill /F /IM python.exe)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":5001\")",
+      "Bash(powershell -Command 'Get-Process python -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep 2; $pids = \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue\\).OwningProcess | Sort-Object -Unique; foreach\\($p in $pids\\) { Stop-Process -Id $p -Force -ErrorAction SilentlyContinue }; Start-Sleep 1; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue\\).Count')",
+      "Bash(curl -s http://localhost:5001/)",
+      "Bash(findstr \"LISTENING\")",
+      "Bash(powershell -Command 'Get-Process python -ErrorAction SilentlyContinue | Stop-Process -Force; \\(Get-NetTCPConnection -LocalPort 5001 -ErrorAction SilentlyContinue\\).OwningProcess | Sort-Object -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }')",
+      "WebFetch(domain:www.gastaoemoukarzel.com.br)",
+      "Bash(unzip -l site_gastaoemoukarzel.zip)",
+      "Bash(start \"\" \"C:\\\\Users\\\\paulo\\\\OneDrive\\\\Documentos\\\\teste_IA\\\\instagram_gastao_moukarzel.html\")",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)"
     ],
     "additionalDirectories": [
       "c:\\Users\\paulo\\OneDrive\\Documentos\\teste_IA\\site_escritorio",
